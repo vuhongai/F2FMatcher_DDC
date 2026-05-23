@@ -5,13 +5,15 @@ import os
 from pathlib import Path
 
 # Mock configuration for testing
-CZI_BASE_DIR_TA = "/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/"
-CZI_BASE_DIR_QUA = "/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/"
-CP_MASKS_DIR_TA = "/DATA/fiber_mapping_DDC/AJ/analysis_TA_run1/run/out_CP_masks"
-CP_MASKS_DIR_QUA = "/DATA/fiber_mapping_DDC/AJ/analysis_Qua_run1/run/out_CP_masks"
-PAIR_DIRS_BASE_TA = "/DATA/fiber_mapping_DDC/AJ/analysis_TA_run1/run/prediction_output"
-PAIR_DIRS_BASE_QUA = "/DATA/fiber_mapping_DDC/AJ/analysis_Qua_run1/run/prediction_output"
-OUTPUT_DIR = "/DATA/F2FMatcher_DDC/results"
+CZI_BASE_DIR_TA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/")
+CP_MASKS_DIR_TA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/analysis_TA_run1/run/out_CP_masks")
+PAIR_DIRS_BASE_TA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/analysis_TA_run1/run/prediction_output")
+
+CZI_BASE_DIR_QUA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/")
+CP_MASKS_DIR_QUA = Path("/DATA/fiber_mapping_DDC/AJ/analysis_Qua_run1/run/out_CP_masks")
+PAIR_DIRS_BASE_QUA = Path("/DATA/fiber_mapping_DDC/AJ/analysis_Qua_run1/run/prediction_output")
+
+OUTPUT_DIR = Path("/DATA/F2FMatcher_DDC/results")
 
 # Sample definitions (mock data)
 TA_SAMPLES = [
@@ -42,48 +44,74 @@ QUA_SAMPLES = [
 SLIDES = {
     1: {
         "czi_dir": "IHF_Lam-Dys-Col4",
+        "scanning_objective": "10X",
         "IHF": True,
+        "segmentation_staining": "Laminin",
+        "segmentation_channel": 1,
+        "segmentation_model": "CP_AV_Laminin_Dia_Qua_TA_AxioScan10X",
         "stainings": {
             0: "DAPI", 1: "Laminin", 2: "Dystrophin", 3: "Collagen4"
         }
     },
     2: {
         "czi_dir": "IHF_Lam-IgG-CD11b",
+        "scanning_objective": "10X",
         "IHF": True,
+        "segmentation_staining": "Laminin",
+        "segmentation_channel": 1,
+        "segmentation_model": "CP_AV_Laminin_Dia_Qua_TA_AxioScan10X",
         "stainings": {
             2: "IgG", 3: "CD11b"
-        }
+        }    
     },
     3: {
         "czi_dir": "NADH",
+        "scanning_objective": "10X",
         "IHF": False,
+        "segmentation_staining": "NADH",
+        "segmentation_channel": 0,
+        "segmentation_model": "CP_AV_TA_COX-SDH-NADH_AxioScan10X",
         "stainings": {
             0: "NADH"
         }
     },
     6: {
         "czi_dir": "HE_10x",
+        "scanning_objective": "10X",
         "IHF": False,
+        "segmentation_staining": "HE",
+        "segmentation_channel": 0,
+        "segmentation_model": "CP_AV_TA_Qua_HE_AxioScan10X",
         "stainings": {
             0: "HE_10x"
         }
     },
     7: {
         "czi_dir": "COX",
+        "scanning_objective": "10X",
         "IHF": False,
+        "segmentation_staining": "HE",
+        "segmentation_channel": 0,
+        "segmentation_model": "CP_AV_TA_Qua_COX_AxioScan10X",
         "stainings": {
             0: "COX"
         }
     },
     8: {
         "czi_dir": "IHF_LAMP2-LGALS3-SQSTM1",
+        "scanning_objective": "10X",
         "IHF": True,
+        "segmentation_staining": "LAMP2",
+        "segmentation_channel": 1,
+        "segmentation_model": "CP_AV_TA_Qua_LAMP2_AxioScan10X",
         "stainings": {
             1: "LAMP2", 2: "LGALS3", 3: "SQSTM1"
         }
     }, 
 }
 
+#
+threshold_fiber_area = 100              # filter (para in F2FMatcher)
 
 # Compartments to analyze
 """
@@ -94,11 +122,12 @@ SLIDES = {
 - cyto2: erosion of 8 pixels followed by no further erosion, corresponds to the inner cytoplasm close to the nucleus, set to 0 if the resulting mask is empty
 """
 COMPARTMENTS = {
-    "whole": {"dilation": None, "erosion": None}, 
-    "mem": {"dilation": 4, "erosion": 4}, 
-    "cyto1": {"erosion_1": 4, "erosion_2": 8},
-    "cyto2": {"erosion_1": 8, "erosion_2": None},
+    "whole": {"erode1": None, "erode2": None}, 
+    "mem": {"erode1": -4, "erode2": 4}, 
+    "cyto1": {"erode1": 4, "erode2": 12},
+    "cyto2": {"erode1": 12, "erode2": None},
 }
+list_erosion = [-4, 4, 12]
 
 # Feature statistics to compute
 FEATURE_STATISTICS = ["mean", "std", "p10", "p25", "p50", "p75", "p90", "skew", "kurt"]
