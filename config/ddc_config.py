@@ -72,7 +72,7 @@ SLIDES = {
         "segmentation_channel": 0,
         "segmentation_model": "CP_AV_TA_COX-SDH-NADH_AxioScan10X",
         "stainings": {
-            0: "NADH"
+            0: "R", 1: "G", 2: "B"
         }
     },
     6: {
@@ -83,7 +83,7 @@ SLIDES = {
         "segmentation_channel": 0,
         "segmentation_model": "CP_AV_TA_Qua_HE_AxioScan10X",
         "stainings": {
-            0: "HE_10x"
+            0: "R", 1: "G", 2: "B"
         }
     },
     7: {
@@ -94,7 +94,7 @@ SLIDES = {
         "segmentation_channel": 0,
         "segmentation_model": "CP_AV_TA_Qua_COX_AxioScan10X",
         "stainings": {
-            0: "COX"
+            0: "R", 1: "G", 2: "B"
         }
     },
     8: {
@@ -168,5 +168,5 @@ MASK_FEATURES = [
     "bbox_height", "bbox_width", "bbox_aspect_ratio", 
     "eccentricity", "solidity",
     "extent", "major_axis_length", "minor_axis_length", "orientation", 
-    "roundness", "edge_pixels", "edge_density", "circularity", "compactness"
+    "roundness", "edge_pixels", "edge_density", "compactness"
 ]
