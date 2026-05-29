@@ -5,13 +5,13 @@ import os
 from pathlib import Path
 
 # Mock configuration for testing
-CZI_BASE_DIR_TA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/")
-CP_MASKS_DIR_TA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/analysis_TA_run1/run/out_CP_masks")
-PAIR_DIRS_BASE_TA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/analysis_TA_run1/run/prediction_output")
+CZI_BASE_DIR_TA =       Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/")
+CP_MASKS_DIR_TA =       Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/analysis_TA_run1/run/out_CP_masks")
+PAIR_DIRS_BASE_TA =     Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/analysis_TA_run1/run/prediction_output")
 
-CZI_BASE_DIR_QUA = Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/")
-CP_MASKS_DIR_QUA = Path("/DATA/fiber_mapping_DDC/AJ/analysis_Qua_run1/run/out_CP_masks")
-PAIR_DIRS_BASE_QUA = Path("/DATA/fiber_mapping_DDC/AJ/analysis_Qua_run1/run/prediction_output")
+CZI_BASE_DIR_QUA =      Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/")
+CP_MASKS_DIR_QUA =      Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/analysis_Qua_run1/run/out_CP_masks")
+PAIR_DIRS_BASE_QUA =    Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/analysis_Qua_run1/run/prediction_output")
 
 OUTPUT_DIR = Path("/DATA/F2FMatcher_DDC/results")
 
