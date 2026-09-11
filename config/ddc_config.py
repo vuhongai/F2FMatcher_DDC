@@ -10,10 +10,23 @@ CP_MASKS_DIR_TA =       Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/anal
 PAIR_DIRS_BASE_TA =     Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_TA/analysis_TA_run1/run/prediction_output")
 
 CZI_BASE_DIR_QUA =      Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/")
-CP_MASKS_DIR_QUA =      Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/analysis_Qua_run1/run/out_CP_masks")
-PAIR_DIRS_BASE_QUA =    Path("/media/DATABRUT/DB_DDC/serverGPU/AJ/22-082_QUA/analysis_Qua_run1/run/prediction_output")
+MAPPING_OUTPUT_DIR_QUA = Path("/DATA/F2FMatcher_DDC/results/QUA")
+CP_MASKS_DIR_QUA =      MAPPING_OUTPUT_DIR_QUA / "out_CP_masks"
+PAIR_DIRS_BASE_QUA =    MAPPING_OUTPUT_DIR_QUA / "prediction_output"
 
 OUTPUT_DIR = Path("/DATA/F2FMatcher_DDC/results")
+CSV_FILE = Path("/DATA/F2FMatcher_DDC/config/QUA_Myh4_mapping_files.csv")
+
+# Fallbacks used when the pairing CSV has no column of the same name
+DEFAULT_CP_MODEL = "CP_AV_Laminin_Dia_Qua_TA_AxioScan10X"
+DEFAULT_PARAM = "fluorescence"          # or "brightfield"
+DEFAULT_OBJECTIVE = "10X"
+
+n_processes = 40          # matching (joblib workers)
+n_processes_seg = 16      # npz crop generation (per producer)
+n_seg_workers = 2         # parallel segmentation producers
+export_output_images = False            # matched-contour PNG per pair
+save_step_prediction = False            # per-step propagation pkl per pair
 
 # Sample definitions (mock data)
 TA_SAMPLES = [
@@ -73,6 +86,17 @@ SLIDES = {
         "segmentation_model": "CP_AV_TA_COX-SDH-NADH_AxioScan10X",
         "stainings": {
             0: "R", 1: "G", 2: "B"
+        }
+    },
+    4: {
+        "czi_dir": "IHF_WGA_Myh4-Myh2-Myh7",
+        "scanning_objective": "10X",
+        "IHF": True,
+        "segmentation_staining": "WGA",
+        "segmentation_channel": 0,
+        "segmentation_model": "CP_AV_TA_Qua_WGA350_AxioScan10X",
+        "stainings": {
+            0: "WGA", 1: "Myh7", 2: "Myh2", 3: "Myh4"
         }
     },
     6: {

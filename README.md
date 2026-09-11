@@ -11,14 +11,15 @@ Fiber-to-fiber matching and multi-modal feature analysis pipeline for muscle his
 
 ## Staining Panels
 
-| Slide | Type | Stainings | Segmentation |
-|-------|------|-----------|-------------|
-| 1 | IHF, 10X | DAPI, Laminin, Dystrophin, Collagen4 | Laminin (ch 1) |
-| 2 | IHF, 10X | IgG, CD11b | Laminin (ch 1) |
-| 3 | Brightfield, 10X | NADH (R, G, B) | NADH |
-| 6 | Brightfield, 10X | HE (R, G, B) | HE |
-| 7 | Brightfield, 10X | COX (R, G, B) | HE |
-| 8 | IHF, 10X | LAMP2, LGALS3, SQSTM1 | LAMP2 (ch 1) |
+| Slide | Type | Stainings | Segmentation | Muscles |
+|-------|------|-----------|-------------|---------|
+| 1 | IHF, 10X | DAPI, Laminin, Dystrophin, Collagen4 | Laminin (ch 1) | TA, QUA |
+| 2 | IHF, 10X | IgG, CD11b | Laminin (ch 1) | TA, QUA |
+| 3 | Brightfield, 10X | NADH (R, G, B) | NADH | TA, QUA |
+| 4 | IHF, 10X | WGA, Myh7, Myh2, Myh4 | WGA (ch 0) | QUA only |
+| 6 | Brightfield, 10X | HE (R, G, B) | HE | TA, QUA |
+| 7 | Brightfield, 10X | COX (R, G, B) | HE | TA, QUA |
+| 8 | IHF, 10X | LAMP2, LGALS3, SQSTM1 | LAMP2 (ch 1) | TA, QUA |
 
 ## Fiber Compartments
 
@@ -31,10 +32,23 @@ Each fiber is partitioned into four sub-regions via morphological operations:
 
 ## Pipeline
 
+### 0. Fiber Mapping (F2FMatcher)
+
+```bash
+python scripts/run_mapping.py            # all pairs in config/QUA_Myh4_mapping_files.csv
+python scripts/evaluate_mapping.py       # per-pair/per-panel coverage -> results/QUA/mapping_summary.csv
+```
+
+Producer/consumer pipeline: `n_seg_workers` threads precompute PNG export + CellPose
+segmentation (persistent masks/flows) while the main thread runs the matching stage
+of the previous pair (npz crops + VAE embeddings are transient, deleted after each pair).
+Outputs under `results/QUA/{images_segmentation,out_CP_masks,prediction_output}`.
+
 ### 1. Feature Extraction
 
 ```bash
-python scripts/extract_features.py
+python scripts/extract_features.py                       # all muscles, all slides
+python scripts/extract_features.py --muscle QUA --slide 4
 ```
 
 For each CZI image, each staining channel:
@@ -58,11 +72,11 @@ For each sample:
 1. Loads per-slide feature pickles
 2. Uses F2FMatcher paired labels (`prediction_output/*___vs__*/paired_labels.pkl`) to match fibers across slides
 3. Concatenates features into a single vector per fiber:
-   - 15 mask features (from slide 1, ch 1)
-   - 648 intensity features (36 × 18 channels across all slides)
-   - **Total: 663 features per fiber**
+    - 15 mask features (from slide 1, ch 1)
+    - 36 intensity features × N channels (N = channels of the slides available for that muscle)
+    - **Total: TA = 15 + 36×18 = 663, QUA = 15 + 36×22 = 807 features per fiber**
 4. Unmatched fibers get NaN padding for missing channels
-5. Saves as `results/{muscle}/features_combined/{sample}.pkl`
+5. Saves (replaces) `results/{muscle}/features_combined/{sample}.pkl`
 
 ### 3. Visualization
 
@@ -78,6 +92,8 @@ F2FMatcher_DDC/
 ├── config/
 │   └── ddc_config.py          # Paths, samples, slides, compartments, analysis params
 ├── scripts/
+│   ├── run_mapping.py         # Step 0: F2FMatcher mapping (segmentation pipelined with matching)
+│   ├── evaluate_mapping.py    # Step 0: mapping quality (per-pair/per-panel coverage)
 │   ├── extract_features.py    # Step 1: per-image feature extraction
 │   ├── combine_features.py    # Step 2: cross-slide fiber matching + concatenation
 │   └── visualization.ipynb    # Step 3: PCA visualization

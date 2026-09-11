@@ -43,15 +43,24 @@ def convert_to_float_array(features):
 dict_all_images = {"TA": {}, "QUA": {}}
 dict_img2metadata = {"TA": {}, "QUA": {}}
 
+# slides that actually have CZI data for each muscle (e.g. slide 4 = QUA only)
+valid_slides = {
+    "TA": [s for s in SLIDES if (CZI_BASE_DIR_TA / SLIDES[s]["czi_dir"]).is_dir()],
+    "QUA": [s for s in SLIDES if (CZI_BASE_DIR_QUA / SLIDES[s]["czi_dir"]).is_dir()],
+}
+n_channels = {m: sum(len(SLIDES[s]["stainings"]) for s in valid_slides[m]) for m in valid_slides}
+print(f"Valid slides: TA={valid_slides['TA']} ({n_channels['TA']} channels), "
+      f"QUA={valid_slides['QUA']} ({n_channels['QUA']} channels)")
+
 for muscle in ["TA", "QUA"]:
     dir_czi_source = CZI_BASE_DIR_TA if muscle == "TA" else CZI_BASE_DIR_QUA
     dir_CP_MASKS = CP_MASKS_DIR_TA if muscle == "TA" else CP_MASKS_DIR_QUA
     dir_pair_output = PAIR_DIRS_BASE_TA if muscle == "TA" else PAIR_DIRS_BASE_QUA
     list_samples = TA_SAMPLES if muscle == "TA" else QUA_SAMPLES
-    
+
     for sample in list_samples:
         dict_all_images[muscle][sample] = {}
-        for slide in SLIDES.keys():
+        for slide in valid_slides[muscle]:
             list_images = [f.split(".czi")[0] for f in os.listdir(dir_czi_source / f'{SLIDES[slide]["czi_dir"]}') \
                             if f.endswith(".czi")]
             img = get_filename(sample, list_images)
@@ -94,10 +103,13 @@ for muscle in ["TA", "QUA"]:
     os.makedirs(dir_save_features_muscle, exist_ok=True)
     
     for sample in list_samples:
-        for slide in SLIDES.keys():
+        for slide in valid_slides[muscle]:
             dir_save_features = Path(f"/DATA/F2FMatcher_DDC/results/{muscle}/features/slide_{slide}/")
             img = dict_all_images[muscle][sample][slide]
-            
+            if img is None:
+                print(f"[skip] {muscle} {sample} slide {slide}: no image found")
+                continue
+
             dict_features_intensity[muscle][sample][slide] = {}
 
             list_channels = SLIDES[slide]["stainings"].keys()
@@ -126,7 +138,7 @@ for muscle in ["TA", "QUA"]:
         # label_id in slide 1 as key, list of features_mask + features_intensity from all channels in slide 2 as value
         features_sample = {}
         list_labels = list(dict_features_intensity[muscle][sample][1].keys())
-        for slide in SLIDES.keys():
+        for slide in valid_slides[muscle]:
             if slide==1: # reference slide
                 for label_id in list_labels:
                     features_sample[label_id] = dict_features_intensity[muscle][sample][slide][label_id]
@@ -140,16 +152,17 @@ for muscle in ["TA", "QUA"]:
                 else:
                     dict_map_slide = {}
 
+                slide_features = dict_features_intensity[muscle][sample].get(slide, {})
                 for label_id in list_labels:
                     label_id_matched = dict_map_slide.get(label_id)
-                    if label_id_matched is not None:
-                        features_sample[label_id].extend(dict_features_intensity[muscle][sample][slide][label_id_matched])
+                    if label_id_matched is not None and label_id_matched in slide_features:
+                        features_sample[label_id].extend(slide_features[label_id_matched])
                     else:
                         features_sample[label_id].extend([np.full(36, np.nan)] * len(SLIDES[slide]["stainings"].keys()))
 
         for label_id in list_labels:
             features_sample[label_id] = np.concatenate(features_sample[label_id])
-            assert features_sample[label_id].shape[0] == 36*18
+            assert features_sample[label_id].shape[0] == 36*n_channels[muscle]
 
         # add mask features (slide 1, channel 1)
         dir_save_features = Path(f"/DATA/F2FMatcher_DDC/results/{muscle}/features/slide_1/")
@@ -166,7 +179,7 @@ for muscle in ["TA", "QUA"]:
             features_sample[label_id] = np.concatenate([f_mask, features_sample[label_id]])
             
         for label_id in list_labels:
-            assert features_sample[label_id].shape[0] == 15+36*18
+            assert features_sample[label_id].shape[0] == 15+36*n_channels[muscle]
 
         with open(dir_save_features_muscle / f"{sample}.pkl", "wb") as f:
             pickle.dump(features_sample, f)    

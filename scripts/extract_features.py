@@ -1,6 +1,6 @@
 from f2fmatcher.io import czi_reader
 from f2fmatcher.segmentation import cellpose_seg
-import os, sys, multiprocessing, pickle
+import os, sys, argparse, multiprocessing, pickle
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
@@ -131,8 +131,15 @@ def calculate_mask_features(mask):
 dir_save_png = Path("./")
 n_process = 32
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--muscle", default="TA,QUA", help="comma-separated muscles, e.g. QUA")
+parser.add_argument("--slide", default="", help="comma-separated slide ids, e.g. 4 (default: all)")
+parser.add_argument("--limit", type=int, default=0, help="max images per slide (0 = all)")
+args = parser.parse_args()
+muscles = [m.strip() for m in args.muscle.split(",")]
+slides = [int(s) for s in args.slide.split(",") if s] or list(SLIDES.keys())
 
-for muscle in ["TA", "QUA"]:
+for muscle in muscles:
     if muscle == "TA":
         dir_czi_source = CZI_BASE_DIR_TA
         dir_CP_MASKS = CP_MASKS_DIR_TA
@@ -142,9 +149,15 @@ for muscle in ["TA", "QUA"]:
         dir_CP_MASKS = CP_MASKS_DIR_QUA
         dir_pair_output = PAIR_DIRS_BASE_QUA
 
-    for slide in SLIDES.keys():
-        list_images = [f.split(".czi")[0] for f in os.listdir(dir_czi_source / f'{SLIDES[slide]["czi_dir"]}') \
+    for slide in slides:
+        dir_czi_slide = dir_czi_source / f'{SLIDES[slide]["czi_dir"]}'
+        if not dir_czi_slide.is_dir():
+            print(f"[skip] {muscle} slide {slide}: no CZI dir {dir_czi_slide}")
+            continue
+        list_images = [f.split(".czi")[0] for f in os.listdir(dir_czi_slide) \
                         if f.endswith(".czi")]
+        if args.limit:
+            list_images = list_images[:args.limit]
         for img in list_images:
             for channel in SLIDES[slide]["stainings"].keys():
     
