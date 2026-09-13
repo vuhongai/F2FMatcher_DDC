@@ -96,9 +96,17 @@ stain gap than registration- or appearance-only baselines**, with each algorithm
 - **Fig 2e** Robustness curves (accuracy vs distortion/density) + runtime/scale.
 - *Supp:* DINOv2 / image-matching-models configs; example failure cases of each baseline.
 
-**Status:** B1 is **ready** (numbers computed from `mapping_summary.csv`). B2–B4 are the **main new work
-for the methods story** — see "Suggested additional analyses". This directly answers the PI's benchmark ask
-(DINOv2, `image-matching-models`).
+**Status (WT-only, per PI):** evaluation cohort = **WT QUAG01–05** (30 section-pairs, 190,009 matched
+fibres). Working draft + all computed numbers in **`manuscript/section_B_evaluation.md`**.
+- **B1 coverage — DONE** (WT): overall 76.5%; NADH 86%, IgG/CD11b 84%, HE 84%, COX 82%, LAMP2 62%, WGA 61%.
+- **B2 accuracy — DONE (self-supervised, no manual GT yet):** (a) shape consistency AUC 0.865 (matched
+  1.09 vs random 2.65, −59%); (b) cross-panel spatial cycle-consistency 2.7× tighter than random.
+- **B3 baselines — PARTIAL:** geometric baselines (global-affine+kNN, no-align kNN) both sit at chance
+  (2.61/2.66 vs random 2.65) vs F2FMatcher 1.09 (−59%) → learned features are essential. **Pending (GPU):**
+  DINOv2, keypoint matchers (LoFTR/RoMa/SuperGlue/DISK), elastic registration, F2FMatcher ablations.
+- **B4 robustness — PENDING** (synthetic distortion / density / segmentation-error curves).
+- **Next (highest value):** expert ground truth → converts the shape-consistency proxy into
+  precision/recall/F1 (Fig 2b definitive). See *Remaining work* in `section_B_evaluation.md`.
 
 ---
 
