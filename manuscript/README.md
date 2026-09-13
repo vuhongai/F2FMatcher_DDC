@@ -5,6 +5,15 @@ Planning materials for the F2FMatcher publication(s).
 - **`OUTLINE.md`** — full argument structure (4 themes → sections §A–§D), figure list per section,
   a prioritised list of suggested additional analyses (including the method benchmark vs DINOv2 /
   `image-matching-models`, and TA cross-muscle replication), a novelty summary, and verified references.
+- **`Results_C_dystrophic_phenotypes.md`** — drafted Results §C (dystrophic phenotypes) with embedded
+  figures (Figures 3–5) and legends.
+- **`Results_D_gene_therapy.md`** — drafted Results §D (gene-therapy evaluation) with embedded figures
+  (Figures 6–8) and legends.
+- **`figures/`** — publication figure PNGs referenced by §C/§D (regenerated from the analysis notebooks;
+  Figures 1–2, method + benchmark, are produced separately).
+
+> Figure numbering: Figures 1–2 are reserved for §A (method) and §B (evaluation/benchmark, in progress);
+> §C uses Figures 3–5, §D uses Figures 6–8.
 
 ## Provenance of the analysis figures (already generated & embedded in the notebooks)
 
