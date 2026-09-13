@@ -9,6 +9,7 @@ biological questions on top of the **precomputed, unbiased fiber clustering**
 | `Q1_mdx_vs_WT.ipynb` | Disease signature: **mdx (DMD model) vs WT** — globally, per morphological cluster, and in marker–marker correlation structure. |
 | `Q2_AAV9_vs_LICA1.ipynb` | Treatment effect: **AAV9 vs LICA1** micro-dystrophin gene therapy (same dose) — cluster-composition shift, sarcolemmal dystrophin restoration, inflammation/necrosis, lysosomal burden, and restored correlations. |
 | `Q3_restoration_mechanisms.ipynb` | **Mechanisms**: (1) what underlies restoration in responsive clusters — basal-lamina/laminin scaffold (dominant), oxidative identity, myotropic capsid; (2) what defines the resistant Cls5 — fast-glycolytic IIb remodeled architecture, dissociating molecular (dystrophin restored) from morphological rescue. Plus a **literature synthesis** (confirmed vs newly discovered) with verified PubMed citations. |
+| `Q4_centronuclei_laminin_review.ipynb` | **Regeneration & scaffold** (English): (A) cross-review of the independent Qwen analysis on `main`; (B) centronucleated (regenerated) fibres — prevalence by group/cluster, and the finding that regenerated fibres carry **less transgene dystrophin** (a two-factor model: laminin scaffold × regeneration/vector-retention); (C) laminin is **dystrophin-independent** (permissive scaffold, not restored by dystrophin). Verified PubMed citations. |
 
 ## Reproducibility design
 - **No re-clustering.** Both notebooks load the committed UMAP cache
