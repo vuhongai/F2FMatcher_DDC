@@ -1,0 +1,1029 @@
+38 pairs, device=cpu, out=/DATA/F2FMatcher_DDC/results/benchmark/f2fmatcher_output
+[ 1/38] AV_260625_22-082_10X_TA1c1_WGA-1  vs  AV_260625_22-082_10X_TA1c2_WGA-1
+Prediction for AV_260625_22-082_10X_TA1c1_WGA-1 vs AV_260625_22-082_10X_TA1c2_WGA-1 already exists, skipping.
+      -> None pairs  (0s)
+[ 2/38] AV_260625_22-082_10X_TA1c1_WGA-2  vs  AV_260625_22-082_10X_TA1c2_WGA-2
+Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-2:   0%|          | 0/19 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-2:  84%|████████▍ | 16/19 [00:00<00:00, 55.24it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-2: 100%|██████████| 19/19 [00:00<00:00, 65.29it/s]
+Generate VAE inputs for AV_260625_22-082_10X_TA1c2_WGA-2:   0%|          | 0/16 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c2_WGA-2: 100%|██████████| 16/16 [00:00<00:00, 17867.11it/s]
+  0%|          | 0/35 [00:00<?, ?it/s] 26%|██▌       | 9/35 [00:00<00:00, 82.39it/s] 51%|█████▏    | 18/35 [00:00<00:00, 85.47it/s] 77%|███████▋  | 27/35 [00:00<00:00, 86.44it/s]100%|██████████| 35/35 [00:00<00:00, 85.73it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/19 [00:01<00:23,  1.30s/it]Wasserstein similarity: 100%|██████████| 19/19 [00:01<00:00, 14.61it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 32567.13it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 43476.15it/s]
+Build neighbor dict:   0%|          | 0/19 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 19/19 [00:00<00:00, 106255.70it/s]
+Local prediction:   0%|          | 0/14 [00:00<?, ?it/s]Local prediction:   7%|▋         | 1/14 [00:00<00:03,  3.50it/s]Local prediction: 100%|██████████| 14/14 [00:00<00:00, 48.86it/s]
+   Step 1: +-6 new pairs (total 10)
+Done: 15 pairs matched.
+      -> [(55, 53), (40, 42), (22, 25), (50, 51), (30, 32), (45, 48), (39, 39), (42, 44), (25, 27), (35, 37), (17, 21), (27, 24), (33, 34), (51, 52), (56, 57)] pairs  (33s)
+[ 3/38] AV_260625_22-082_10X_TA1c1_WGA-2  vs  AV_260625_22-082_10X_TA1c3_WGA-2
+Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-2:   0%|          | 0/19 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-2: 100%|██████████| 19/19 [00:00<00:00, 18231.93it/s]
+Generate VAE inputs for AV_260625_22-082_10X_TA1c3_WGA-2:   0%|          | 0/14 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c3_WGA-2: 100%|██████████| 14/14 [00:00<00:00, 26788.44it/s]
+  0%|          | 0/33 [00:00<?, ?it/s] 27%|██▋       | 9/33 [00:00<00:00, 80.99it/s] 55%|█████▍    | 18/33 [00:00<00:00, 83.15it/s] 82%|████████▏ | 27/33 [00:00<00:00, 83.81it/s]100%|██████████| 33/33 [00:00<00:00, 83.60it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/19 [00:01<00:25,  1.40s/it]Wasserstein similarity: 100%|██████████| 19/19 [00:01<00:00, 13.52it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 33498.01it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 41291.08it/s]
+Build neighbor dict:   0%|          | 0/19 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 19/19 [00:00<00:00, 35450.08it/s]
+Local prediction:   0%|          | 0/12 [00:00<?, ?it/s]Local prediction:   8%|▊         | 1/12 [00:00<00:02,  3.67it/s]Local prediction: 100%|██████████| 12/12 [00:00<00:00, 44.04it/s]
+   Step 1: +-6 new pairs (total 6)
+Done: 8 pairs matched.
+      -> [(35, 39), (45, 48), (30, 35), (39, 41), (22, 28), (25, 29), (42, 46), (50, 53)] pairs  (26s)
+[ 4/38] AV_260625_TA21c1-2  vs  AV_260625_TA21c2-2
+Generate VAE inputs for AV_260625_TA21c1-2:   0%|          | 0/19 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c1-2: 100%|██████████| 19/19 [00:00<00:00, 18223.59it/s]
+Generate VAE inputs for AV_260625_TA21c2-2:   0%|          | 0/20 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c2-2: 100%|██████████| 20/20 [00:00<00:00, 18408.18it/s]
+  0%|          | 0/39 [00:00<?, ?it/s] 23%|██▎       | 9/39 [00:00<00:00, 82.84it/s] 49%|████▊     | 19/39 [00:00<00:00, 89.94it/s] 74%|███████▍  | 29/39 [00:00<00:00, 92.59it/s]100%|██████████| 39/39 [00:00<00:00, 94.79it/s]100%|██████████| 39/39 [00:00<00:00, 92.83it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/19 [00:01<00:25,  1.40s/it]Wasserstein similarity: 100%|██████████| 19/19 [00:01<00:00, 13.54it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 34012.71it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 42479.62it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (25s)
+[ 5/38] AV_260625_TA21c2-1  vs  AV_260625_TA21c3-1
+Generate VAE inputs for AV_260625_TA21c2-1:   0%|          | 0/18 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c2-1:   6%|▌         | 1/18 [00:00<00:05,  3.25it/s]Generate VAE inputs for AV_260625_TA21c2-1:  89%|████████▉ | 16/18 [00:00<00:00, 32.79it/s]Generate VAE inputs for AV_260625_TA21c2-1: 100%|██████████| 18/18 [00:00<00:00, 31.47it/s]
+Generate VAE inputs for AV_260625_TA21c3-1:   0%|          | 0/19 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c3-1: 100%|██████████| 19/19 [00:00<00:00, 17701.42it/s]
+  0%|          | 0/37 [00:00<?, ?it/s] 24%|██▍       | 9/37 [00:00<00:00, 81.71it/s] 49%|████▊     | 18/37 [00:00<00:00, 84.51it/s] 73%|███████▎  | 27/37 [00:00<00:00, 85.63it/s] 97%|█████████▋| 36/37 [00:00<00:00, 85.59it/s]100%|██████████| 37/37 [00:00<00:00, 85.22it/s]
+Wasserstein similarity:   0%|          | 0/18 [00:00<?, ?it/s]Wasserstein similarity:   6%|▌         | 1/18 [00:01<00:22,  1.30s/it]Wasserstein similarity: 100%|██████████| 18/18 [00:01<00:00, 13.81it/s]
+Wasserstein similarity:   0%|          | 0/18 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 18/18 [00:00<00:00, 32896.50it/s]
+Wasserstein similarity:   0%|          | 0/18 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 18/18 [00:00<00:00, 36244.59it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (26s)
+[ 6/38] AV_260625_TA21c2-2  vs  AV_260625_TA21c3-2
+Generate VAE inputs for AV_260625_TA21c2-2:   0%|          | 0/20 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c2-2:   5%|▌         | 1/20 [00:00<00:05,  3.24it/s]Generate VAE inputs for AV_260625_TA21c2-2:  80%|████████  | 16/20 [00:00<00:00, 33.92it/s]Generate VAE inputs for AV_260625_TA21c2-2: 100%|██████████| 20/20 [00:00<00:00, 35.97it/s]
+Generate VAE inputs for AV_260625_TA21c3-2:   0%|          | 0/21 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c3-2: 100%|██████████| 21/21 [00:00<00:00, 19400.97it/s]
+  0%|          | 0/41 [00:00<?, ?it/s] 41%|████▏     | 17/41 [00:00<00:00, 153.57it/s] 90%|█████████ | 37/41 [00:00<00:00, 172.20it/s]100%|██████████| 41/41 [00:00<00:00, 161.17it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/20 [00:01<00:24,  1.29s/it]Wasserstein similarity: 100%|██████████| 20/20 [00:01<00:00, 15.47it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 31823.25it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 45914.66it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (20s)
+[ 7/38] AV_260625_TA33c1-1  vs  AV_260625_TA33c2-1
+Generate VAE inputs for AV_260625_TA33c1-1:   0%|          | 0/9 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-1:  11%|█         | 1/9 [00:00<00:02,  3.21it/s]Generate VAE inputs for AV_260625_TA33c1-1: 100%|██████████| 9/9 [00:00<00:00, 28.84it/s]
+Generate VAE inputs for AV_260625_TA33c2-1:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-1: 100%|██████████| 13/13 [00:00<00:00, 21986.27it/s]
+  0%|          | 0/22 [00:00<?, ?it/s] 36%|███▋      | 8/22 [00:00<00:00, 78.62it/s] 77%|███████▋  | 17/22 [00:00<00:00, 83.82it/s]100%|██████████| 22/22 [00:00<00:00, 84.95it/s]
+Wasserstein similarity:   0%|          | 0/9 [00:00<?, ?it/s]Wasserstein similarity:  11%|█         | 1/9 [00:01<00:12,  1.57s/it]Wasserstein similarity: 100%|██████████| 9/9 [00:01<00:00,  5.75it/s]
+Wasserstein similarity:   0%|          | 0/9 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 9/9 [00:00<00:00, 16063.29it/s]
+Wasserstein similarity:   0%|          | 0/9 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 9/9 [00:00<00:00, 18912.19it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (29s)
+[ 8/38] AV_260625_TA33c1-2  vs  AV_260625_TA33c2-2
+Generate VAE inputs for AV_260625_TA33c1-2:   0%|          | 0/10 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-2:  10%|█         | 1/10 [00:00<00:02,  4.46it/s]Generate VAE inputs for AV_260625_TA33c1-2: 100%|██████████| 10/10 [00:00<00:00, 44.50it/s]
+Generate VAE inputs for AV_260625_TA33c2-2:   0%|          | 0/8 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-2: 100%|██████████| 8/8 [00:00<00:00, 12510.97it/s]
+  0%|          | 0/18 [00:00<?, ?it/s] 50%|█████     | 9/18 [00:00<00:00, 82.34it/s]100%|██████████| 18/18 [00:00<00:00, 83.80it/s]100%|██████████| 18/18 [00:00<00:00, 83.50it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity:  10%|█         | 1/10 [00:01<00:13,  1.45s/it]Wasserstein similarity: 100%|██████████| 10/10 [00:01<00:00,  6.91it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 18699.53it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 25070.56it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (28s)
+[ 9/38] AV_260625_TA33c1-2  vs  AV_260625_TA33c3-2
+Generate VAE inputs for AV_260625_TA33c1-2:   0%|          | 0/10 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-2:  10%|█         | 1/10 [00:00<00:02,  3.85it/s]Generate VAE inputs for AV_260625_TA33c1-2: 100%|██████████| 10/10 [00:00<00:00, 38.46it/s]
+Generate VAE inputs for AV_260625_TA33c3-2:   0%|          | 0/12 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-2: 100%|██████████| 12/12 [00:00<00:00, 19576.68it/s]
+  0%|          | 0/22 [00:00<?, ?it/s] 55%|█████▍    | 12/22 [00:00<00:00, 119.90it/s]100%|██████████| 22/22 [00:00<00:00, 150.13it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity:  10%|█         | 1/10 [00:01<00:11,  1.27s/it]Wasserstein similarity: 100%|██████████| 10/10 [00:01<00:00,  7.86it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 19328.59it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 23616.58it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (24s)
+[10/38] AV_260625_TA33c1-3  vs  AV_260625_TA33c2-3
+Generate VAE inputs for AV_260625_TA33c1-3:   0%|          | 0/6 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-3:  17%|█▋        | 1/6 [00:00<00:01,  3.85it/s]Generate VAE inputs for AV_260625_TA33c1-3: 100%|██████████| 6/6 [00:00<00:00, 23.05it/s]
+Generate VAE inputs for AV_260625_TA33c2-3:   0%|          | 0/5 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-3: 100%|██████████| 5/5 [00:00<00:00, 12073.41it/s]
+  0%|          | 0/11 [00:00<?, ?it/s] 73%|███████▎  | 8/11 [00:00<00:00, 79.56it/s]100%|██████████| 11/11 [00:00<00:00, 79.44it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity:  17%|█▋        | 1/6 [00:01<00:08,  1.62s/it]Wasserstein similarity: 100%|██████████| 6/6 [00:01<00:00,  3.71it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 6/6 [00:00<00:00, 7966.39it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 6/6 [00:00<00:00, 9327.58it/s]
+Build neighbor dict:   0%|          | 0/6 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 6/6 [00:00<00:00, 63550.06it/s]
+Local prediction:   0%|          | 0/5 [00:00<?, ?it/s]Local prediction:  20%|██        | 1/5 [00:00<00:00,  4.33it/s]Local prediction: 100%|██████████| 5/5 [00:00<00:00, 21.62it/s]
+   Step 1: +0 new pairs (total 5)
+Done: 5 pairs matched.
+      -> [(17, 17), (24, 23), (10, 13), (25, 24), (22, 22)] pairs  (35s)
+[11/38] AV_260625_TA33c1-3  vs  AV_260625_TA33c3-3
+Generate VAE inputs for AV_260625_TA33c1-3:   0%|          | 0/6 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-3: 100%|██████████| 6/6 [00:00<00:00, 11910.00it/s]
+Generate VAE inputs for AV_260625_TA33c3-3:   0%|          | 0/4 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-3: 100%|██████████| 4/4 [00:00<00:00, 9915.61it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 90%|█████████ | 9/10 [00:00<00:00, 81.16it/s]100%|██████████| 10/10 [00:00<00:00, 81.16it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity:  17%|█▋        | 1/6 [00:01<00:08,  1.63s/it]Wasserstein similarity: 100%|██████████| 6/6 [00:01<00:00,  3.67it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 6/6 [00:00<00:00, 8630.26it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 6/6 [00:00<00:00, 12012.33it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (22s)
+[12/38] AV_260625_TA33c1-4  vs  AV_260625_TA33c2-4
+Generate VAE inputs for AV_260625_TA33c1-4:   0%|          | 0/4 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-4:  25%|██▌       | 1/4 [00:00<00:00,  5.19it/s]Generate VAE inputs for AV_260625_TA33c1-4: 100%|██████████| 4/4 [00:00<00:00, 20.72it/s]
+Generate VAE inputs for AV_260625_TA33c2-4:   0%|          | 0/3 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-4: 100%|██████████| 3/3 [00:00<00:00, 7561.85it/s]
+  0%|          | 0/7 [00:00<?, ?it/s]100%|██████████| 7/7 [00:00<00:00, 79.10it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity:  25%|██▌       | 1/4 [00:01<00:03,  1.13s/it]Wasserstein similarity: 100%|██████████| 4/4 [00:01<00:00,  3.53it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 7028.58it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 8409.63it/s]
+      ERROR: IndexError: index 0 is out of bounds for axis 0 with size 0  (25s)
+[13/38] AV_260625_TA33c1-4  vs  AV_260625_TA33c3-4
+Generate VAE inputs for AV_260625_TA33c1-4:   0%|          | 0/4 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-4:  25%|██▌       | 1/4 [00:00<00:00,  4.79it/s]Generate VAE inputs for AV_260625_TA33c1-4: 100%|██████████| 4/4 [00:00<00:00, 19.11it/s]
+Generate VAE inputs for AV_260625_TA33c3-4:   0%|          | 0/6 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-4: 100%|██████████| 6/6 [00:00<00:00, 15326.32it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 132.22it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity:  25%|██▌       | 1/4 [00:01<00:03,  1.24s/it]Wasserstein similarity: 100%|██████████| 4/4 [00:01<00:00,  3.23it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 5385.94it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 9058.97it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (22s)
+[14/38] AV_260625_TA33c2-1  vs  AV_260625_TA33c3-1
+Generate VAE inputs for AV_260625_TA33c2-1:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-1:   8%|▊         | 1/13 [00:00<00:02,  4.91it/s]Generate VAE inputs for AV_260625_TA33c2-1: 100%|██████████| 13/13 [00:00<00:00, 63.79it/s]
+Generate VAE inputs for AV_260625_TA33c3-1:   0%|          | 0/14 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-1: 100%|██████████| 14/14 [00:00<00:00, 21820.98it/s]
+  0%|          | 0/27 [00:00<?, ?it/s] 67%|██████▋   | 18/27 [00:00<00:00, 160.86it/s]100%|██████████| 27/27 [00:00<00:00, 155.88it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity:   8%|▊         | 1/13 [00:01<00:16,  1.41s/it]Wasserstein similarity: 100%|██████████| 13/13 [00:01<00:00,  9.20it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 19480.51it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 27692.21it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (25s)
+[15/38] AV_260625_TA4-c1  vs  AV_260625_TA4-c2
+Generate VAE inputs for AV_260625_TA4-c1:   0%|          | 0/15 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA4-c1:   7%|▋         | 1/15 [00:00<00:03,  4.14it/s]Generate VAE inputs for AV_260625_TA4-c1: 100%|██████████| 15/15 [00:00<00:00, 61.99it/s]
+Generate VAE inputs for AV_260625_TA4-c2:   0%|          | 0/15 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA4-c2: 100%|██████████| 15/15 [00:00<00:00, 33518.68it/s]
+  0%|          | 0/30 [00:00<?, ?it/s] 30%|███       | 9/30 [00:00<00:00, 81.63it/s] 60%|██████    | 18/30 [00:00<00:00, 82.51it/s] 90%|█████████ | 27/30 [00:00<00:00, 82.23it/s]100%|██████████| 30/30 [00:00<00:00, 82.65it/s]
+Wasserstein similarity:   0%|          | 0/15 [00:00<?, ?it/s]Wasserstein similarity:   7%|▋         | 1/15 [00:01<00:18,  1.33s/it]Wasserstein similarity: 100%|██████████| 15/15 [00:01<00:00, 11.24it/s]
+Wasserstein similarity:   0%|          | 0/15 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 15/15 [00:00<00:00, 21754.69it/s]
+Wasserstein similarity:   0%|          | 0/15 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 15/15 [00:00<00:00, 30364.17it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (28s)
+[16/38] TA22c1_1  vs  TA22c2_1
+Generate VAE inputs for TA22c1_1:   0%|          | 0/3 [00:00<?, ?it/s]Generate VAE inputs for TA22c1_1:  33%|███▎      | 1/3 [00:00<00:00,  3.56it/s]Generate VAE inputs for TA22c1_1: 100%|██████████| 3/3 [00:00<00:00, 10.65it/s]
+Generate VAE inputs for TA22c2_1:   0%|          | 0/1 [00:00<?, ?it/s]Generate VAE inputs for TA22c2_1: 100%|██████████| 1/1 [00:00<00:00, 2147.62it/s]
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 79.92it/s]
+Wasserstein similarity:   0%|          | 0/3 [00:00<?, ?it/s]Wasserstein similarity:  33%|███▎      | 1/3 [00:01<00:02,  1.05s/it]Wasserstein similarity: 100%|██████████| 3/3 [00:01<00:00,  2.86it/s]
+Wasserstein similarity:   0%|          | 0/3 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 3/3 [00:00<00:00, 4508.39it/s]
+Wasserstein similarity:   0%|          | 0/3 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 3/3 [00:00<00:00, 6138.01it/s]
+      ERROR: IndexError: index 0 is out of bounds for axis 0 with size 0  (23s)
+[17/38] TA22c1_2  vs  TA22c2_2
+Generate VAE inputs for TA22c1_2:   0%|          | 0/10 [00:00<?, ?it/s]Generate VAE inputs for TA22c1_2:  10%|█         | 1/10 [00:00<00:01,  5.62it/s]Generate VAE inputs for TA22c1_2: 100%|██████████| 10/10 [00:00<00:00, 56.06it/s]
+Generate VAE inputs for TA22c2_2:   0%|          | 0/16 [00:00<?, ?it/s]Generate VAE inputs for TA22c2_2: 100%|██████████| 16/16 [00:00<00:00, 12436.78it/s]
+  0%|          | 0/26 [00:00<?, ?it/s] 31%|███       | 8/26 [00:00<00:00, 79.73it/s] 65%|██████▌   | 17/26 [00:00<00:00, 80.60it/s]100%|██████████| 26/26 [00:00<00:00, 79.95it/s]100%|██████████| 26/26 [00:00<00:00, 79.99it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity:  10%|█         | 1/10 [00:01<00:13,  1.48s/it]Wasserstein similarity: 100%|██████████| 10/10 [00:01<00:00,  6.77it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 17346.17it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 22333.89it/s]
+Build neighbor dict:   0%|          | 0/10 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 10/10 [00:00<00:00, 77385.68it/s]
+Local prediction: 0it [00:00, ?it/s]Local prediction: 0it [00:00, ?it/s]
+   Step 1: +0 new pairs (total 10)
+Done: 10 pairs matched.
+      -> [(23, 27), (31, 40), (29, 36), (36, 42), (18, 29), (19, 25), (27, 32), (33, 41), (21, 24), (22, 28)] pairs  (29s)
+[18/38] TA22c2_2  vs  TA22c3_1
+Generate VAE inputs for TA22c2_2:   0%|          | 0/16 [00:00<?, ?it/s]Generate VAE inputs for TA22c2_2: 100%|██████████| 16/16 [00:00<00:00, 64.23it/s]Generate VAE inputs for TA22c2_2: 100%|██████████| 16/16 [00:00<00:00, 63.54it/s]
+Generate VAE inputs for TA22c3_1:   0%|          | 0/10 [00:00<?, ?it/s]Generate VAE inputs for TA22c3_1: 100%|██████████| 10/10 [00:00<00:00, 23683.25it/s]
+  0%|          | 0/26 [00:00<?, ?it/s] 35%|███▍      | 9/26 [00:00<00:00, 86.87it/s] 69%|██████▉   | 18/26 [00:00<00:00, 87.94it/s]100%|██████████| 26/26 [00:00<00:00, 88.17it/s]
+Wasserstein similarity:   0%|          | 0/16 [00:00<?, ?it/s]Wasserstein similarity:   6%|▋         | 1/16 [00:01<00:19,  1.31s/it]Wasserstein similarity: 100%|██████████| 16/16 [00:01<00:00, 12.25it/s]
+Wasserstein similarity:   0%|          | 0/16 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 16/16 [00:00<00:00, 28864.03it/s]
+Wasserstein similarity:   0%|          | 0/16 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 16/16 [00:00<00:00, 34450.14it/s]
+Build neighbor dict:   0%|          | 0/16 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 16/16 [00:00<00:00, 32201.95it/s]
+Local prediction:   0%|          | 0/9 [00:00<?, ?it/s]Local prediction:  11%|█         | 1/9 [00:00<00:02,  3.46it/s]Local prediction: 100%|██████████| 9/9 [00:00<00:00, 31.05it/s]
+   Step 1: +-5 new pairs (total 4)
+      ERROR: ValueError: XB must be a 2-dimensional array.  (26s)
+[19/38] TA22c2_3  vs  TA22c3_2
+Generate VAE inputs for TA22c2_3:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for TA22c2_3: 100%|██████████| 13/13 [00:00<00:00, 23351.59it/s]
+Generate VAE inputs for TA22c3_2:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for TA22c3_2: 100%|██████████| 13/13 [00:00<00:00, 30805.62it/s]
+  0%|          | 0/26 [00:00<?, ?it/s] 35%|███▍      | 9/26 [00:00<00:00, 87.27it/s] 69%|██████▉   | 18/26 [00:00<00:00, 87.99it/s]100%|██████████| 26/26 [00:00<00:00, 87.69it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity:   8%|▊         | 1/13 [00:01<00:19,  1.60s/it]Wasserstein similarity: 100%|██████████| 13/13 [00:01<00:00,  8.11it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 23935.89it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 30598.18it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (21s)
+[20/38] TA23c2_2  vs  TA23c3_1
+Generate VAE inputs for TA23c2_2:   0%|          | 0/26 [00:00<?, ?it/s]Generate VAE inputs for TA23c2_2:   4%|▍         | 1/26 [00:00<00:06,  3.97it/s]Generate VAE inputs for TA23c2_2:  62%|██████▏   | 16/26 [00:00<00:00, 37.90it/s]Generate VAE inputs for TA23c2_2: 100%|██████████| 26/26 [00:00<00:00, 53.02it/s]
+Generate VAE inputs for TA23c3_1:   0%|          | 0/22 [00:00<?, ?it/s]Generate VAE inputs for TA23c3_1: 100%|██████████| 22/22 [00:00<00:00, 15816.71it/s]
+  0%|          | 0/48 [00:00<?, ?it/s] 19%|█▉        | 9/48 [00:00<00:00, 85.00it/s] 38%|███▊      | 18/48 [00:00<00:00, 86.22it/s] 56%|█████▋    | 27/48 [00:00<00:00, 86.57it/s] 75%|███████▌  | 36/48 [00:00<00:00, 85.62it/s] 96%|█████████▌| 46/48 [00:00<00:00, 87.66it/s]100%|██████████| 48/48 [00:00<00:00, 87.34it/s]
+Wasserstein similarity:   0%|          | 0/26 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/26 [00:01<00:34,  1.38s/it]Wasserstein similarity: 100%|██████████| 26/26 [00:01<00:00, 18.84it/s]
+Wasserstein similarity:   0%|          | 0/26 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 26/26 [00:00<00:00, 40981.55it/s]
+Wasserstein similarity:   0%|          | 0/26 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 26/26 [00:00<00:00, 60282.98it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (28s)
+[21/38] TA23c2_3  vs  TA23c3_2
+Generate VAE inputs for TA23c2_3:   0%|          | 0/22 [00:00<?, ?it/s]Generate VAE inputs for TA23c2_3:   5%|▍         | 1/22 [00:00<00:06,  3.38it/s]Generate VAE inputs for TA23c2_3:  73%|███████▎  | 16/22 [00:00<00:00, 34.56it/s]Generate VAE inputs for TA23c2_3: 100%|██████████| 22/22 [00:00<00:00, 40.47it/s]
+Generate VAE inputs for TA23c3_2:   0%|          | 0/28 [00:00<?, ?it/s]Generate VAE inputs for TA23c3_2: 100%|██████████| 28/28 [00:00<00:00, 20830.17it/s]
+  0%|          | 0/50 [00:00<?, ?it/s] 20%|██        | 10/50 [00:00<00:00, 93.04it/s] 40%|████      | 20/50 [00:00<00:00, 95.94it/s] 60%|██████    | 30/50 [00:00<00:00, 97.23it/s] 80%|████████  | 40/50 [00:00<00:00, 97.54it/s]100%|██████████| 50/50 [00:00<00:00, 96.17it/s]100%|██████████| 50/50 [00:00<00:00, 96.26it/s]
+Wasserstein similarity:   0%|          | 0/22 [00:00<?, ?it/s]Wasserstein similarity:   5%|▍         | 1/22 [00:01<00:27,  1.32s/it]Wasserstein similarity: 100%|██████████| 22/22 [00:01<00:00, 16.62it/s]
+Wasserstein similarity:   0%|          | 0/22 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 22/22 [00:00<00:00, 36486.63it/s]
+Wasserstein similarity:   0%|          | 0/22 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 22/22 [00:00<00:00, 46745.03it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (32s)
+[22/38] TA23c2_4  vs  TA23c3_3
+Generate VAE inputs for TA23c2_4:   0%|          | 0/27 [00:00<?, ?it/s]Generate VAE inputs for TA23c2_4:   4%|▎         | 1/27 [00:00<00:08,  3.12it/s]Generate VAE inputs for TA23c2_4:  59%|█████▉    | 16/27 [00:00<00:00, 30.06it/s]Generate VAE inputs for TA23c2_4: 100%|██████████| 27/27 [00:00<00:00, 43.61it/s]
+Generate VAE inputs for TA23c3_3:   0%|          | 0/28 [00:00<?, ?it/s]Generate VAE inputs for TA23c3_3: 100%|██████████| 28/28 [00:00<00:00, 27458.62it/s]
+  0%|          | 0/55 [00:00<?, ?it/s] 16%|█▋        | 9/55 [00:00<00:00, 80.04it/s] 33%|███▎      | 18/55 [00:00<00:00, 81.87it/s] 49%|████▉     | 27/55 [00:00<00:00, 82.32it/s] 65%|██████▌   | 36/55 [00:00<00:00, 83.30it/s] 82%|████████▏ | 45/55 [00:00<00:00, 83.83it/s] 98%|█████████▊| 54/55 [00:00<00:00, 84.61it/s]100%|██████████| 55/55 [00:00<00:00, 83.46it/s]
+Wasserstein similarity:   0%|          | 0/27 [00:00<?, ?it/s]Wasserstein similarity:   4%|▎         | 1/27 [00:01<00:38,  1.49s/it]Wasserstein similarity: 100%|██████████| 27/27 [00:01<00:00, 18.13it/s]
+Wasserstein similarity:   0%|          | 0/27 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 27/27 [00:00<00:00, 45226.12it/s]
+Wasserstein similarity:   0%|          | 0/27 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 27/27 [00:00<00:00, 53367.68it/s]
+Build neighbor dict:   0%|          | 0/27 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 27/27 [00:00<00:00, 133702.72it/s]
+Local prediction: 0it [00:00, ?it/s]Local prediction: 0it [00:00, ?it/s]
+   Step 1: +-5 new pairs (total 22)
+Done: 27 pairs matched.
+      -> [(41, 40), (50, 49), (51, 50), (46, 45), (30, 30), (47, 46), (56, 55), (42, 41), (43, 42), (21, 21), (22, 22), (31, 31), (48, 47), (32, 32), (18, 18), (60, 60), (23, 23), (49, 48), (28, 28), (27, 26), (55, 54), (33, 33), (20, 20), (24, 25), (34, 34), (36, 36), (38, 37)] pairs  (45s)
+[23/38] TA24c1_1  vs  TA24c2_1
+Generate VAE inputs for TA24c1_1:   0%|          | 0/36 [00:00<?, ?it/s]Generate VAE inputs for TA24c1_1:  44%|████▍     | 16/36 [00:00<00:00, 54.39it/s]Generate VAE inputs for TA24c1_1:  89%|████████▉ | 32/36 [00:07<00:01,  3.88it/s]Generate VAE inputs for TA24c1_1: 100%|██████████| 36/36 [00:07<00:00,  5.07it/s]
+Generate VAE inputs for TA24c2_1:   0%|          | 0/24 [00:00<?, ?it/s]Generate VAE inputs for TA24c2_1: 100%|██████████| 24/24 [00:00<00:00, 20623.50it/s]
+  0%|          | 0/60 [00:00<?, ?it/s] 13%|█▎        | 8/60 [00:00<00:00, 79.29it/s] 28%|██▊       | 17/60 [00:00<00:00, 81.13it/s] 43%|████▎     | 26/60 [00:00<00:00, 81.80it/s] 58%|█████▊    | 35/60 [00:00<00:00, 80.59it/s] 75%|███████▌  | 45/60 [00:00<00:00, 84.09it/s] 90%|█████████ | 54/60 [00:00<00:00, 85.15it/s]100%|██████████| 60/60 [00:00<00:00, 83.98it/s]
+Wasserstein similarity:   0%|          | 0/36 [00:00<?, ?it/s]Wasserstein similarity:   3%|▎         | 1/36 [00:01<00:47,  1.36s/it]Wasserstein similarity: 100%|██████████| 36/36 [00:01<00:00, 26.39it/s]
+Wasserstein similarity:   0%|          | 0/36 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 36/36 [00:00<00:00, 66109.87it/s]
+Wasserstein similarity:   0%|          | 0/36 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 36/36 [00:00<00:00, 73620.16it/s]
+Build neighbor dict:   0%|          | 0/36 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 36/36 [00:00<00:00, 137769.11it/s]
+Local prediction:   0%|          | 0/21 [00:00<?, ?it/s]Local prediction:   5%|▍         | 1/21 [00:00<00:06,  3.18it/s]Local prediction:  76%|███████▌  | 16/21 [00:00<00:00, 30.22it/s]Local prediction: 100%|██████████| 21/21 [00:00<00:00, 34.17it/s]
+   Step 1: +-6 new pairs (total 15)
+Done: 22 pairs matched.
+      -> [(35, 27), (21, 13), (29, 20), (40, 32), (64, 53), (32, 24), (31, 22), (24, 16), (60, 48), (33, 25), (44, 34), (38, 30), (63, 50), (50, 40), (26, 18), (25, 17), (30, 19), (43, 35), (45, 37), (55, 42), (56, 43), (65, 52)] pairs  (50s)
+[24/38] TA24c1_2  vs  TA24c2_3
+Generate VAE inputs for TA24c1_2:   0%|          | 0/20 [00:00<?, ?it/s]Generate VAE inputs for TA24c1_2: 100%|██████████| 20/20 [00:00<00:00, 18653.79it/s]
+Generate VAE inputs for TA24c2_3:   0%|          | 0/16 [00:00<?, ?it/s]Generate VAE inputs for TA24c2_3: 100%|██████████| 16/16 [00:00<00:00, 14202.93it/s]
+  0%|          | 0/36 [00:00<?, ?it/s] 25%|██▌       | 9/36 [00:00<00:00, 84.38it/s] 50%|█████     | 18/36 [00:00<00:00, 85.43it/s] 78%|███████▊  | 28/36 [00:00<00:00, 88.48it/s]100%|██████████| 36/36 [00:00<00:00, 88.44it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/20 [00:01<00:26,  1.39s/it]Wasserstein similarity: 100%|██████████| 20/20 [00:01<00:00, 14.35it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 34464.29it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 40021.98it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (19s)
+[25/38] TA24c1_3  vs  TA24c3_2
+Generate VAE inputs for TA24c1_3:   0%|          | 0/31 [00:00<?, ?it/s]Generate VAE inputs for TA24c1_3:   3%|▎         | 1/31 [00:00<00:09,  3.23it/s]Generate VAE inputs for TA24c1_3:  52%|█████▏    | 16/31 [00:00<00:00, 29.82it/s]Generate VAE inputs for TA24c1_3: 100%|██████████| 31/31 [00:00<00:00, 50.01it/s]
+Generate VAE inputs for TA24c3_2:   0%|          | 0/27 [00:00<?, ?it/s]Generate VAE inputs for TA24c3_2: 100%|██████████| 27/27 [00:00<00:00, 21887.55it/s]
+  0%|          | 0/58 [00:00<?, ?it/s] 14%|█▍        | 8/58 [00:00<00:00, 78.35it/s] 29%|██▉       | 17/58 [00:00<00:00, 81.65it/s] 45%|████▍     | 26/58 [00:00<00:00, 82.29it/s] 60%|██████    | 35/58 [00:00<00:00, 81.83it/s] 76%|███████▌  | 44/58 [00:00<00:00, 78.79it/s] 90%|████████▉ | 52/58 [00:00<00:00, 75.08it/s]100%|██████████| 58/58 [00:00<00:00, 76.22it/s]
+Wasserstein similarity:   0%|          | 0/31 [00:00<?, ?it/s]Wasserstein similarity:   3%|▎         | 1/31 [00:01<00:42,  1.42s/it]Wasserstein similarity: 100%|██████████| 31/31 [00:01<00:00, 21.86it/s]
+Wasserstein similarity:   0%|          | 0/31 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 31/31 [00:00<00:00, 56952.88it/s]
+Wasserstein similarity:   0%|          | 0/31 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 31/31 [00:00<00:00, 66542.18it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (31s)
+[26/38] TA24c2_2  vs  TA24c3_1
+Generate VAE inputs for TA24c2_2:   0%|          | 0/23 [00:00<?, ?it/s]Generate VAE inputs for TA24c2_2:   4%|▍         | 1/23 [00:00<00:06,  3.65it/s]Generate VAE inputs for TA24c2_2:  70%|██████▉   | 16/23 [00:00<00:00, 32.95it/s]Generate VAE inputs for TA24c2_2: 100%|██████████| 23/23 [00:00<00:00, 40.95it/s]
+Generate VAE inputs for TA24c3_1:   0%|          | 0/21 [00:00<?, ?it/s]Generate VAE inputs for TA24c3_1: 100%|██████████| 21/21 [00:00<00:00, 17206.56it/s]
+  0%|          | 0/44 [00:00<?, ?it/s] 20%|██        | 9/44 [00:00<00:00, 85.35it/s] 41%|████      | 18/44 [00:00<00:00, 87.80it/s] 61%|██████▏   | 27/44 [00:00<00:00, 83.81it/s] 82%|████████▏ | 36/44 [00:00<00:00, 84.04it/s]100%|██████████| 44/44 [00:00<00:00, 85.44it/s]
+Wasserstein similarity:   0%|          | 0/23 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/23 [00:01<00:29,  1.34s/it]Wasserstein similarity: 100%|██████████| 23/23 [00:01<00:00, 17.16it/s]
+Wasserstein similarity:   0%|          | 0/23 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 23/23 [00:00<00:00, 43182.18it/s]
+Wasserstein similarity:   0%|          | 0/23 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 23/23 [00:00<00:00, 51041.79it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (27s)
+[27/38] TA25c1_1  vs  TA25c2_1
+Generate VAE inputs for TA25c1_1:   0%|          | 0/25 [00:00<?, ?it/s]Generate VAE inputs for TA25c1_1:   4%|▍         | 1/25 [00:00<00:07,  3.10it/s]Generate VAE inputs for TA25c1_1:  64%|██████▍   | 16/25 [00:00<00:00, 30.91it/s]Generate VAE inputs for TA25c1_1: 100%|██████████| 25/25 [00:00<00:00, 41.30it/s]
+Generate VAE inputs for TA25c2_1:   0%|          | 0/22 [00:00<?, ?it/s]Generate VAE inputs for TA25c2_1: 100%|██████████| 22/22 [00:00<00:00, 28585.71it/s]
+  0%|          | 0/47 [00:00<?, ?it/s] 19%|█▉        | 9/47 [00:00<00:00, 83.81it/s] 38%|███▊      | 18/47 [00:00<00:00, 83.75it/s] 57%|█████▋    | 27/47 [00:00<00:00, 84.94it/s] 77%|███████▋  | 36/47 [00:00<00:00, 86.28it/s] 96%|█████████▌| 45/47 [00:00<00:00, 86.57it/s]100%|██████████| 47/47 [00:00<00:00, 85.95it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/25 [00:01<00:30,  1.28s/it]Wasserstein similarity: 100%|██████████| 25/25 [00:01<00:00, 19.51it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 40960.00it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 51400.78it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (26s)
+[28/38] TA25c1_1  vs  TA25c3_1
+Generate VAE inputs for TA25c1_1:   0%|          | 0/25 [00:00<?, ?it/s]Generate VAE inputs for TA25c1_1:   4%|▍         | 1/25 [00:00<00:06,  3.49it/s]Generate VAE inputs for TA25c1_1:  64%|██████▍   | 16/25 [00:00<00:00, 31.98it/s]Generate VAE inputs for TA25c1_1: 100%|██████████| 25/25 [00:00<00:00, 43.30it/s]
+Generate VAE inputs for TA25c3_1:   0%|          | 0/25 [00:00<?, ?it/s]Generate VAE inputs for TA25c3_1: 100%|██████████| 25/25 [00:00<00:00, 15592.21it/s]
+  0%|          | 0/50 [00:00<?, ?it/s] 42%|████▏     | 21/50 [00:00<00:00, 188.03it/s] 80%|████████  | 40/50 [00:00<00:00, 171.25it/s]100%|██████████| 50/50 [00:00<00:00, 166.47it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/25 [00:01<00:30,  1.27s/it]Wasserstein similarity: 100%|██████████| 25/25 [00:01<00:00, 19.67it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 43098.07it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 51704.93it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (19s)
+[29/38] TA25c1_2  vs  TA25c3_2
+Generate VAE inputs for TA25c1_2:   0%|          | 0/72 [00:00<?, ?it/s]Generate VAE inputs for TA25c1_2:   1%|▏         | 1/72 [00:00<00:21,  3.35it/s]Generate VAE inputs for TA25c1_2:  22%|██▏       | 16/72 [00:00<00:01, 30.25it/s]Generate VAE inputs for TA25c1_2:  44%|████▍     | 32/72 [00:07<00:10,  3.66it/s]Generate VAE inputs for TA25c1_2:  67%|██████▋   | 48/72 [00:08<00:03,  6.27it/s]Generate VAE inputs for TA25c1_2: 100%|██████████| 72/72 [00:08<00:00,  8.86it/s]
+Generate VAE inputs for TA25c3_2:   0%|          | 0/73 [00:00<?, ?it/s]Generate VAE inputs for TA25c3_2: 100%|██████████| 73/73 [00:00<00:00, 768.57it/s]
+  0%|          | 0/145 [00:00<?, ?it/s]  7%|▋         | 10/145 [00:00<00:01, 91.15it/s] 14%|█▍        | 20/145 [00:00<00:01, 91.17it/s] 21%|██        | 30/145 [00:00<00:01, 90.32it/s] 28%|██▊       | 40/145 [00:00<00:01, 86.93it/s] 34%|███▍      | 50/145 [00:00<00:01, 89.59it/s] 41%|████▏     | 60/145 [00:00<00:00, 92.71it/s] 48%|████▊     | 70/145 [00:00<00:00, 94.78it/s] 55%|█████▌    | 80/145 [00:00<00:00, 96.00it/s] 62%|██████▏   | 90/145 [00:00<00:00, 96.54it/s] 69%|██████▉   | 100/145 [00:01<00:00, 97.22it/s] 76%|███████▌  | 110/145 [00:01<00:00, 97.04it/s] 83%|████████▎ | 120/145 [00:01<00:00, 97.09it/s] 90%|█████████ | 131/145 [00:01<00:00, 98.51it/s] 98%|█████████▊| 142/145 [00:01<00:00, 99.29it/s]100%|██████████| 145/145 [00:01<00:00, 95.42it/s]
+Wasserstein similarity:   0%|          | 0/72 [00:00<?, ?it/s]Wasserstein similarity:   1%|▏         | 1/72 [00:01<01:36,  1.36s/it]Wasserstein similarity:  89%|████████▉ | 64/72 [00:02<00:00, 29.42it/s]Wasserstein similarity: 100%|██████████| 72/72 [00:02<00:00, 27.98it/s]
+Wasserstein similarity:   0%|          | 0/72 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 72/72 [00:00<00:00, 32409.30it/s]
+Wasserstein similarity:   0%|          | 0/72 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 72/72 [00:00<00:00, 34332.64it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (40s)
+[30/38] TA25c1_3  vs  TA25c2_2
+Generate VAE inputs for TA25c1_3:   0%|          | 0/42 [00:00<?, ?it/s]Generate VAE inputs for TA25c1_3:   2%|▏         | 1/42 [00:00<00:12,  3.27it/s]Generate VAE inputs for TA25c1_3:  38%|███▊      | 16/42 [00:00<00:00, 30.70it/s]Generate VAE inputs for TA25c1_3:  76%|███████▌  | 32/42 [00:07<00:02,  3.54it/s]Generate VAE inputs for TA25c1_3: 100%|██████████| 42/42 [00:07<00:00,  5.34it/s]
+Generate VAE inputs for TA25c2_2:   0%|          | 0/40 [00:00<?, ?it/s]Generate VAE inputs for TA25c2_2: 100%|██████████| 40/40 [00:00<00:00, 713.63it/s]
+  0%|          | 0/82 [00:00<?, ?it/s] 11%|█         | 9/82 [00:00<00:00, 82.01it/s] 22%|██▏       | 18/82 [00:00<00:00, 83.58it/s] 33%|███▎      | 27/82 [00:00<00:00, 84.89it/s] 44%|████▍     | 36/82 [00:00<00:00, 83.97it/s] 55%|█████▍    | 45/82 [00:00<00:00, 85.59it/s] 66%|██████▌   | 54/82 [00:00<00:00, 85.94it/s] 77%|███████▋  | 63/82 [00:00<00:00, 85.66it/s] 88%|████████▊ | 72/82 [00:00<00:00, 86.21it/s] 99%|█████████▉| 81/82 [00:00<00:00, 86.19it/s]100%|██████████| 82/82 [00:00<00:00, 85.47it/s]
+Wasserstein similarity:   0%|          | 0/42 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/42 [00:01<00:53,  1.30s/it]Wasserstein similarity: 100%|██████████| 42/42 [00:01<00:00, 32.19it/s]
+Wasserstein similarity:   0%|          | 0/42 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 42/42 [00:00<00:00, 66375.57it/s]
+Wasserstein similarity:   0%|          | 0/42 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 42/42 [00:00<00:00, 79710.75it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (36s)
+[31/38] TA26c1_1  vs  TA26c2_1
+Generate VAE inputs for TA26c1_1:   0%|          | 0/48 [00:00<?, ?it/s]Generate VAE inputs for TA26c1_1:   2%|▏         | 1/48 [00:00<00:13,  3.44it/s]Generate VAE inputs for TA26c1_1:  33%|███▎      | 16/48 [00:00<00:01, 29.63it/s]Generate VAE inputs for TA26c1_1:  67%|██████▋   | 32/48 [00:07<00:04,  3.66it/s]Generate VAE inputs for TA26c1_1: 100%|██████████| 48/48 [00:07<00:00,  6.35it/s]Generate VAE inputs for TA26c1_1: 100%|██████████| 48/48 [00:07<00:00,  6.03it/s]
+Generate VAE inputs for TA26c2_1:   0%|          | 0/44 [00:00<?, ?it/s]Generate VAE inputs for TA26c2_1: 100%|██████████| 44/44 [00:00<00:00, 693.76it/s]
+  0%|          | 0/92 [00:00<?, ?it/s] 11%|█         | 10/92 [00:00<00:00, 92.94it/s] 22%|██▏       | 20/92 [00:00<00:00, 95.25it/s] 33%|███▎      | 30/92 [00:00<00:00, 95.96it/s] 43%|████▎     | 40/92 [00:00<00:00, 95.90it/s] 54%|█████▍    | 50/92 [00:00<00:00, 95.46it/s] 65%|██████▌   | 60/92 [00:00<00:00, 94.84it/s] 76%|███████▌  | 70/92 [00:00<00:00, 94.73it/s] 87%|████████▋ | 80/92 [00:00<00:00, 93.35it/s] 98%|█████████▊| 90/92 [00:00<00:00, 94.23it/s]100%|██████████| 92/92 [00:00<00:00, 94.67it/s]
+Wasserstein similarity:   0%|          | 0/48 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/48 [00:01<01:02,  1.33s/it]Wasserstein similarity: 100%|██████████| 48/48 [00:01<00:00, 36.12it/s]
+Wasserstein similarity:   0%|          | 0/48 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 48/48 [00:00<00:00, 67604.63it/s]
+Wasserstein similarity:   0%|          | 0/48 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 48/48 [00:00<00:00, 79044.60it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (41s)
+[32/38] TA26c1_2  vs  TA26c2_2
+Generate VAE inputs for TA26c1_2:   0%|          | 0/43 [00:00<?, ?it/s]Generate VAE inputs for TA26c1_2:   2%|▏         | 1/43 [00:00<00:12,  3.29it/s]Generate VAE inputs for TA26c1_2:  37%|███▋      | 16/43 [00:00<00:00, 27.87it/s]Generate VAE inputs for TA26c1_2:  74%|███████▍  | 32/43 [00:07<00:03,  3.61it/s]Generate VAE inputs for TA26c1_2: 100%|██████████| 43/43 [00:07<00:00,  5.56it/s]
+Generate VAE inputs for TA26c2_2:   0%|          | 0/45 [00:00<?, ?it/s]Generate VAE inputs for TA26c2_2: 100%|██████████| 45/45 [00:00<00:00, 771.77it/s]
+  0%|          | 0/88 [00:00<?, ?it/s] 10%|█         | 9/88 [00:00<00:00, 87.38it/s] 22%|██▏       | 19/88 [00:00<00:00, 93.04it/s] 33%|███▎      | 29/88 [00:00<00:00, 95.46it/s] 44%|████▍     | 39/88 [00:00<00:00, 96.51it/s] 56%|█████▌    | 49/88 [00:00<00:00, 97.28it/s] 67%|██████▋   | 59/88 [00:00<00:00, 96.51it/s] 78%|███████▊  | 69/88 [00:00<00:00, 95.74it/s] 90%|████████▉ | 79/88 [00:00<00:00, 96.14it/s]100%|██████████| 88/88 [00:00<00:00, 96.09it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/43 [00:01<00:55,  1.31s/it]Wasserstein similarity: 100%|██████████| 43/43 [00:01<00:00, 32.71it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 69769.85it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 78757.67it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (33s)
+[33/38] TA26c1_2  vs  TA26c3_1
+Generate VAE inputs for TA26c1_2:   0%|          | 0/43 [00:00<?, ?it/s]Generate VAE inputs for TA26c1_2:   2%|▏         | 1/43 [00:00<00:13,  3.17it/s]Generate VAE inputs for TA26c1_2:  37%|███▋      | 16/43 [00:00<00:00, 29.59it/s]Generate VAE inputs for TA26c1_2:  74%|███████▍  | 32/43 [00:07<00:03,  3.63it/s]Generate VAE inputs for TA26c1_2: 100%|██████████| 43/43 [00:07<00:00,  5.59it/s]
+Generate VAE inputs for TA26c3_1:   0%|          | 0/49 [00:00<?, ?it/s]Generate VAE inputs for TA26c3_1: 100%|██████████| 49/49 [00:00<00:00, 766.31it/s]
+  0%|          | 0/92 [00:00<?, ?it/s] 28%|██▊       | 26/92 [00:00<00:00, 236.65it/s] 54%|█████▍    | 50/92 [00:00<00:00, 178.75it/s] 75%|███████▌  | 69/92 [00:00<00:00, 165.19it/s] 96%|█████████▌| 88/92 [00:00<00:00, 168.87it/s]100%|██████████| 92/92 [00:00<00:00, 174.39it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/43 [00:01<01:03,  1.52s/it]Wasserstein similarity: 100%|██████████| 43/43 [00:01<00:00, 28.25it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 67700.85it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 82316.33it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (27s)
+[34/38] TA27c1_1  vs  TA27c2_1
+Generate VAE inputs for TA27c1_1:   0%|          | 0/53 [00:00<?, ?it/s]Generate VAE inputs for TA27c1_1:   2%|▏         | 1/53 [00:00<00:17,  2.94it/s]Generate VAE inputs for TA27c1_1:  30%|███       | 16/53 [00:00<00:01, 29.71it/s]Generate VAE inputs for TA27c1_1:  60%|██████    | 32/53 [00:07<00:05,  3.72it/s]Generate VAE inputs for TA27c1_1:  91%|█████████ | 48/53 [00:07<00:00,  6.45it/s]Generate VAE inputs for TA27c1_1: 100%|██████████| 53/53 [00:07<00:00,  6.75it/s]
+Generate VAE inputs for TA27c2_1:   0%|          | 0/58 [00:00<?, ?it/s]Generate VAE inputs for TA27c2_1: 100%|██████████| 58/58 [00:00<00:00, 962.55it/s]
+  0%|          | 0/111 [00:00<?, ?it/s]  6%|▋         | 7/111 [00:00<00:01, 69.98it/s] 14%|█▎        | 15/111 [00:00<00:01, 73.67it/s] 22%|██▏       | 24/111 [00:00<00:01, 79.14it/s] 31%|███       | 34/111 [00:00<00:00, 85.71it/s] 40%|███▉      | 44/111 [00:00<00:00, 88.79it/s] 49%|████▊     | 54/111 [00:00<00:00, 90.67it/s] 58%|█████▊    | 64/111 [00:00<00:00, 90.81it/s] 67%|██████▋   | 74/111 [00:00<00:00, 90.84it/s] 76%|███████▌  | 84/111 [00:00<00:00, 91.82it/s] 85%|████████▍ | 94/111 [00:01<00:00, 91.85it/s] 94%|█████████▎| 104/111 [00:01<00:00, 92.37it/s]100%|██████████| 111/111 [00:01<00:00, 89.14it/s]
+Wasserstein similarity:   0%|          | 0/53 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/53 [00:01<01:06,  1.27s/it]Wasserstein similarity: 100%|██████████| 53/53 [00:01<00:00, 41.59it/s]
+Wasserstein similarity:   0%|          | 0/53 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 53/53 [00:00<00:00, 72932.45it/s]
+Wasserstein similarity:   0%|          | 0/53 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 53/53 [00:00<00:00, 93050.70it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (36s)
+[35/38] TA27c1_2  vs  TA27c3_1
+Generate VAE inputs for TA27c1_2:   0%|          | 0/59 [00:00<?, ?it/s]Generate VAE inputs for TA27c1_2:   2%|▏         | 1/59 [00:00<00:17,  3.26it/s]Generate VAE inputs for TA27c1_2:  27%|██▋       | 16/59 [00:00<00:01, 29.63it/s]Generate VAE inputs for TA27c1_2:  54%|█████▍    | 32/59 [00:07<00:07,  3.62it/s]Generate VAE inputs for TA27c1_2:  81%|████████▏ | 48/59 [00:08<00:01,  6.26it/s]Generate VAE inputs for TA27c1_2: 100%|██████████| 59/59 [00:08<00:00,  7.31it/s]
+Generate VAE inputs for TA27c3_1:   0%|          | 0/65 [00:00<?, ?it/s]Generate VAE inputs for TA27c3_1: 100%|██████████| 65/65 [00:00<00:00, 685.98it/s]
+  0%|          | 0/124 [00:00<?, ?it/s]  7%|▋         | 9/124 [00:00<00:01, 82.63it/s] 15%|█▍        | 18/124 [00:00<00:01, 82.67it/s] 23%|██▎       | 28/124 [00:00<00:01, 86.15it/s] 30%|██▉       | 37/124 [00:00<00:01, 86.80it/s] 37%|███▋      | 46/124 [00:00<00:00, 87.60it/s] 44%|████▍     | 55/124 [00:00<00:00, 87.15it/s] 52%|█████▏    | 64/124 [00:00<00:00, 87.51it/s] 60%|█████▉    | 74/124 [00:00<00:00, 88.34it/s] 68%|██████▊   | 84/124 [00:00<00:00, 88.97it/s] 75%|███████▌  | 93/124 [00:01<00:00, 88.58it/s] 82%|████████▏ | 102/124 [00:01<00:00, 88.94it/s] 90%|████████▉ | 111/124 [00:01<00:00, 89.05it/s] 97%|█████████▋| 120/124 [00:01<00:00, 89.12it/s]100%|██████████| 124/124 [00:01<00:00, 88.11it/s]
+Wasserstein similarity:   0%|          | 0/59 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/59 [00:01<01:15,  1.31s/it]Wasserstein similarity: 100%|██████████| 59/59 [00:01<00:00, 45.07it/s]
+Wasserstein similarity:   0%|          | 0/59 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 59/59 [00:00<00:00, 97388.40it/s]
+Wasserstein similarity:   0%|          | 0/59 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 59/59 [00:00<00:00, 114038.68it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (36s)
+[36/38] TA27c1_3  vs  TA27c3_2
+Generate VAE inputs for TA27c1_3:   0%|          | 0/47 [00:00<?, ?it/s]Generate VAE inputs for TA27c1_3:   2%|▏         | 1/47 [00:00<00:14,  3.21it/s]Generate VAE inputs for TA27c1_3:  34%|███▍      | 16/47 [00:00<00:01, 30.10it/s]Generate VAE inputs for TA27c1_3:  68%|██████▊   | 32/47 [00:07<00:04,  3.63it/s]Generate VAE inputs for TA27c1_3: 100%|██████████| 47/47 [00:07<00:00,  6.12it/s]
+Generate VAE inputs for TA27c3_2:   0%|          | 0/47 [00:00<?, ?it/s]Generate VAE inputs for TA27c3_2: 100%|██████████| 47/47 [00:00<00:00, 708.04it/s]
+  0%|          | 0/94 [00:00<?, ?it/s]  9%|▊         | 8/94 [00:00<00:01, 76.92it/s] 17%|█▋        | 16/94 [00:00<00:00, 78.31it/s] 26%|██▌       | 24/94 [00:00<00:00, 78.70it/s] 35%|███▌      | 33/94 [00:00<00:00, 79.14it/s] 44%|████▎     | 41/94 [00:00<00:00, 79.17it/s] 52%|█████▏    | 49/94 [00:00<00:00, 79.34it/s] 61%|██████    | 57/94 [00:00<00:00, 78.53it/s] 70%|███████   | 66/94 [00:00<00:00, 80.65it/s] 80%|███████▉  | 75/94 [00:00<00:00, 82.24it/s] 89%|████████▉ | 84/94 [00:01<00:00, 83.19it/s] 99%|█████████▉| 93/94 [00:01<00:00, 83.63it/s]100%|██████████| 94/94 [00:01<00:00, 81.19it/s]
+Wasserstein similarity:   0%|          | 0/47 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/47 [00:01<00:59,  1.30s/it]Wasserstein similarity: 100%|██████████| 47/47 [00:01<00:00, 36.09it/s]
+Wasserstein similarity:   0%|          | 0/47 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 47/47 [00:00<00:00, 77917.90it/s]
+Wasserstein similarity:   0%|          | 0/47 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 47/47 [00:00<00:00, 83495.25it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (38s)
+[37/38] TA28c1_1  vs  TA28c2_1
+Generate VAE inputs for TA28c1_1:   0%|          | 0/73 [00:00<?, ?it/s]Generate VAE inputs for TA28c1_1:   1%|▏         | 1/73 [00:00<00:21,  3.30it/s]Generate VAE inputs for TA28c1_1:  22%|██▏       | 16/73 [00:00<00:01, 30.17it/s]Generate VAE inputs for TA28c1_1:  44%|████▍     | 32/73 [00:07<00:11,  3.63it/s]Generate VAE inputs for TA28c1_1:  66%|██████▌   | 48/73 [00:07<00:03,  6.34it/s]Generate VAE inputs for TA28c1_1:  88%|████████▊ | 64/73 [00:08<00:00, 10.19it/s]Generate VAE inputs for TA28c1_1: 100%|██████████| 73/73 [00:08<00:00,  9.01it/s]
+Generate VAE inputs for TA28c2_1:   0%|          | 0/76 [00:00<?, ?it/s]Generate VAE inputs for TA28c2_1:  84%|████████▍ | 64/76 [00:00<00:00, 622.10it/s]Generate VAE inputs for TA28c2_1: 100%|██████████| 76/76 [00:00<00:00, 729.70it/s]
+  0%|          | 0/149 [00:00<?, ?it/s]  5%|▌         | 8/149 [00:00<00:01, 79.03it/s] 11%|█▏        | 17/149 [00:00<00:01, 82.04it/s] 17%|█▋        | 26/149 [00:00<00:01, 81.32it/s] 23%|██▎       | 35/149 [00:00<00:01, 81.53it/s] 30%|██▉       | 44/149 [00:00<00:01, 81.83it/s] 36%|███▌      | 53/149 [00:00<00:01, 83.66it/s] 42%|████▏     | 63/149 [00:00<00:00, 86.05it/s] 49%|████▉     | 73/149 [00:00<00:00, 88.84it/s] 56%|█████▌    | 83/149 [00:00<00:00, 91.99it/s] 62%|██████▏   | 93/149 [00:01<00:00, 93.01it/s] 69%|██████▉   | 103/149 [00:01<00:00, 94.20it/s] 76%|███████▌  | 113/149 [00:01<00:00, 94.78it/s] 83%|████████▎ | 123/149 [00:01<00:00, 96.30it/s] 89%|████████▉ | 133/149 [00:01<00:00, 96.71it/s] 97%|█████████▋| 144/149 [00:01<00:00, 98.03it/s]100%|██████████| 149/149 [00:01<00:00, 91.34it/s]
+Wasserstein similarity:   0%|          | 0/73 [00:00<?, ?it/s]Wasserstein similarity:   1%|▏         | 1/73 [00:01<01:35,  1.32s/it]Wasserstein similarity:  88%|████████▊ | 64/73 [00:02<00:00, 30.38it/s]Wasserstein similarity: 100%|██████████| 73/73 [00:02<00:00, 29.26it/s]
+Wasserstein similarity:   0%|          | 0/73 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 73/73 [00:00<00:00, 32824.21it/s]
+Wasserstein similarity:   0%|          | 0/73 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 73/73 [00:00<00:00, 42602.50it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (38s)
+[38/38] TA28c1_2  vs  TA28c3_1
+Generate VAE inputs for TA28c1_2:   0%|          | 0/66 [00:00<?, ?it/s]Generate VAE inputs for TA28c1_2:   2%|▏         | 1/66 [00:00<00:20,  3.23it/s]Generate VAE inputs for TA28c1_2:  24%|██▍       | 16/66 [00:00<00:01, 29.16it/s]Generate VAE inputs for TA28c1_2:  48%|████▊     | 32/66 [00:07<00:09,  3.52it/s]Generate VAE inputs for TA28c1_2:  73%|███████▎  | 48/66 [00:08<00:02,  6.09it/s]Generate VAE inputs for TA28c1_2:  97%|█████████▋| 64/66 [00:08<00:00,  9.77it/s]Generate VAE inputs for TA28c1_2: 100%|██████████| 66/66 [00:08<00:00,  7.84it/s]
+Generate VAE inputs for TA28c3_1:   0%|          | 0/64 [00:00<?, ?it/s]Generate VAE inputs for TA28c3_1: 100%|██████████| 64/64 [00:00<00:00, 659.68it/s]
+  0%|          | 0/130 [00:00<?, ?it/s]  6%|▌         | 8/130 [00:00<00:01, 79.45it/s] 13%|█▎        | 17/130 [00:00<00:01, 80.59it/s] 20%|██        | 26/130 [00:00<00:01, 80.20it/s] 27%|██▋       | 35/130 [00:00<00:01, 81.19it/s] 34%|███▍      | 44/130 [00:00<00:01, 82.13it/s] 41%|████      | 53/130 [00:00<00:00, 82.47it/s] 48%|████▊     | 62/130 [00:00<00:00, 82.82it/s] 55%|█████▍    | 71/130 [00:00<00:00, 83.20it/s] 62%|██████▏   | 80/130 [00:00<00:00, 83.24it/s] 68%|██████▊   | 89/130 [00:01<00:00, 82.86it/s] 75%|███████▌  | 98/130 [00:01<00:00, 82.75it/s] 82%|████████▏ | 107/130 [00:01<00:00, 82.93it/s] 89%|████████▉ | 116/130 [00:01<00:00, 81.80it/s] 96%|█████████▌| 125/130 [00:01<00:00, 82.62it/s]100%|██████████| 130/130 [00:01<00:00, 82.55it/s]
+Wasserstein similarity:   0%|          | 0/66 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/66 [00:01<01:40,  1.55s/it]Wasserstein similarity:  97%|█████████▋| 64/66 [00:02<00:00, 26.65it/s]Wasserstein similarity: 100%|██████████| 66/66 [00:02<00:00, 23.12it/s]
+Wasserstein similarity:   0%|          | 0/66 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 66/66 [00:00<00:00, 27751.79it/s]
+Wasserstein similarity:   0%|          | 0/66 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 66/66 [00:00<00:00, 34551.18it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (40s)
+
+All done in 1111s

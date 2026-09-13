@@ -1,0 +1,410 @@
+38 pairs, device=cpu, out=/DATA/F2FMatcher_DDC/results/benchmark/f2fmatcher_output
+[ 1/38] AV_260625_22-082_10X_TA1c1_WGA-1  vs  AV_260625_22-082_10X_TA1c2_WGA-1
+Prediction for AV_260625_22-082_10X_TA1c1_WGA-1 vs AV_260625_22-082_10X_TA1c2_WGA-1 already exists, skipping.
+      -> None pairs  (0s)
+[ 2/38] AV_260625_22-082_10X_TA1c1_WGA-2  vs  AV_260625_22-082_10X_TA1c2_WGA-2
+Prediction for AV_260625_22-082_10X_TA1c1_WGA-2 vs AV_260625_22-082_10X_TA1c2_WGA-2 already exists, skipping.
+      -> None pairs  (0s)
+[ 3/38] AV_260625_22-082_10X_TA1c1_WGA-2  vs  AV_260625_22-082_10X_TA1c3_WGA-2
+Prediction for AV_260625_22-082_10X_TA1c1_WGA-2 vs AV_260625_22-082_10X_TA1c3_WGA-2 already exists, skipping.
+      -> None pairs  (0s)
+[ 4/38] AV_260625_TA21c1-2  vs  AV_260625_TA21c2-2
+Generate VAE inputs for AV_260625_TA21c1-2:   0%|          | 0/19 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c1-2:  84%|████████▍ | 16/19 [00:00<00:00, 66.30it/s]Generate VAE inputs for AV_260625_TA21c1-2: 100%|██████████| 19/19 [00:00<00:00, 78.57it/s]
+Generate VAE inputs for AV_260625_TA21c2-2:   0%|          | 0/20 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c2-2: 100%|██████████| 20/20 [00:00<00:00, 20702.39it/s]
+  0%|          | 0/39 [00:00<?, ?it/s]100%|██████████| 39/39 [00:00<00:00, 151601.35it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/19 [00:01<00:23,  1.32s/it]Wasserstein similarity: 100%|██████████| 19/19 [00:01<00:00, 14.38it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 37239.15it/s]
+Wasserstein similarity:   0%|          | 0/19 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 19/19 [00:00<00:00, 24207.71it/s]
+Build neighbor dict:   0%|          | 0/19 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 19/19 [00:00<00:00, 65915.45it/s]
+Local prediction:   0%|          | 0/14 [00:00<?, ?it/s]Local prediction:   7%|▋         | 1/14 [00:00<00:03,  3.45it/s]Local prediction: 100%|██████████| 14/14 [00:00<00:00, 48.20it/s]
+   Step 1: +-16 new pairs (total 3)
+      ERROR: IndexError: list index out of range  (29s)
+[ 5/38] AV_260625_TA21c2-1  vs  AV_260625_TA21c3-1
+Generate VAE inputs for AV_260625_TA21c2-1:   0%|          | 0/18 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c2-1: 100%|██████████| 18/18 [00:00<00:00, 18531.53it/s]
+Generate VAE inputs for AV_260625_TA21c3-1:   0%|          | 0/19 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c3-1: 100%|██████████| 19/19 [00:00<00:00, 17480.10it/s]
+  0%|          | 0/37 [00:00<?, ?it/s]100%|██████████| 37/37 [00:00<00:00, 151848.58it/s]
+Wasserstein similarity:   0%|          | 0/18 [00:00<?, ?it/s]Wasserstein similarity:   6%|▌         | 1/18 [00:01<00:22,  1.34s/it]Wasserstein similarity: 100%|██████████| 18/18 [00:01<00:00, 13.39it/s]
+Wasserstein similarity:   0%|          | 0/18 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 18/18 [00:00<00:00, 32140.26it/s]
+Wasserstein similarity:   0%|          | 0/18 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 18/18 [00:00<00:00, 35428.19it/s]
+Build neighbor dict:   0%|          | 0/18 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 18/18 [00:00<00:00, 62653.50it/s]
+Local prediction:   0%|          | 0/16 [00:00<?, ?it/s]Local prediction:   6%|▋         | 1/16 [00:00<00:04,  3.63it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 37.89it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 32.03it/s]
+   Step 1: +-3 new pairs (total 14)
+Done: 16 pairs matched.
+      -> [(27, 40), (38, 45), (35, 42), (26, 33), (30, 41), (19, 29), (23, 28), (20, 35), (22, 32), (14, 22), (40, 47), (36, 48), (31, 37), (39, 44), (13, 24), (15, 19)] pairs  (27s)
+[ 6/38] AV_260625_TA21c2-2  vs  AV_260625_TA21c3-2
+Generate VAE inputs for AV_260625_TA21c2-2:   0%|          | 0/20 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c2-2: 100%|██████████| 20/20 [00:00<00:00, 14929.01it/s]
+Generate VAE inputs for AV_260625_TA21c3-2:   0%|          | 0/21 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA21c3-2: 100%|██████████| 21/21 [00:00<00:00, 21839.92it/s]
+  0%|          | 0/41 [00:00<?, ?it/s]100%|██████████| 41/41 [00:00<00:00, 147864.54it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/20 [00:01<00:24,  1.30s/it]Wasserstein similarity: 100%|██████████| 20/20 [00:01<00:00, 15.33it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 36393.09it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 42366.71it/s]
+Build neighbor dict:   0%|          | 0/20 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 20/20 [00:00<00:00, 91578.69it/s]
+Local prediction:   0%|          | 0/16 [00:00<?, ?it/s]Local prediction:   6%|▋         | 1/16 [00:00<00:04,  3.39it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 37.62it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 31.49it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (24s)
+[ 7/38] AV_260625_TA33c1-1  vs  AV_260625_TA33c2-1
+Generate VAE inputs for AV_260625_TA33c1-1:   0%|          | 0/9 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-1: 100%|██████████| 9/9 [00:00<00:00, 5408.90it/s]
+Generate VAE inputs for AV_260625_TA33c2-1:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-1: 100%|██████████| 13/13 [00:00<00:00, 23182.80it/s]
+  0%|          | 0/22 [00:00<?, ?it/s]100%|██████████| 22/22 [00:00<00:00, 134707.57it/s]
+Wasserstein similarity:   0%|          | 0/9 [00:00<?, ?it/s]Wasserstein similarity:  11%|█         | 1/9 [00:01<00:12,  1.54s/it]Wasserstein similarity: 100%|██████████| 9/9 [00:01<00:00,  5.86it/s]
+Wasserstein similarity:   0%|          | 0/9 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 9/9 [00:00<00:00, 16491.37it/s]
+Wasserstein similarity:   0%|          | 0/9 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 9/9 [00:00<00:00, 19210.55it/s]
+Build neighbor dict:   0%|          | 0/9 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 9/9 [00:00<00:00, 97541.95it/s]
+Local prediction:   0%|          | 0/9 [00:00<?, ?it/s]Local prediction:  11%|█         | 1/9 [00:00<00:01,  4.09it/s]Local prediction: 100%|██████████| 9/9 [00:00<00:00, 36.71it/s]
+   Step 1: +-2 new pairs (total 7)
+Done: 5 pairs matched.
+      -> [(40, 43), (38, 42), (26, 29), (30, 34), (33, 35)] pairs  (27s)
+[ 8/38] AV_260625_TA33c1-2  vs  AV_260625_TA33c2-2
+Generate VAE inputs for AV_260625_TA33c1-2:   0%|          | 0/10 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-2: 100%|██████████| 10/10 [00:00<00:00, 19517.47it/s]
+Generate VAE inputs for AV_260625_TA33c2-2:   0%|          | 0/8 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-2: 100%|██████████| 8/8 [00:00<00:00, 11393.70it/s]
+  0%|          | 0/18 [00:00<?, ?it/s]100%|██████████| 18/18 [00:00<00:00, 126039.19it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity:  10%|█         | 1/10 [00:01<00:14,  1.66s/it]Wasserstein similarity: 100%|██████████| 10/10 [00:01<00:00,  6.03it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 18436.50it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 22298.27it/s]
+Build neighbor dict:   0%|          | 0/10 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 10/10 [00:00<00:00, 28826.83it/s]
+Local prediction:   0%|          | 0/8 [00:00<?, ?it/s]Local prediction:  12%|█▎        | 1/8 [00:00<00:01,  4.10it/s]Local prediction: 100%|██████████| 8/8 [00:00<00:00, 32.77it/s]
+   Step 1: +-2 new pairs (total 6)
+Done: 6 pairs matched.
+      -> [(22, 21), (24, 23), (17, 16), (28, 29), (23, 22), (33, 31)] pairs  (20s)
+[ 9/38] AV_260625_TA33c1-2  vs  AV_260625_TA33c3-2
+Generate VAE inputs for AV_260625_TA33c1-2:   0%|          | 0/10 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-2: 100%|██████████| 10/10 [00:00<00:00, 18691.19it/s]
+Generate VAE inputs for AV_260625_TA33c3-2:   0%|          | 0/12 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-2: 100%|██████████| 12/12 [00:00<00:00, 25944.15it/s]
+  0%|          | 0/22 [00:00<?, ?it/s] 86%|████████▋ | 19/22 [00:00<00:00, 179.04it/s]100%|██████████| 22/22 [00:00<00:00, 148.37it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity:  10%|█         | 1/10 [00:01<00:14,  1.57s/it]Wasserstein similarity: 100%|██████████| 10/10 [00:01<00:00,  6.37it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 17802.65it/s]
+Wasserstein similarity:   0%|          | 0/10 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 10/10 [00:00<00:00, 22477.51it/s]
+Build neighbor dict:   0%|          | 0/10 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 10/10 [00:00<00:00, 84733.41it/s]
+Local prediction:   0%|          | 0/7 [00:00<?, ?it/s]Local prediction:  14%|█▍        | 1/7 [00:00<00:01,  3.93it/s]Local prediction: 100%|██████████| 7/7 [00:00<00:00, 27.47it/s]
+   Step 1: +-4 new pairs (total 5)
+Done: 7 pairs matched.
+      -> [(40, 39), (23, 19), (41, 41), (22, 22), (24, 24), (28, 29), (33, 33)] pairs  (20s)
+[10/38] AV_260625_TA33c1-3  vs  AV_260625_TA33c2-3
+Prediction for AV_260625_TA33c1-3 vs AV_260625_TA33c2-3 already exists, skipping.
+      -> None pairs  (0s)
+[11/38] AV_260625_TA33c1-3  vs  AV_260625_TA33c3-3
+Generate VAE inputs for AV_260625_TA33c1-3:   0%|          | 0/6 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-3: 100%|██████████| 6/6 [00:00<00:00, 12852.82it/s]
+Generate VAE inputs for AV_260625_TA33c3-3:   0%|          | 0/4 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-3: 100%|██████████| 4/4 [00:00<00:00, 9625.48it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 100824.62it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity:  17%|█▋        | 1/6 [00:01<00:06,  1.37s/it]Wasserstein similarity: 100%|██████████| 6/6 [00:01<00:00,  4.38it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 6/6 [00:00<00:00, 10941.66it/s]
+Wasserstein similarity:   0%|          | 0/6 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 6/6 [00:00<00:00, 13120.87it/s]
+Done: 0 pairs matched.
+      -> [] pairs  (19s)
+[12/38] AV_260625_TA33c1-4  vs  AV_260625_TA33c2-4
+Generate VAE inputs for AV_260625_TA33c1-4:   0%|          | 0/4 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-4:  25%|██▌       | 1/4 [00:00<00:00,  4.59it/s]Generate VAE inputs for AV_260625_TA33c1-4: 100%|██████████| 4/4 [00:00<00:00, 18.31it/s]
+Generate VAE inputs for AV_260625_TA33c2-4:   0%|          | 0/3 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-4: 100%|██████████| 3/3 [00:00<00:00, 6335.81it/s]
+  0%|          | 0/7 [00:00<?, ?it/s]100%|██████████| 7/7 [00:00<00:00, 100548.38it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity:  25%|██▌       | 1/4 [00:01<00:03,  1.10s/it]Wasserstein similarity: 100%|██████████| 4/4 [00:01<00:00,  3.63it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 7394.10it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 7850.83it/s]
+      ERROR: IndexError: index 0 is out of bounds for axis 0 with size 0  (19s)
+[13/38] AV_260625_TA33c1-4  vs  AV_260625_TA33c3-4
+Generate VAE inputs for AV_260625_TA33c1-4:   0%|          | 0/4 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c1-4:  25%|██▌       | 1/4 [00:00<00:00,  4.83it/s]Generate VAE inputs for AV_260625_TA33c1-4: 100%|██████████| 4/4 [00:00<00:00, 19.28it/s]
+Generate VAE inputs for AV_260625_TA33c3-4:   0%|          | 0/6 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-4: 100%|██████████| 6/6 [00:00<00:00, 11887.49it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 98689.51it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity:  25%|██▌       | 1/4 [00:01<00:04,  1.51s/it]Wasserstein similarity: 100%|██████████| 4/4 [00:01<00:00,  2.65it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 7381.09it/s]
+Wasserstein similarity:   0%|          | 0/4 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 4/4 [00:00<00:00, 6017.65it/s]
+Build neighbor dict:   0%|          | 0/4 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 4/4 [00:00<00:00, 16878.49it/s]
+Local prediction:   0%|          | 0/4 [00:00<?, ?it/s]Local prediction:  25%|██▌       | 1/4 [00:00<00:00,  5.61it/s]Local prediction: 100%|██████████| 4/4 [00:00<00:00, 22.40it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (27s)
+[14/38] AV_260625_TA33c2-1  vs  AV_260625_TA33c3-1
+Generate VAE inputs for AV_260625_TA33c2-1:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c2-1: 100%|██████████| 13/13 [00:00<00:00, 9171.73it/s]
+Generate VAE inputs for AV_260625_TA33c3-1:   0%|          | 0/14 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA33c3-1: 100%|██████████| 14/14 [00:00<00:00, 27324.46it/s]
+  0%|          | 0/27 [00:00<?, ?it/s] 56%|█████▌    | 15/27 [00:00<00:00, 132.46it/s]100%|██████████| 27/27 [00:00<00:00, 146.26it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity:   8%|▊         | 1/13 [00:01<00:15,  1.30s/it]Wasserstein similarity: 100%|██████████| 13/13 [00:01<00:00, 10.03it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 23301.69it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 27113.85it/s]
+Build neighbor dict:   0%|          | 0/13 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 13/13 [00:00<00:00, 32168.70it/s]
+Local prediction:   0%|          | 0/9 [00:00<?, ?it/s]Local prediction:  11%|█         | 1/9 [00:00<00:02,  3.97it/s]Local prediction: 100%|██████████| 9/9 [00:00<00:00, 35.70it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (29s)
+[15/38] AV_260625_TA4-c1  vs  AV_260625_TA4-c2
+Generate VAE inputs for AV_260625_TA4-c1:   0%|          | 0/15 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA4-c1: 100%|██████████| 15/15 [00:00<00:00, 10597.03it/s]
+Generate VAE inputs for AV_260625_TA4-c2:   0%|          | 0/15 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_TA4-c2: 100%|██████████| 15/15 [00:00<00:00, 29537.35it/s]
+  0%|          | 0/30 [00:00<?, ?it/s]100%|██████████| 30/30 [00:00<00:00, 182361.04it/s]
+Wasserstein similarity:   0%|          | 0/15 [00:00<?, ?it/s]Wasserstein similarity:   7%|▋         | 1/15 [00:01<00:21,  1.52s/it]Wasserstein similarity: 100%|██████████| 15/15 [00:01<00:00,  9.84it/s]
+Wasserstein similarity:   0%|          | 0/15 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 15/15 [00:00<00:00, 28074.32it/s]
+Wasserstein similarity:   0%|          | 0/15 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 15/15 [00:00<00:00, 37008.56it/s]
+Build neighbor dict:   0%|          | 0/15 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 15/15 [00:00<00:00, 75618.46it/s]
+Local prediction:   0%|          | 0/11 [00:00<?, ?it/s]Local prediction:   9%|▉         | 1/11 [00:00<00:02,  3.54it/s]Local prediction: 100%|██████████| 11/11 [00:00<00:00, 38.86it/s]
+   Step 1: +-5 new pairs (total 9)
+Done: 9 pairs matched.
+      -> [(52, 53), (33, 35), (41, 42), (42, 44), (27, 29), (51, 48), (24, 21), (49, 49), (36, 37)] pairs  (30s)
+[16/38] TA22c1_1  vs  TA22c2_1
+Generate VAE inputs for TA22c1_1:   0%|          | 0/3 [00:00<?, ?it/s]Generate VAE inputs for TA22c1_1: 100%|██████████| 3/3 [00:00<00:00, 6608.67it/s]
+Generate VAE inputs for TA22c2_1:   0%|          | 0/1 [00:00<?, ?it/s]Generate VAE inputs for TA22c2_1: 100%|██████████| 1/1 [00:00<00:00, 1869.95it/s]
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 61455.00it/s]
+Wasserstein similarity:   0%|          | 0/3 [00:00<?, ?it/s]Wasserstein similarity:  33%|███▎      | 1/3 [00:01<00:02,  1.25s/it]Wasserstein similarity: 100%|██████████| 3/3 [00:01<00:00,  2.40it/s]
+Wasserstein similarity:   0%|          | 0/3 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 3/3 [00:00<00:00, 5409.68it/s]
+Wasserstein similarity:   0%|          | 0/3 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 3/3 [00:00<00:00, 5874.38it/s]
+      ERROR: IndexError: index 0 is out of bounds for axis 0 with size 0  (17s)
+[17/38] TA22c1_2  vs  TA22c2_2
+Prediction for TA22c1_2 vs TA22c2_2 already exists, skipping.
+      -> None pairs  (0s)
+[18/38] TA22c2_2  vs  TA22c3_1
+Generate VAE inputs for TA22c2_2:   0%|          | 0/16 [00:00<?, ?it/s]Generate VAE inputs for TA22c2_2:   6%|▋         | 1/16 [00:00<00:03,  4.49it/s]Generate VAE inputs for TA22c2_2: 100%|██████████| 16/16 [00:00<00:00, 42.33it/s]Generate VAE inputs for TA22c2_2: 100%|██████████| 16/16 [00:00<00:00, 36.18it/s]
+Generate VAE inputs for TA22c3_1:   0%|          | 0/10 [00:00<?, ?it/s]Generate VAE inputs for TA22c3_1: 100%|██████████| 10/10 [00:00<00:00, 20733.09it/s]
+  0%|          | 0/26 [00:00<?, ?it/s]100%|██████████| 26/26 [00:00<00:00, 178481.02it/s]
+Wasserstein similarity:   0%|          | 0/16 [00:00<?, ?it/s]Wasserstein similarity:   6%|▋         | 1/16 [00:01<00:19,  1.28s/it]Wasserstein similarity: 100%|██████████| 16/16 [00:01<00:00, 12.50it/s]
+Wasserstein similarity:   0%|          | 0/16 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 16/16 [00:00<00:00, 29089.23it/s]
+Wasserstein similarity:   0%|          | 0/16 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 16/16 [00:00<00:00, 35488.56it/s]
+Build neighbor dict:   0%|          | 0/16 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 16/16 [00:00<00:00, 34309.24it/s]
+Local prediction:   0%|          | 0/9 [00:00<?, ?it/s]Local prediction:  11%|█         | 1/9 [00:00<00:02,  3.68it/s]Local prediction: 100%|██████████| 9/9 [00:00<00:00, 33.07it/s]
+   Step 1: +-5 new pairs (total 4)
+      ERROR: ValueError: XB must be a 2-dimensional array.  (21s)
+[19/38] TA22c2_3  vs  TA22c3_2
+Generate VAE inputs for TA22c2_3:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for TA22c2_3: 100%|██████████| 13/13 [00:00<00:00, 17691.74it/s]
+Generate VAE inputs for TA22c3_2:   0%|          | 0/13 [00:00<?, ?it/s]Generate VAE inputs for TA22c3_2: 100%|██████████| 13/13 [00:00<00:00, 31015.90it/s]
+  0%|          | 0/26 [00:00<?, ?it/s]100%|██████████| 26/26 [00:00<00:00, 155566.20it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity:   8%|▊         | 1/13 [00:01<00:19,  1.62s/it]Wasserstein similarity: 100%|██████████| 13/13 [00:01<00:00,  8.03it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 23717.25it/s]
+Wasserstein similarity:   0%|          | 0/13 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 13/13 [00:00<00:00, 27636.06it/s]
+Build neighbor dict:   0%|          | 0/13 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 13/13 [00:00<00:00, 31427.06it/s]
+Local prediction:   0%|          | 0/10 [00:00<?, ?it/s]Local prediction:  10%|█         | 1/10 [00:00<00:02,  3.66it/s]Local prediction: 100%|██████████| 10/10 [00:00<00:00, 36.56it/s]
+   Step 1: +-3 new pairs (total 10)
+Done: 11 pairs matched.
+      -> [(45, 49), (44, 52), (30, 33), (34, 36), (37, 38), (35, 39), (36, 42), (26, 32), (41, 47), (28, 30), (24, 29)] pairs  (22s)
+[20/38] TA23c2_2  vs  TA23c3_1
+Generate VAE inputs for TA23c2_2:   0%|          | 0/26 [00:00<?, ?it/s]Generate VAE inputs for TA23c2_2: 100%|██████████| 26/26 [00:00<00:00, 22943.80it/s]
+Generate VAE inputs for TA23c3_1:   0%|          | 0/22 [00:00<?, ?it/s]Generate VAE inputs for TA23c3_1: 100%|██████████| 22/22 [00:00<00:00, 18214.51it/s]
+  0%|          | 0/48 [00:00<?, ?it/s]100%|██████████| 48/48 [00:00<00:00, 177850.35it/s]
+Wasserstein similarity:   0%|          | 0/26 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/26 [00:01<00:39,  1.60s/it]Wasserstein similarity: 100%|██████████| 26/26 [00:01<00:00, 16.25it/s]
+Wasserstein similarity:   0%|          | 0/26 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 26/26 [00:00<00:00, 44620.26it/s]
+Wasserstein similarity:   0%|          | 0/26 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 26/26 [00:00<00:00, 51978.98it/s]
+Build neighbor dict:   0%|          | 0/26 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 26/26 [00:00<00:00, 116883.07it/s]
+Local prediction:   0%|          | 0/18 [00:00<?, ?it/s]Local prediction:   6%|▌         | 1/18 [00:00<00:04,  3.47it/s]Local prediction:  89%|████████▉ | 16/18 [00:00<00:00, 36.11it/s]Local prediction: 100%|██████████| 18/18 [00:00<00:00, 34.48it/s]
+   Step 1: +-3 new pairs (total 18)
+Done: 20 pairs matched.
+      -> [(18, 23), (44, 42), (51, 53), (35, 36), (28, 27), (56, 55), (58, 58), (38, 40), (46, 47), (34, 33), (24, 25), (32, 32), (43, 44), (61, 62), (49, 51), (36, 35), (27, 29), (30, 31), (54, 57), (55, 56)] pairs  (32s)
+[21/38] TA23c2_3  vs  TA23c3_2
+Generate VAE inputs for TA23c2_3:   0%|          | 0/22 [00:00<?, ?it/s]Generate VAE inputs for TA23c2_3: 100%|██████████| 22/22 [00:00<00:00, 13161.42it/s]
+Generate VAE inputs for TA23c3_2:   0%|          | 0/28 [00:00<?, ?it/s]Generate VAE inputs for TA23c3_2: 100%|██████████| 28/28 [00:00<00:00, 29997.58it/s]
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 198593.94it/s]
+Wasserstein similarity:   0%|          | 0/22 [00:00<?, ?it/s]Wasserstein similarity:   5%|▍         | 1/22 [00:01<00:28,  1.37s/it]Wasserstein similarity: 100%|██████████| 22/22 [00:01<00:00, 16.03it/s]
+Wasserstein similarity:   0%|          | 0/22 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 22/22 [00:00<00:00, 41047.46it/s]
+Wasserstein similarity:   0%|          | 0/22 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 22/22 [00:00<00:00, 46045.25it/s]
+Build neighbor dict:   0%|          | 0/22 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 22/22 [00:00<00:00, 117847.62it/s]
+Local prediction:   0%|          | 0/16 [00:00<?, ?it/s]Local prediction:   6%|▋         | 1/16 [00:00<00:04,  3.19it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 35.18it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 29.54it/s]
+   Step 1: +-10 new pairs (total 11)
+Done: 20 pairs matched.
+      -> [(28, 30), (30, 33), (24, 26), (41, 45), (50, 54), (26, 29), (44, 50), (40, 43), (32, 32), (48, 52), (34, 38), (23, 27), (31, 34), (37, 41), (38, 42), (43, 44), (45, 47), (46, 51), (54, 57), (56, 59)] pairs  (24s)
+[22/38] TA23c2_4  vs  TA23c3_3
+Prediction for TA23c2_4 vs TA23c3_3 already exists, skipping.
+      -> None pairs  (0s)
+[23/38] TA24c1_1  vs  TA24c2_1
+Prediction for TA24c1_1 vs TA24c2_1 already exists, skipping.
+      -> None pairs  (0s)
+[24/38] TA24c1_2  vs  TA24c2_3
+Generate VAE inputs for TA24c1_2:   0%|          | 0/20 [00:00<?, ?it/s]Generate VAE inputs for TA24c1_2: 100%|██████████| 20/20 [00:00<00:00, 18766.46it/s]
+Generate VAE inputs for TA24c2_3:   0%|          | 0/16 [00:00<?, ?it/s]Generate VAE inputs for TA24c2_3: 100%|██████████| 16/16 [00:00<00:00, 10100.67it/s]
+  0%|          | 0/36 [00:00<?, ?it/s]100%|██████████| 36/36 [00:00<00:00, 147312.14it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/20 [00:01<00:24,  1.28s/it]Wasserstein similarity: 100%|██████████| 20/20 [00:01<00:00, 15.60it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 39420.15it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 45964.98it/s]
+Build neighbor dict:   0%|          | 0/20 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 20/20 [00:00<00:00, 70849.73it/s]
+Local prediction:   0%|          | 0/13 [00:00<?, ?it/s]Local prediction:   8%|▊         | 1/13 [00:00<00:03,  3.34it/s]Local prediction: 100%|██████████| 13/13 [00:00<00:00, 43.36it/s]
+   Step 1: +-3 new pairs (total 12)
+Done: 13 pairs matched.
+      -> [(21, 16), (31, 27), (26, 20), (38, 35), (42, 38), (45, 39), (22, 17), (24, 19), (33, 31), (32, 29), (37, 33), (29, 24), (28, 25)] pairs  (17s)
+[25/38] TA24c1_3  vs  TA24c3_2
+Generate VAE inputs for TA24c1_3:   0%|          | 0/31 [00:00<?, ?it/s]Generate VAE inputs for TA24c1_3: 100%|██████████| 31/31 [00:00<00:00, 32136.29it/s]
+Generate VAE inputs for TA24c3_2:   0%|          | 0/27 [00:00<?, ?it/s]Generate VAE inputs for TA24c3_2: 100%|██████████| 27/27 [00:00<00:00, 19461.46it/s]
+  0%|          | 0/58 [00:00<?, ?it/s]100%|██████████| 58/58 [00:00<00:00, 164482.51it/s]
+Wasserstein similarity:   0%|          | 0/31 [00:00<?, ?it/s]Wasserstein similarity:   3%|▎         | 1/31 [00:01<00:47,  1.58s/it]Wasserstein similarity: 100%|██████████| 31/31 [00:01<00:00, 19.65it/s]
+Wasserstein similarity:   0%|          | 0/31 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 31/31 [00:00<00:00, 51474.04it/s]
+Wasserstein similarity:   0%|          | 0/31 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 31/31 [00:00<00:00, 64304.36it/s]
+Build neighbor dict:   0%|          | 0/31 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 31/31 [00:00<00:00, 135300.13it/s]
+Local prediction:   0%|          | 0/23 [00:00<?, ?it/s]Local prediction:   4%|▍         | 1/23 [00:00<00:06,  3.45it/s]Local prediction:  70%|██████▉   | 16/23 [00:00<00:00, 35.83it/s]Local prediction: 100%|██████████| 23/23 [00:00<00:00, 43.74it/s]
+   Step 1: +-24 new pairs (total 0)
+      ERROR: ValueError: not enough values to unpack (expected 2, got 1)  (31s)
+[26/38] TA24c2_2  vs  TA24c3_1
+Generate VAE inputs for TA24c2_2:   0%|          | 0/23 [00:00<?, ?it/s]Generate VAE inputs for TA24c2_2: 100%|██████████| 23/23 [00:00<00:00, 27697.10it/s]
+Generate VAE inputs for TA24c3_1:   0%|          | 0/21 [00:00<?, ?it/s]Generate VAE inputs for TA24c3_1: 100%|██████████| 21/21 [00:00<00:00, 26269.13it/s]
+  0%|          | 0/44 [00:00<?, ?it/s]100%|██████████| 44/44 [00:00<00:00, 171355.04it/s]
+Wasserstein similarity:   0%|          | 0/23 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/23 [00:01<00:28,  1.30s/it]Wasserstein similarity: 100%|██████████| 23/23 [00:01<00:00, 17.72it/s]
+Wasserstein similarity:   0%|          | 0/23 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 23/23 [00:00<00:00, 44009.58it/s]
+Wasserstein similarity:   0%|          | 0/23 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 23/23 [00:00<00:00, 53004.94it/s]
+Build neighbor dict:   0%|          | 0/23 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 23/23 [00:00<00:00, 102083.59it/s]
+Local prediction:   0%|          | 0/16 [00:00<?, ?it/s]Local prediction:   6%|▋         | 1/16 [00:00<00:04,  3.16it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 34.56it/s]Local prediction: 100%|██████████| 16/16 [00:00<00:00, 29.10it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (25s)
+[27/38] TA25c1_1  vs  TA25c2_1
+Generate VAE inputs for TA25c1_1:   0%|          | 0/25 [00:00<?, ?it/s]Generate VAE inputs for TA25c1_1:  64%|██████▍   | 16/25 [00:00<00:00, 75.00it/s]Generate VAE inputs for TA25c1_1: 100%|██████████| 25/25 [00:00<00:00, 115.36it/s]
+Generate VAE inputs for TA25c2_1:   0%|          | 0/22 [00:00<?, ?it/s]Generate VAE inputs for TA25c2_1: 100%|██████████| 22/22 [00:00<00:00, 20182.57it/s]
+  0%|          | 0/47 [00:00<?, ?it/s]100%|██████████| 47/47 [00:00<00:00, 173838.00it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/25 [00:01<00:31,  1.31s/it]Wasserstein similarity: 100%|██████████| 25/25 [00:01<00:00, 19.06it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 38678.57it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 49766.30it/s]
+Build neighbor dict:   0%|          | 0/25 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 25/25 [00:00<00:00, 125879.47it/s]
+Local prediction:   0%|          | 0/13 [00:00<?, ?it/s]Local prediction:   8%|▊         | 1/13 [00:00<00:03,  3.01it/s]Local prediction: 100%|██████████| 13/13 [00:00<00:00, 39.05it/s]
+   Step 1: +-5 new pairs (total 8)
+Done: 11 pairs matched.
+      -> [(34, 33), (55, 53), (62, 62), (39, 36), (40, 41), (27, 32), (29, 34), (45, 50), (46, 45), (51, 60), (54, 63)] pairs  (32s)
+[28/38] TA25c1_1  vs  TA25c3_1
+Generate VAE inputs for TA25c1_1:   0%|          | 0/25 [00:00<?, ?it/s]Generate VAE inputs for TA25c1_1: 100%|██████████| 25/25 [00:00<00:00, 27850.62it/s]
+Generate VAE inputs for TA25c3_1:   0%|          | 0/25 [00:00<?, ?it/s]Generate VAE inputs for TA25c3_1: 100%|██████████| 25/25 [00:00<00:00, 18995.94it/s]
+  0%|          | 0/50 [00:00<?, ?it/s] 24%|██▍       | 12/50 [00:00<00:00, 117.80it/s] 52%|█████▏    | 26/50 [00:00<00:00, 119.82it/s] 96%|█████████▌| 48/50 [00:00<00:00, 154.12it/s]100%|██████████| 50/50 [00:00<00:00, 138.78it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity:   4%|▍         | 1/25 [00:01<00:39,  1.66s/it]Wasserstein similarity: 100%|██████████| 25/25 [00:01<00:00, 15.02it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 37435.77it/s]
+Wasserstein similarity:   0%|          | 0/25 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 25/25 [00:00<00:00, 52142.02it/s]
+Build neighbor dict:   0%|          | 0/25 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 25/25 [00:00<00:00, 121222.66it/s]
+Local prediction:   0%|          | 0/21 [00:00<?, ?it/s]Local prediction:   5%|▍         | 1/21 [00:00<00:06,  3.17it/s]Local prediction:  76%|███████▌  | 16/21 [00:00<00:00, 36.93it/s]Local prediction: 100%|██████████| 21/21 [00:00<00:00, 40.36it/s]
+   Step 1: +-20 new pairs (total 1)
+      ERROR: IndexError: list index out of range  (32s)
+[29/38] TA25c1_2  vs  TA25c3_2
+Generate VAE inputs for TA25c1_2:   0%|          | 0/72 [00:00<?, ?it/s]Generate VAE inputs for TA25c1_2:  89%|████████▉ | 64/72 [00:00<00:00, 637.29it/s]Generate VAE inputs for TA25c1_2: 100%|██████████| 72/72 [00:00<00:00, 709.50it/s]
+Generate VAE inputs for TA25c3_2:   0%|          | 0/73 [00:00<?, ?it/s]Generate VAE inputs for TA25c3_2: 100%|██████████| 73/73 [00:00<00:00, 740.20it/s]
+  0%|          | 0/145 [00:00<?, ?it/s]100%|██████████| 145/145 [00:00<00:00, 220672.74it/s]
+Wasserstein similarity:   0%|          | 0/72 [00:00<?, ?it/s]Wasserstein similarity:   1%|▏         | 1/72 [00:01<01:33,  1.31s/it]Wasserstein similarity:  89%|████████▉ | 64/72 [00:02<00:00, 35.44it/s]Wasserstein similarity: 100%|██████████| 72/72 [00:02<00:00, 32.84it/s]
+Wasserstein similarity:   0%|          | 0/72 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 72/72 [00:00<00:00, 28278.85it/s]
+Wasserstein similarity:   0%|          | 0/72 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 72/72 [00:00<00:00, 36936.14it/s]
+Build neighbor dict:   0%|          | 0/72 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 72/72 [00:00<00:00, 146312.93it/s]
+Local prediction:   0%|          | 0/54 [00:00<?, ?it/s]Local prediction:   2%|▏         | 1/54 [00:00<00:16,  3.25it/s]Local prediction:  30%|██▉       | 16/54 [00:00<00:01, 33.05it/s]Local prediction:  59%|█████▉    | 32/54 [00:07<00:05,  3.86it/s]/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (150s)
+[30/38] TA25c1_3  vs  TA25c2_2
+
+Generate VAE inputs for TA25c1_3:   0%|          | 0/42 [00:00<?, ?it/s][A
+Generate VAE inputs for TA25c1_3:  38%|███▊      | 16/42 [00:00<00:00, 72.83it/s][A
+Generate VAE inputs for TA25c1_3:  76%|███████▌  | 32/42 [00:07<00:02,  3.84it/s][AGenerate VAE inputs for TA25c1_3: 100%|██████████| 42/42 [00:07<00:00,  5.87it/s]
+
+Generate VAE inputs for TA25c2_2:   0%|          | 0/40 [00:00<?, ?it/s][AGenerate VAE inputs for TA25c2_2: 100%|██████████| 40/40 [00:00<00:00, 742.25it/s]
+
+  0%|          | 0/82 [00:00<?, ?it/s][A100%|██████████| 82/82 [00:00<00:00, 166714.94it/s]
+Local prediction:  87%|████████▋ | 47/54 [00:17<00:02,  2.71it/s]
+Wasserstein similarity:   0%|          | 0/42 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/42 [00:01<00:54,  1.32s/it]Wasserstein similarity: 100%|██████████| 42/42 [00:01<00:00, 31.74it/s]
+Wasserstein similarity:   0%|          | 0/42 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 42/42 [00:00<00:00, 61230.72it/s]
+Wasserstein similarity:   0%|          | 0/42 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 42/42 [00:00<00:00, 64693.63it/s]
+Build neighbor dict:   0%|          | 0/42 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 42/42 [00:00<00:00, 118947.18it/s]
+Local prediction:   0%|          | 0/17 [00:00<?, ?it/s]Local prediction:   6%|▌         | 1/17 [00:00<00:04,  3.22it/s]Local prediction:  94%|█████████▍| 16/17 [00:00<00:00, 34.81it/s]Local prediction: 100%|██████████| 17/17 [00:00<00:00, 31.14it/s]
+   Step 1: +-15 new pairs (total 25)
+Done: 33 pairs matched.
+      -> [(43, 43), (66, 66), (53, 50), (64, 56), (33, 32), (44, 41), (52, 48), (78, 79), (75, 71), (28, 26), (27, 24), (47, 39), (62, 58), (71, 67), (42, 40), (24, 22), (41, 38), (35, 31), (31, 30), (48, 46), (40, 36), (39, 37), (36, 35), (45, 44), (55, 51), (23, 20), (30, 28), (34, 34), (56, 47), (57, 55), (63, 57), (67, 64), (79, 80)] pairs  (42s)
+[31/38] TA26c1_1  vs  TA26c2_1
+Generate VAE inputs for TA26c1_1:   0%|          | 0/48 [00:00<?, ?it/s]Generate VAE inputs for TA26c1_1: 100%|██████████| 48/48 [00:00<00:00, 803.04it/s]
+Generate VAE inputs for TA26c2_1:   0%|          | 0/44 [00:00<?, ?it/s]Generate VAE inputs for TA26c2_1: 100%|██████████| 44/44 [00:00<00:00, 755.63it/s]
+  0%|          | 0/92 [00:00<?, ?it/s]100%|██████████| 92/92 [00:00<00:00, 175159.31it/s]
+Wasserstein similarity:   0%|          | 0/48 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/48 [00:01<01:00,  1.30s/it]Wasserstein similarity: 100%|██████████| 48/48 [00:01<00:00, 36.99it/s]
+Wasserstein similarity:   0%|          | 0/48 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 48/48 [00:00<00:00, 75488.04it/s]
+Wasserstein similarity:   0%|          | 0/48 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 48/48 [00:00<00:00, 89043.16it/s]
+Build neighbor dict:   0%|          | 0/48 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 48/48 [00:00<00:00, 171927.06it/s]
+Local prediction:   0%|          | 0/31 [00:00<?, ?it/s]Local prediction:   3%|▎         | 1/31 [00:00<00:09,  3.12it/s]Local prediction:  52%|█████▏    | 16/31 [00:00<00:00, 34.96it/s]Local prediction: 100%|██████████| 31/31 [00:00<00:00, 56.79it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (34s)
+[32/38] TA26c1_2  vs  TA26c2_2
+Generate VAE inputs for TA26c1_2:   0%|          | 0/43 [00:00<?, ?it/s]Generate VAE inputs for TA26c1_2:  37%|███▋      | 16/43 [00:00<00:00, 76.11it/s]Generate VAE inputs for TA26c1_2:  74%|███████▍  | 32/43 [00:06<00:02,  3.93it/s]Generate VAE inputs for TA26c1_2: 100%|██████████| 43/43 [00:06<00:00,  6.16it/s]
+Generate VAE inputs for TA26c2_2:   0%|          | 0/45 [00:00<?, ?it/s]Generate VAE inputs for TA26c2_2: 100%|██████████| 45/45 [00:00<00:00, 758.42it/s]
+  0%|          | 0/88 [00:00<?, ?it/s]100%|██████████| 88/88 [00:00<00:00, 168077.76it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/43 [00:01<01:05,  1.56s/it]Wasserstein similarity: 100%|██████████| 43/43 [00:01<00:00, 27.61it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 71314.78it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 83112.94it/s]
+Build neighbor dict:   0%|          | 0/43 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 43/43 [00:00<00:00, 158763.27it/s]
+Local prediction:   0%|          | 0/36 [00:00<?, ?it/s]Local prediction:   3%|▎         | 1/36 [00:00<00:10,  3.40it/s]Local prediction:  44%|████▍     | 16/36 [00:00<00:00, 37.16it/s]Local prediction:  89%|████████▉ | 32/36 [00:07<00:01,  3.78it/s]Local prediction: 100%|██████████| 36/36 [00:07<00:00,  4.89it/s]
+/DATA/F2FMatcher/src/f2fmatcher/matching/spatial.py:62: RuntimeWarning: invalid value encountered in scalar divide
+  cos_val = np.clip((side1 ** 2 + side2 ** 2 - opposite ** 2) / (2 * side1 * side2), -1.0, 1.0)
+      ERROR: ValueError: Input contains NaN.  (43s)
+[33/38] TA26c1_2  vs  TA26c3_1
+Generate VAE inputs for TA26c1_2:   0%|          | 0/43 [00:00<?, ?it/s]Generate VAE inputs for TA26c1_2:  37%|███▋      | 16/43 [00:00<00:00, 73.42it/s]Generate VAE inputs for TA26c1_2:  74%|███████▍  | 32/43 [00:07<00:02,  3.85it/s]Generate VAE inputs for TA26c1_2: 100%|██████████| 43/43 [00:07<00:00,  6.02it/s]
+Generate VAE inputs for TA26c3_1:   0%|          | 0/49 [00:00<?, ?it/s]Generate VAE inputs for TA26c3_1: 100%|██████████| 49/49 [00:00<00:00, 902.30it/s]
+  0%|          | 0/92 [00:00<?, ?it/s]100%|██████████| 92/92 [00:00<00:00, 220374.62it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/43 [00:01<00:52,  1.24s/it]Wasserstein similarity: 100%|██████████| 43/43 [00:01<00:00, 34.58it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 72402.68it/s]
+Wasserstein similarity:   0%|          | 0/43 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 43/43 [00:00<00:00, 76616.43it/s]
+Build neighbor dict:   0%|          | 0/43 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 43/43 [00:00<00:00, 138521.56it/s]
+Local prediction:   0%|          | 0/21 [00:00<?, ?it/s]Local prediction:   5%|▍         | 1/21 [00:00<00:06,  3.06it/s]Local prediction:  76%|███████▌  | 16/21 [00:00<00:00, 33.71it/s]Local prediction: 100%|██████████| 21/21 [00:00<00:00, 37.22it/s]
+   Step 1: +-41 new pairs (total 2)
+      ERROR: IndexError: list index out of range  (42s)
+[34/38] TA27c1_1  vs  TA27c2_1
+Generate VAE inputs for TA27c1_1:   0%|          | 0/53 [00:00<?, ?it/s]Generate VAE inputs for TA27c1_1: 100%|██████████| 53/53 [00:00<00:00, 832.50it/s]
+Generate VAE inputs for TA27c2_1:   0%|          | 0/58 [00:00<?, ?it/s]Generate VAE inputs for TA27c2_1: 100%|██████████| 58/58 [00:00<00:00, 987.78it/s]
+  0%|          | 0/111 [00:00<?, ?it/s]100%|██████████| 111/111 [00:00<00:00, 178037.38it/s]
+Wasserstein similarity:   0%|          | 0/53 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/53 [00:01<01:12,  1.39s/it]Wasserstein similarity: 100%|██████████| 53/53 [00:01<00:00, 38.16it/s]
+Wasserstein similarity:   0%|          | 0/53 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 53/53 [00:00<00:00, 91556.06it/s]
+Wasserstein similarity:   0%|          | 0/53 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 53/53 [00:00<00:00, 101182.57it/s]
+Build neighbor dict:   0%|          | 0/53 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 53/53 [00:00<00:00, 121408.03it/s]
+Local prediction:   0%|          | 0/25 [00:00<?, ?it/s]Local prediction:   4%|▍         | 1/25 [00:00<00:07,  3.16it/s]Local prediction:  64%|██████▍   | 16/25 [00:00<00:00, 33.87it/s]Local prediction: 100%|██████████| 25/25 [00:00<00:00, 44.43it/s]
+   Step 1: +-42 new pairs (total 11)
+Done: 49 pairs matched.
+      -> [(80, 83), (27, 34), (64, 62), (71, 71), (79, 80), (102, 109), (90, 92), (62, 63), (95, 97), (83, 86), (100, 108), (19, 25), (24, 31), (28, 29), (29, 32), (30, 36), (31, 35), (34, 38), (35, 37), (37, 39), (39, 41), (40, 48), (42, 44), (43, 46), (45, 55), (47, 49), (49, 54), (51, 53), (52, 56), (55, 58), (57, 61), (61, 66), (63, 64), (66, 68), (70, 73), (72, 77), (73, 74), (77, 79), (81, 89), (84, 87), (85, 94), (86, 91), (87, 95), (89, 98), (93, 100), (94, 103), (96, 101), (97, 107), (99, 106)] pairs  (56s)
+[35/38] TA27c1_2  vs  TA27c3_1
+Generate VAE inputs for TA27c1_2:   0%|          | 0/59 [00:00<?, ?it/s]Generate VAE inputs for TA27c1_2: 100%|██████████| 59/59 [00:00<00:00, 1011.87it/s]
+Generate VAE inputs for TA27c3_1:   0%|          | 0/65 [00:00<?, ?it/s]Generate VAE inputs for TA27c3_1: 100%|██████████| 65/65 [00:00<00:00, 651.52it/s]
+  0%|          | 0/124 [00:00<?, ?it/s]100%|██████████| 124/124 [00:00<00:00, 170802.53it/s]
+Wasserstein similarity:   0%|          | 0/59 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/59 [00:01<01:19,  1.36s/it]Wasserstein similarity: 100%|██████████| 59/59 [00:01<00:00, 43.24it/s]
+Wasserstein similarity:   0%|          | 0/59 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 59/59 [00:00<00:00, 91214.13it/s]
+Wasserstein similarity:   0%|          | 0/59 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 59/59 [00:00<00:00, 111020.16it/s]
+Build neighbor dict:   0%|          | 0/59 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 59/59 [00:00<00:00, 121544.17it/s]
+Local prediction:   0%|          | 0/52 [00:00<?, ?it/s]Local prediction:   2%|▏         | 1/52 [00:00<00:16,  3.15it/s]Local prediction:  31%|███       | 16/52 [00:00<00:01, 33.08it/s]Local prediction:  62%|██████▏   | 32/52 [00:07<00:05,  3.76it/s]Local prediction:  92%|█████████▏| 48/52 [00:07<00:00,  6.51it/s]Local prediction: 100%|██████████| 52/52 [00:07<00:00,  6.70it/s]
+   Step 1: +-53 new pairs (total 1)
+      ERROR: IndexError: list index out of range  (75s)
+[36/38] TA27c1_3  vs  TA27c3_2
+Generate VAE inputs for TA27c1_3:   0%|          | 0/47 [00:00<?, ?it/s]Generate VAE inputs for TA27c1_3: 100%|██████████| 47/47 [00:00<00:00, 810.24it/s]
+Generate VAE inputs for TA27c3_2:   0%|          | 0/47 [00:00<?, ?it/s]Generate VAE inputs for TA27c3_2: 100%|██████████| 47/47 [00:00<00:00, 745.40it/s]
+  0%|          | 0/94 [00:00<?, ?it/s]100%|██████████| 94/94 [00:00<00:00, 210162.35it/s]
+Wasserstein similarity:   0%|          | 0/47 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/47 [00:01<01:01,  1.35s/it]Wasserstein similarity: 100%|██████████| 47/47 [00:01<00:00, 34.92it/s]
+Wasserstein similarity:   0%|          | 0/47 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 47/47 [00:00<00:00, 74784.63it/s]
+Wasserstein similarity:   0%|          | 0/47 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 47/47 [00:00<00:00, 95741.76it/s]
+Build neighbor dict:   0%|          | 0/47 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 47/47 [00:00<00:00, 161849.17it/s]
+Local prediction:   0%|          | 0/42 [00:00<?, ?it/s]Local prediction:   2%|▏         | 1/42 [00:00<00:12,  3.39it/s]Local prediction:  38%|███▊      | 16/42 [00:00<00:00, 36.40it/s]Local prediction:  76%|███████▌  | 32/42 [00:07<00:02,  3.77it/s]Local prediction: 100%|██████████| 42/42 [00:07<00:00,  5.69it/s]
+   Step 1: +-38 new pairs (total 4)
+Done: 36 pairs matched.
+      -> [(38, 29), (39, 24), (72, 71), (46, 34), (27, 22), (28, 31), (31, 20), (32, 23), (34, 30), (37, 39), (41, 41), (48, 40), (49, 38), (50, 52), (51, 44), (53, 43), (54, 51), (55, 53), (56, 54), (59, 58), (61, 63), (63, 69), (64, 55), (67, 62), (68, 57), (70, 74), (74, 82), (75, 67), (78, 72), (79, 78), (84, 87), (85, 75), (87, 85), (90, 81), (91, 91), (92, 89)] pairs  (44s)
+[37/38] TA28c1_1  vs  TA28c2_1
+Generate VAE inputs for TA28c1_1:   0%|          | 0/73 [00:00<?, ?it/s]Generate VAE inputs for TA28c1_1: 100%|██████████| 73/73 [00:00<00:00, 758.99it/s]
+Generate VAE inputs for TA28c2_1:   0%|          | 0/76 [00:00<?, ?it/s]Generate VAE inputs for TA28c2_1: 100%|██████████| 76/76 [00:00<00:00, 759.19it/s]
+  0%|          | 0/149 [00:00<?, ?it/s]100%|██████████| 149/149 [00:00<00:00, 193124.63it/s]
+Wasserstein similarity:   0%|          | 0/73 [00:00<?, ?it/s]Wasserstein similarity:   1%|▏         | 1/73 [00:01<01:35,  1.33s/it]Wasserstein similarity:  88%|████████▊ | 64/73 [00:02<00:00, 35.41it/s]Wasserstein similarity: 100%|██████████| 73/73 [00:02<00:00, 33.16it/s]
+Wasserstein similarity:   0%|          | 0/73 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 73/73 [00:00<00:00, 33869.93it/s]
+Wasserstein similarity:   0%|          | 0/73 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 73/73 [00:00<00:00, 36818.69it/s]
+Build neighbor dict:   0%|          | 0/73 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 73/73 [00:00<00:00, 108115.89it/s]
+Local prediction:   0%|          | 0/48 [00:00<?, ?it/s]Local prediction:   2%|▏         | 1/48 [00:00<00:13,  3.42it/s]Local prediction:  33%|███▎      | 16/48 [00:00<00:01, 31.71it/s]Local prediction:  67%|██████▋   | 32/48 [00:07<00:04,  3.82it/s]Local prediction: 100%|██████████| 48/48 [00:07<00:00,  6.60it/s]Local prediction: 100%|██████████| 48/48 [00:07<00:00,  6.27it/s]
+   Step 1: +-65 new pairs (total 6)
+Done: 53 pairs matched.
+      -> [(117, 136), (32, 49), (116, 128), (126, 144), (41, 60), (35, 53), (31, 44), (34, 38), (39, 43), (45, 57), (47, 46), (48, 50), (49, 59), (51, 58), (56, 71), (59, 74), (61, 77), (63, 70), (64, 78), (65, 83), (68, 84), (69, 81), (70, 87), (74, 89), (75, 85), (77, 93), (79, 94), (80, 98), (81, 91), (83, 100), (87, 103), (88, 99), (90, 104), (92, 101), (95, 105), (96, 113), (97, 109), (98, 111), (100, 108), (101, 112), (102, 114), (103, 119), (109, 124), (110, 133), (111, 134), (112, 122), (113, 123), (114, 135), (118, 138), (123, 132), (124, 140), (130, 152), (135, 145)] pairs  (160s)
+[38/38] TA28c1_2  vs  TA28c3_1
+Generate VAE inputs for TA28c1_2:   0%|          | 0/66 [00:00<?, ?it/s]Generate VAE inputs for TA28c1_2: 100%|██████████| 66/66 [00:00<00:00, 678.90it/s]
+Generate VAE inputs for TA28c3_1:   0%|          | 0/64 [00:00<?, ?it/s]Generate VAE inputs for TA28c3_1: 100%|██████████| 64/64 [00:00<00:00, 664.89it/s]
+  0%|          | 0/130 [00:00<?, ?it/s]100%|██████████| 130/130 [00:00<00:00, 169440.50it/s]
+Wasserstein similarity:   0%|          | 0/66 [00:00<?, ?it/s]Wasserstein similarity:   2%|▏         | 1/66 [00:01<01:27,  1.35s/it]Wasserstein similarity:  97%|█████████▋| 64/66 [00:02<00:00, 33.57it/s]Wasserstein similarity: 100%|██████████| 66/66 [00:02<00:00, 28.65it/s]
+Wasserstein similarity:   0%|          | 0/66 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 66/66 [00:00<00:00, 29213.18it/s]
+Wasserstein similarity:   0%|          | 0/66 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 66/66 [00:00<00:00, 35793.13it/s]
+Build neighbor dict:   0%|          | 0/66 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 66/66 [00:00<00:00, 123637.37it/s]
+Local prediction:   0%|          | 0/38 [00:00<?, ?it/s]Local prediction:   3%|▎         | 1/38 [00:00<00:11,  3.10it/s]Local prediction:  42%|████▏     | 16/38 [00:00<00:00, 31.74it/s]Local prediction:  84%|████████▍ | 32/38 [00:07<00:01,  3.71it/s]Local prediction: 100%|██████████| 38/38 [00:07<00:00,  5.05it/s]
+   Step 1: +-15 new pairs (total 49)
+Done: 56 pairs matched.
+      -> [(72, 73), (119, 127), (59, 58), (101, 97), (43, 43), (70, 67), (99, 109), (77, 78), (80, 80), (34, 34), (109, 110), (93, 89), (68, 72), (62, 62), (64, 65), (55, 59), (41, 45), (98, 103), (104, 104), (31, 31), (38, 46), (114, 117), (45, 42), (85, 84), (115, 125), (111, 106), (30, 32), (81, 77), (105, 108), (116, 111), (90, 92), (50, 56), (107, 102), (32, 41), (46, 49), (118, 126), (97, 91), (89, 90), (113, 118), (106, 112), (76, 74), (121, 128), (120, 120), (79, 79), (54, 53), (94, 95), (117, 121), (96, 98), (88, 88), (26, 36), (37, 35), (48, 47), (63, 60), (73, 68), (82, 87), (86, 81)] pairs  (99s)
+
+All done in 1267s
