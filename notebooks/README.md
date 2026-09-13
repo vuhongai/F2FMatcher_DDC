@@ -1,13 +1,14 @@
 # QUA deep-dive notebooks
 
 Single-fiber analysis of the Quadriceps (QUA) samples of study 22-082, answering the
-two biological questions on top of the **precomputed, unbiased fiber clustering**
+biological questions on top of the **precomputed, unbiased fiber clustering**
 (morphology + HE, `ch3` preset).
 
 | Notebook | Question |
 |---|---|
 | `Q1_mdx_vs_WT.ipynb` | Disease signature: **mdx (DMD model) vs WT** — globally, per morphological cluster, and in marker–marker correlation structure. |
 | `Q2_AAV9_vs_LICA1.ipynb` | Treatment effect: **AAV9 vs LICA1** micro-dystrophin gene therapy (same dose) — cluster-composition shift, sarcolemmal dystrophin restoration, inflammation/necrosis, lysosomal burden, and restored correlations. |
+| `Q3_restoration_mechanisms.ipynb` | **Mechanisms**: (1) what underlies restoration in responsive clusters — basal-lamina/laminin scaffold (dominant), oxidative identity, myotropic capsid; (2) what defines the resistant Cls5 — fast-glycolytic IIb remodeled architecture, dissociating molecular (dystrophin restored) from morphological rescue. Plus a **literature synthesis** (confirmed vs newly discovered) with verified PubMed citations. |
 
 ## Reproducibility design
 - **No re-clustering.** Both notebooks load the committed UMAP cache
