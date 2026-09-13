@@ -33,3 +33,5 @@ results/QUA/eval/*.log
 
 results/benchmark/f2fmatcher_output/
 results/benchmark/f2fmatcher_output_ablation/
+results/benchmark/*.log
+results/benchmark/vismatch/

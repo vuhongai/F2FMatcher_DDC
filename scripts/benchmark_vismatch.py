@@ -100,12 +100,12 @@ def _dinov2_patch_feats(model, image, size, device):
     x = (x - DINO_MEAN) / DINO_STD
     x = torch.from_numpy(x).permute(2, 0, 1).unsqueeze(0).to(device)
     with torch.no_grad():
-        f = model.forward_features(x)          # (1, N, D) patch tokens
+        f = model.forward_features(x)["x_norm_patchtokens"]   # (1, N, D)
     f = f[0].cpu().numpy()
     n = size // DINO_PATCH
     gy, gx = np.meshgrid(np.arange(n), np.arange(n), indexing="ij")
-    centers = np.stack([gx * DINO_PATCH + DINO_PATCH / 2,
-                        gy * DINO_PATCH + DINO_PATCH / 2], axis=1).astype(np.float64)
+    centers = np.stack([gx.ravel() * DINO_PATCH + DINO_PATCH / 2,
+                        gy.ravel() * DINO_PATCH + DINO_PATCH / 2], axis=1).astype(np.float64)
     scale = np.array([ow / size, oh / size])   # resized -> original
     return f, centers, scale
 

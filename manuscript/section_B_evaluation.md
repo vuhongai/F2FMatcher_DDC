@@ -1,8 +1,9 @@
 # §B. Evaluation of the method — working draft (WT cohort)
 
 > **Status:** B1 **done** · B2 self-supervised accuracy **done** (adapted to the available star
-> topology) · B3 **partial** (geometric baselines done; learned baselines + ablations pending GPU) ·
-> B4 **pending**. Prose below is a first draft in manuscript voice — to be refined with the PI.
+> topology) · B3 geometric baselines **done** · **B4 curated-GT P/R/F1 + ablation done** (TA crop
+> pairs) · B4c appearance/dense baselines (DINOv2, VisMatch) **setup ready, pending GPU** · B5
+> robustness **pending**. Prose below is a first draft in manuscript voice — to be refined with the PI.
 > All numbers are computed, reproducible, and sourced (see *Provenance*).
 
 ## Scope
@@ -150,30 +151,108 @@ appearance-only baselines DINOv2 and keypoint matchers, plus ablations) is the r
 
 ---
 
-## Remaining work (B2 ground truth · B3 full benchmark · B4 robustness)
+## B4. Definitive accuracy against curated ground truth (TA crop pairs)
+
+The self-supervised checks in B2 are label-free proxies. We now report the **definitive** accuracy:
+precision / recall / F1 against a **curated expert ground truth** of fibre correspondences on TA
+muscle crop pairs.
+
+**Ground truth.** 73 TA crop images (~486 px, WGA 10×) with **1,315 expert-annotated fibre
+correspondences** across **38 image-pairs** (`datasets/training_data_updated.csv`). Each annotation is
+a pair of CellPose region labels (one per image) judged by the expert to be the same physical fibre.
+We verified the label space is exactly reproducible: re-running the annotation CellPose setup
+(`CP_AV_WGA_Dia_Qua_TA_AxioScan10X`, channels=[0,0], flow_threshold=0.4, cellprob_threshold=0,
+diameter=model default, cellpose 2.2.2) reproduces **100%** of the annotated labels (`gt_in_fresh=1.0`),
+so every method is scored in the same label space.
+
+**Edge-ROI caveat (important).** F2FMatcher only matches ROIs whose full 256-px crop window fits
+inside the image (`filter_ROIs`); ROIs with a centroid within 128 px of any border are discarded by
+design. On these 486-px crops, **523 of the 1,315 GT pairs (40%) involve at least one such edge ROI**
+and are therefore *unmatchable by F2FMatcher by design*. We report recall two ways: over **all** GT
+pairs (`R_all`) and over the **792 matchable** (both ROIs non-edge) pairs (`R_match`, the fair
+denominator). Precision is unaffected (every method only predicts non-edge ROIs).
+
+### B4a. F2FMatcher vs geometric baselines (P/R/F1 vs GT)
+
+| Method | pairs | P | R_all | R_match | F1_match |
+|---|---|---|---|---|---|
+| **F2FMatcher** | 23/38 | **0.937** | 0.494 | **0.891** | **0.914** |
+| No-alignment kNN | 38 | 0.339 | 0.262 | 0.434 | 0.381 |
+| Global affine + kNN | 38 | 0.194 | 0.150 | 0.249 | 0.218 |
+| Random null | 38 | 0.022 | 0.008 | 0.013 | 0.016 |
+
+F2FMatcher is **highly precise** (P=0.937: a predicted match is correct ~94% of the time) and, over
+the matchable ROIs, reaches **R=0.891 / F1=0.914** — **2.4× the F1** of the best geometric baseline
+(no-align kNN, 0.381) and **4.2×** the affine baseline (0.218). The geometric baselines sit near
+chance (random F1=0.016), confirming that the learned per-fibre features + triangle geometry +
+propagation do the work pure geometry cannot.
+
+**Robustness caveat.** F2FMatcher completed **23/38** crop pairs; 15 crashed on small-crop edge cases
+(7 degenerate-triangle NaN, 4 neighbour-index, 2 no-seed, 1 2-D-array, 1 unpack). These are real
+limitations on very small / sparse crops (the matcher was tuned for full sections). A NaN-safe
+triangle-angle guard (crash-fix only, `scripts/run_f2fmatcher_benchmark.py`) was applied; the
+remaining crashes are propagation edge cases we do not paper over. The 23 completed pairs are the fair
+benchmark set.
+
+### B4b. Ablation: mapping quality as steps are added (22 pairs)
+
+We re-ran the pipeline capturing the intermediate matched-label set at each step and scored each
+stage against the GT (same edge-ROI correction):
+
+| Stage | #pred | P | R_match | F1_match |
+|---|---|---|---|---|
+| S1 classifier seeds (initial guess) | 518 | 0.683 | 0.753 | 0.717 |
+| S2 + geometry validation | 490 | 0.722 | 0.753 | 0.737 |
+| S3 + local propagation | 297 | 0.926 | 0.585 | 0.717 |
+| S4 + fill unannotated (FULL) | 447 | 0.937 | 0.891 | 0.914 |
+
+The classifier seeds already carry most of the recall (R=0.753) at moderate precision (0.683);
+geometry validation lifts precision (0.722) without losing recall; local propagation is conservative
+(high precision 0.926, but it prunes to the highest-confidence pairs, dropping recall to 0.585); and
+the affine fill of unannotated ROIs recovers the recall (0.891) while keeping precision (0.937). The
+full pipeline (S4) is the best (F1=0.914) — each step contributes.
+
+### B4c. Appearance / dense-matching baselines (DINOv2, VisMatch) — pending GPU
+
+Per the PI, we benchmark appearance-only and dense/sparse matchers against the same GT. These map
+**pixel→pixel**; we assign each source pixel/patch to its ROI via the CellPose label map, aggregate
+to (ROI,ROI) correspondences, and score P/R/F1 + coverage (the coverage metric also applies to the
+large sections that have no GT). Setup is ready: a dedicated `vismatch` conda env (torch 2.14+cu130,
+`vismatch` 1.3.2 wrapping 50+ matchers, `dinov2`) and `scripts/benchmark_vismatch.py`. Models: dense
+(LoFTR, RoMa), sparse (SuperPoint-LightGlue, SuperGlue), and DINOv2 (ViT-S/14 patch matching).
+**Needs the A30s freed** (currently occupied by the local LLM). Smoke-tested on CPU (1 pair):
+DINOv2 P=0.079/R=0.857, SuperPoint-LightGlue P=0.208/R=0.905 — appearance/texture baselines are
+recall-heavy but imprecise vs F2FMatcher (P=0.937). Run on GPU once freed:
+
+```bash
+PYTHONNOUSERSITE=1 /home/avuhong/anaconda3/envs/vismatch/bin/python \
+    scripts/benchmark_vismatch.py --models loftr,roma,superpoint-lightglue,superglue,dinov2 \
+    --device cuda
+```
+
+---
+
+## Remaining work (B5 robustness · B4c GPU baselines)
 
 Ordered by value-to-effort. Items marked **GPU** need the A30s freed (the local LLM is currently
-running on them); items marked **manual** need the PI/lab.
+running on them); items marked **manual** need the PI/lab. **Done** items are struck through.
 
-1. **Expert ground truth (B2, manual).** Annotate K fibre correspondences on N section-pairs
-   spanning easy→hard stain gaps. Converts the B2a/B3 proxy into **precision/recall/F1** and is the
-   single most valuable addition. *Deliverable: Fig 2b (definitive).*
+1. ~~**Expert ground truth (B2, manual).**~~ **DONE → B4.** The curated TA-crop GT (1,315
+   correspondences, 38 pairs) is in place and scored: F2FMatcher P=0.937, R_match=0.891, F1=0.914.
 2. **10×-HE ↔ 5×-HE near-GT (B2, GPU).** Same stain, two magnifications — a near-ground-truth
-   sanity check. The 5×-HE pair directories exist but were never matched; running the matcher on the
-   5 WT 5×-HE pairs (~1–2 h each on CPU, faster on GPU) gives a label-free accuracy anchor.
-3. **Appearance-only baselines (B3, GPU).** **DINOv2** ROI embeddings + mutual-NN/Hungarian, and
-   general keypoint matchers (**SuperPoint+SuperGlue, LoFTR, DISK, RoMa** via
-   `alexstoken/image-matching-models`) → dense correspondence → propagate to cells. These are the
-   PI's explicit benchmark ask and the ones most likely to be competitive; they need model downloads
-   + GPU inference.
+   sanity check on the full WT sections. The 5×-HE pair directories exist but were never matched;
+   running the matcher on the 5 WT 5×-HE pairs (~1–2 h each on CPU, faster on GPU) gives a
+   label-free accuracy anchor.
+3. **Appearance / dense baselines (B4c, GPU).** **Setup ready, pending GPU.** DINOv2 (ViT-S/14
+   patch matching) + VisMatch (LoFTR, RoMa, SuperPoint-LightGlue, SuperGlue) via the dedicated
+   `vismatch` env + `scripts/benchmark_vismatch.py` (pixel→ROI assignment, P/R/F1 + coverage).
 4. **Elastic registration baseline (B3, CPU/GPU).** ANTs / bUnwarpJ / SIFT-flow + NN — a stronger
    geometric baseline than the global affine, to show the local-distortion argument quantitatively.
-5. **F2FMatcher ablations (B3, GPU).** VAE-only (no spatial signature); classifier-only; no triangle
-   geometry; no iterative propagation; full model. Quantifies each component's contribution.
-   *Deliverable: Fig 2c.*
-6. **Robustness (B4).** Accuracy vs inter-section distance/distortion, fibre density, and
+5. ~~**F2FMatcher ablations (B3, GPU).**~~ **DONE → B4b.** Step-by-step P/R/F1 (seeds → geometry →
+   propagation → fill) shows the full pipeline is best (F1=0.914).
+6. **Robustness (B5).** Accuracy vs inter-section distance/distortion, fibre density, and
    segmentation errors (synthetic distortion of one side of a pair, re-run the matcher).
-   *Deliverable: Fig 2e.*
+   *Deliverable: Fig 2e.* Also: fix the 15 small-crop crashes (B4a caveat) to benchmark all 38 pairs.
 
 ---
 
@@ -194,10 +273,21 @@ running on them); items marked **manual** need the PI/lab.
   each anchor fibre matched in ≥2 panels, the mean pairwise distance of its counterparts (mapped
   back to the anchor frame) is the spread; null = random counterparts (3,000 draws/sample).
 - **Baselines (B3).** *Global affine + kNN* uses the robust affine above + `scipy.cKDTree`
-  nearest neighbour in the aligned space; *no-alignment kNN* uses raw coordinates. Both scored on
-  the same anchor fibres and same shape distance as F2FMatcher.
-- **Scripts.** `scripts/precompute_fiber_morphology.py` → `scripts/evaluate_section_B.py` →
-  `scripts/plot_section_B.py`. End-to-end runtime of the evaluation (from cache): ~2 s.
+   nearest neighbour in the aligned space; *no-alignment kNN* uses raw coordinates. Both scored on
+   the same anchor fibres and same shape distance as F2FMatcher.
+- **Curated GT benchmark (B4).** TA crop pairs from `datasets/training_data_updated.csv` (1,315
+   correspondences, 38 pairs, 73 images). F2FMatcher is run on the exact annotation CellPose setup
+   (`scripts/run_f2fmatcher_benchmark.py`, CPU, NaN-safe triangle-angle guard). A predicted
+   (label1,label2) pair is a true positive iff it is in the curated GT. The **edge-ROI correction**
+   splits the GT into *matchable* (both ROIs pass `filter_ROIs`) and *edge* pairs; recall is reported
+   over both (P/R/F1 in `scripts/benchmark_gt.py`). The **ablation** re-runs the pipeline with
+   `save_step_prediction=True` (`scripts/run_f2fmatcher_ablation.py`) and scores the intermediate
+   matched-label set at each step (`scripts/benchmark_ablation.py`).
+- **DINOv2 / VisMatch (B4c).** Dedicated `vismatch` conda env (torch 2.14+cu130, `vismatch` 1.3.2,
+   `dinov2`); `scripts/benchmark_vismatch.py` runs each matcher, assigns matched pixels/patches to
+   ROIs via the CellPose label map, and scores P/R/F1 + coverage. Pending GPU.
+- **Scripts (WT self-supervised).** `scripts/precompute_fiber_morphology.py` →
+   `scripts/evaluate_section_B.py` → `scripts/plot_section_B.py`. End-to-end runtime (from cache): ~2 s.
 
 ## Provenance
 
@@ -213,3 +303,8 @@ running on them); items marked **manual** need the PI/lab.
 | Fig 2 (B2a) shape consistency | `visualizations/eval/fig_B2_morph_consistency.png` |
 | Fig 2d (B2b) cross-panel | `visualizations/eval/fig_B2b_crosspanel.png` |
 | Fig 2b (B3) baselines | `visualizations/eval/fig_B3_baselines.png` |
+| B4 GT per-pair P/R/F1 (edge-corrected) | `results/benchmark/benchmark_scores.csv` |
+| B4 F2FMatcher pipeline output (23/38 pairs) | `results/benchmark/f2fmatcher_output/` |
+| B4 ablation step predictions (22 pairs) | `results/benchmark/f2fmatcher_output_ablation/` |
+| B4c DINOv2/VisMatch scores (pending GPU) | `results/benchmark/vismatch/vismatch_scores.csv` |
+| B4c env build / install logs | `results/benchmark/vismatch_env2.log`, `vismatch_install.log` |
