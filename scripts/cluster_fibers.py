@@ -165,6 +165,34 @@ def resolve_feature(name, Xfull, cols):
     raise SystemExit(f"unknown feature/marker: {name}")
 
 
+def feature_observed_mask(name, Xfull, cols):
+    """Per-fiber: True if the feature's channel(s) have any observed (non-NaN) value.
+    Xfull must be the PRE-imputation matrix in the full 807-column layout."""
+    blocks = slide_channel_blocks()
+
+    def chan_block(col):
+        slide, stain = col.split("_")[0][1:], col.split("_")[1]  # strip "S" prefix
+        st0 = blocks[int(slide)][0]
+        ci = list(SLIDES[int(slide)]["stainings"].values()).index(stain)
+        base = 15 + (st0 + ci) * 36
+        return base, base + 36
+
+    if name in MASK_FEATURES:
+        return np.ones(len(Xfull), dtype=bool)
+    if name in cols:
+        cols_list = [name]
+    elif name in MARKERS:
+        spec = MARKERS[name]
+        cols_list = spec if isinstance(spec, list) else [spec]
+    else:
+        raise SystemExit(f"unknown feature/marker: {name}")
+    obs = np.zeros(len(Xfull), dtype=bool)
+    for c in cols_list:
+        lo, hi = chan_block(c)
+        obs |= (~np.isnan(Xfull[:, lo:hi])).any(axis=1)
+    return obs
+
+
 def normalize(X, mode, feat_cols, groups=None):
     """mode: none | zscore | groupzscore (per-feature, per-group) | pooled
     (center per group, whiten with the pooled covariance) | wtshift
