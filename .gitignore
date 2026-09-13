@@ -16,6 +16,7 @@ Thumbs.db
 .ipynb_checkpoints/
 
 results/TA/
+results/QUA/analysis_bundle.npz
 results/QUA/features/
 results/QUA/images_segmentation/
 results/QUA/npz_256/

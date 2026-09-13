@@ -85,6 +85,30 @@ Open `scripts/visualization.ipynb` (kernel: `fibermatcher`):
 - Standardizes and runs PCA
 - Plots PC1 vs PC2 colored by group (WT, mdx, AAV9, LICA1)
 
+### 4. Clustering (unbiased) + Q1/Q2 analysis notebooks
+
+**Clustering setup (precomputed, do not re-run):** unbiased on morphology (15 features) +
+HE_10x RGB (108) = 123 features, global z-score, PCA(30), UMAP(nn=15, min_dist=0),
+GMM(k=6) on the PCA scores (full covariance, n_init=1, max_iter=200, random_state=42).
+Cache: `results/QUA/clustering_cache/ch3_zscore_pca30_mindist0.0_nn15.npz` (111,403 fibers,
+filter = detected on slide 6). Plots: `scripts/plot_umap.py`.
+
+**Analysis bundle:** `scripts/build_analysis_bundle.py` derives
+`results/QUA/analysis_bundle.npz` from the precomputed cache + `features_combined`
+(raw 807-dim features, UMAP, groups, samples, GMM k=6 labels) — no re-clustering.
+
+**Notebooks** (kernel: `fibermatcher`, run top-to-bottom; figures in `visualizations/Q1|Q2/`):
+- `notebooks/Q1_mdx_vs_WT.ipynb` — the mdx disease signature: cluster identities,
+  mdx vs WT per-cluster marker effects (Cliff's delta), dystrophin loss, correlations lost in mdx.
+- `notebooks/Q2_treatment_effect_AAV9_vs_LICA1.ipynb` — treatment effect: cluster
+  composition shift (mdx -> AAV9 -> LICA1), dystrophin restoration (LICA1 > AAV9 in all 6 clusters),
+  correlations restored, slide-8 lysosomal panel (AAV9 excluded: mapping failed for QUAG27/28/29),
+  C5 deep dive (treatment-resistant cluster).
+
+**Clusters (k=6):** C1 large quiet mixed; C2 small fibrotic/inflammatory; C3 small active + immune
+(mdx-enriched); C4 small healthy fast (WT-enriched); C5 large Myh4/BM-defect (mdx-specific,
+treatment-resistant); C6 large quiet WT-like.
+
 ## Project Structure
 
 ```
@@ -96,7 +120,14 @@ F2FMatcher_DDC/
 │   ├── evaluate_mapping.py    # Step 0: mapping quality (per-pair/per-panel coverage)
 │   ├── extract_features.py    # Step 1: per-image feature extraction
 │   ├── combine_features.py    # Step 2: cross-slide fiber matching + concatenation
-│   └── visualization.ipynb    # Step 3: PCA visualization
+│   ├── visualization.ipynb    # Step 3: PCA visualization
+│   ├── cluster_fibers.py      # Step 4: UMAP cache builder (filter->impute->zscore->PCA->UMAP)
+│   ├── plot_umap.py           # Step 4: UMAP plots from cache (group / cluster / feature)
+│   ├── plot_stain_correlation.py  # Step 4: density scatter of 2 stainings per group
+│   └── build_analysis_bundle.py   # Step 5: analysis_bundle.npz for the Q1/Q2 notebooks
+├── notebooks/
+│   ├── Q1_mdx_vs_WT.ipynb
+│   └── Q2_treatment_effect_AAV9_vs_LICA1.ipynb
 ├── results/
 │   ├── TA/
 │   │   ├── features/slide_{N}/   # Per-image .pkl files
