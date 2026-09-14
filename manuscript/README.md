@@ -1,6 +1,11 @@
 # manuscript/
 
-Planning materials for the F2FMatcher publication(s).
+Planning materials and the assembled draft for the F2FMatcher publication(s).
+
+- **`MANUSCRIPT.md`** — the assembled full manuscript: Title, Abstract, Introduction, Results §A–§D
+  (Figures 1–8 embedded), Discussion, consolidated Methods, and a References list with inline `[DOI:…]`
+  citations (20 refs; journal DOIs for articles, arXiv DOIs for CV-method baselines). **This is the
+  authoritative draft;** the per-section files below are the working sources.
 
 - **`OUTLINE.md`** — full argument structure (4 themes → sections §A–§D), figure list per section,
   a prioritised list of suggested additional analyses (including the method benchmark vs DINOv2 /
