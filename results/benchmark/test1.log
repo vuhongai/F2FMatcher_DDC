@@ -1,0 +1,10 @@
+Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-1:   0%|          | 0/20 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-1:  80%|████████  | 16/20 [00:00<00:00, 46.66it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c1_WGA-1: 100%|██████████| 20/20 [00:00<00:00, 58.23it/s]
+Generate VAE inputs for AV_260625_22-082_10X_TA1c2_WGA-1:   0%|          | 0/16 [00:00<?, ?it/s]Generate VAE inputs for AV_260625_22-082_10X_TA1c2_WGA-1: 100%|██████████| 16/16 [00:00<00:00, 21592.30it/s]
+  0%|          | 0/36 [00:00<?, ?it/s] 19%|█▉        | 7/36 [00:00<00:00, 69.79it/s] 44%|████▍     | 16/36 [00:00<00:00, 80.68it/s] 69%|██████▉   | 25/36 [00:00<00:00, 83.02it/s] 94%|█████████▍| 34/36 [00:00<00:00, 85.50it/s]100%|██████████| 36/36 [00:00<00:00, 83.52it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity:   5%|▌         | 1/20 [00:01<00:27,  1.44s/it]Wasserstein similarity: 100%|██████████| 20/20 [00:01<00:00, 13.89it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 40446.52it/s]
+Wasserstein similarity:   0%|          | 0/20 [00:00<?, ?it/s]Wasserstein similarity: 100%|██████████| 20/20 [00:00<00:00, 37167.07it/s]
+Build neighbor dict:   0%|          | 0/20 [00:00<?, ?it/s]Build neighbor dict: 100%|██████████| 20/20 [00:00<00:00, 68928.58it/s]
+Local prediction:   0%|          | 0/15 [00:00<?, ?it/s]Local prediction:   7%|▋         | 1/15 [00:00<00:04,  3.35it/s]Local prediction: 100%|██████████| 15/15 [00:00<00:00, 50.17it/s]
+   Step 1: +0 new pairs (total 15)
+Done: 15 pairs matched.

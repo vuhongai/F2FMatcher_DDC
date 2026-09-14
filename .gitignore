@@ -24,5 +24,11 @@ results/QUA/out_CP_masks/
 results/QUA/prediction_output/
 results/QUA/VAE_embed/
 
+# results/QUA/clustering_cache/analysis_frame_ch3_k6.npz
+
+results/QUA/eval/fiber_morphology.pkl
+results/QUA/eval/*.log
+
 results/benchmark/f2fmatcher_output/
 results/benchmark/f2fmatcher_output_ablation/
+results/benchmark/*.log
