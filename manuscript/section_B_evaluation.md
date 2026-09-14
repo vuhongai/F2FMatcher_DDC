@@ -332,3 +332,41 @@ running on them); items marked **manual** need the PI/lab. **Done** items are st
 | B4d final complete comparison | `results/benchmark/final_comparison.csv` |
 | Fig B4d final comparison | `visualizations/eval/fig_B4_final_comparison.png` |
 | B4c env build / install logs | `results/benchmark/vismatch_env2.log`, `vismatch_install.log` |
+
+---
+
+## B-WS. Whole-slide comparison: coverage vs correctness (WT) — *code ready, run pending*
+
+The curated-GT benchmark (B4) is the definitive *accuracy* result but uses small crops. A complementary
+**whole-slide** comparison answers a different, reviewer-relevant question: at full-section scale — where
+there is **no ground truth** — do the generic matchers actually assign fibres correctly, or do they merely
+achieve high *coverage*? **Coverage alone is misleading** (a matcher can "match" everything at chance
+accuracy), so we report coverage **together with two label-free correctness proxies** (the same ones
+validated in B2): shape-consistency AUC and cross-panel cycle-consistency, plus runtime.
+
+**Expected result / argument.** Geometry-only kNN reaches ~100% coverage at chance shape-AUC (~0.5); the
+learned matchers (DINOv2, LoFTR, RoMa, SuperGlue) reach high coverage but low correctness (their per-fibre
+assignment lands on wrong-but-adjacent fibres, exactly as in B4); **only F2FMatcher is high on both axes**
+(coverage ≈ 0.77, shape-AUC ≈ 0.87). The runtime panel additionally shows the scalability cost of running
+generic matchers at whole-slide resolution.
+
+**Code (ready to run on the GPU box; WT data present).**
+- `scripts/wholeslide_run_baselines.py` — runs each learned matcher (DINOv2 via torch.hub; LoFTR/RoMa/
+  SuperGlue/SuperPoint-LightGlue via `vismatch`) on the WT whole-slide pairs, reduces pixel/patch
+  correspondences to a **1:1 per-fibre assignment** by majority vote through the CellPose label map, and
+  records runtime. Whole slides are downscaled to `--max-size` (default 2048) with keypoints scaled back to
+  mask space; the downscale + runtime are logged (part of the scalability story). GPU.
+  `python scripts/wholeslide_run_baselines.py --models dinov2,loftr,roma,superpoint-lightglue`
+- `scripts/wholeslide_score_and_plot.py` — scores **every** method (F2FMatcher from `paired_labels`; the two
+  geometric baselines computed inline from centroids; any learned matchers whose assignments exist) on
+  coverage + shape-AUC + cross-panel fold + runtime, and draws the 2-D coverage-vs-correctness figure and the
+  runtime bar. CPU, seconds. **Runs standalone** (F2FMatcher + geometric baselines) even before the GPU run;
+  re-run after the baselines land to add their points.
+  `python scripts/wholeslide_score_and_plot.py`
+
+Outputs: `results/QUA/eval/wholeslide_scores.csv`;
+`visualizations/eval/fig_B_wholeslide_coverage_vs_consistency.png`, `…_runtime.png`.
+Both scripts reuse the B1–B3 machinery in `scripts/evaluate_section_B.py` (morphology cache, shape distance,
+robust affine), so the metric is identical to the rest of §B. Prerequisite: `fiber_morphology.pkl`
+(`scripts/precompute_fiber_morphology.py`) and the whole-slide PNGs (`--img-dir`, default
+`results/QUA/images_segmentation`).
