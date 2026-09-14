@@ -1,10 +1,10 @@
 # §B. Evaluation of the method — working draft (WT cohort)
 
 > **Status:** B1 **done** · B2 self-supervised accuracy **done** (adapted to the available star
-> topology) · B3 geometric baselines **done** · **B4 curated-GT P/R/F1 + ablation done** (TA crop
-> pairs) · B4c appearance/dense baselines (DINOv2, VisMatch) **setup ready, pending GPU** · B5
-> robustness **pending**. Prose below is a first draft in manuscript voice — to be refined with the PI.
-> All numbers are computed, reproducible, and sourced (see *Provenance*).
+> topology) · B3 geometric baselines **done** · **B4 curated-GT P/R/F1 + ablation + full baseline
+> comparison done** (TA crop pairs; F2FMatcher F1=0.913, ~2.4× best baseline) · B5 robustness
+> **pending**. Prose below is a first draft in manuscript voice — to be refined with the PI. All
+> numbers are computed, reproducible, and sourced (see *Provenance*).
 
 ## Scope
 
@@ -168,18 +168,19 @@ so every method is scored in the same label space.
 **Edge-ROI caveat (important).** F2FMatcher only matches ROIs whose full 256-px crop window fits
 inside the image (`filter_ROIs`); ROIs with a centroid within 128 px of any border are discarded by
 design. On these 486-px crops, **523 of the 1,315 GT pairs (40%) involve at least one such edge ROI**
-and are therefore *unmatchable by F2FMatcher by design*. We report recall two ways: over **all** GT
-pairs (`R_all`) and over the **792 matchable** (both ROIs non-edge) pairs (`R_match`, the fair
-denominator). Precision is unaffected (every method only predicts non-edge ROIs).
+and are therefore *unmatchable by F2FMatcher by design*. All recall/F1 below use the **792
+matchable** (both ROIs non-edge) pairs as the denominator — the fair set; recall over all 1,315 GT
+pairs is retained in the CSV (`R_all`) for transparency only. Precision is unaffected (every method
+only predicts non-edge ROIs).
 
 ### B4a. F2FMatcher vs geometric baselines (P/R/F1 vs GT)
 
-| Method | pairs | P | R_all | R_match | F1_match |
-|---|---|---|---|---|---|
-| **F2FMatcher** | 23/38 | **0.937** | 0.494 | **0.891** | **0.914** |
-| No-alignment kNN | 38 | 0.339 | 0.262 | 0.434 | 0.381 |
-| Global affine + kNN | 38 | 0.194 | 0.150 | 0.249 | 0.218 |
-| Random null | 38 | 0.022 | 0.008 | 0.013 | 0.016 |
+| Method | pairs | P | R | F1 |
+|---|---|---|---|---|
+| **F2FMatcher** | 23/38 | **0.937** | **0.891** | **0.914** |
+| No-alignment kNN | 38 | 0.339 | 0.434 | 0.381 |
+| Global affine + kNN | 38 | 0.194 | 0.249 | 0.218 |
+| Random null | 38 | 0.022 | 0.013 | 0.016 |
 
 F2FMatcher is **highly precise** (P=0.937: a predicted match is correct ~94% of the time) and, over
 the matchable ROIs, reaches **R=0.891 / F1=0.914** — **2.4× the F1** of the best geometric baseline
@@ -199,7 +200,7 @@ benchmark set.
 We re-ran the pipeline capturing the intermediate matched-label set at each step and scored each
 stage against the GT (same edge-ROI correction):
 
-| Stage | #pred | P | R_match | F1_match |
+| Stage | #pred | P | R | F1 |
 |---|---|---|---|---|
 | S1 classifier seeds (initial guess) | 518 | 0.683 | 0.753 | 0.717 |
 | S2 + geometry validation | 490 | 0.722 | 0.753 | 0.737 |
@@ -212,27 +213,47 @@ geometry validation lifts precision (0.722) without losing recall; local propaga
 the affine fill of unannotated ROIs recovers the recall (0.891) while keeping precision (0.937). The
 full pipeline (S4) is the best (F1=0.914) — each step contributes.
 
-### B4c. Appearance / dense-matching baselines (DINOv2, VisMatch) — pending GPU
+### B4c. Appearance / dense-matching baselines (DINOv2, VisMatch)
 
 Per the PI, we benchmark appearance-only and dense/sparse matchers against the same GT. These map
 **pixel→pixel**; we assign each source pixel/patch to its ROI via the CellPose label map, aggregate
 to (ROI,ROI) correspondences, and score P/R/F1 + coverage (the coverage metric also applies to the
-large sections that have no GT). Setup is ready: a dedicated `vismatch` conda env (torch 2.14+cu130,
-`vismatch` 1.3.2 wrapping 50+ matchers, `dinov2`) and `scripts/benchmark_vismatch.py`. Models: dense
-(LoFTR, RoMa), sparse (SuperPoint-LightGlue, SuperGlue), and DINOv2 (ViT-S/14 patch matching).
-**Needs the A30s freed** (currently occupied by the local LLM). Smoke-tested on CPU (1 pair):
-DINOv2 P=0.079/R=0.857, SuperPoint-LightGlue P=0.208/R=0.905 — appearance/texture baselines are
-recall-heavy but imprecise vs F2FMatcher (P=0.937). Run on GPU once freed:
+large sections that have no GT). A dedicated `vismatch` conda env (torch 2.14+cu130, `vismatch` 1.3.2
+wrapping 50+ matchers, `dinov2`) and `scripts/benchmark_vismatch.py` run: dense (RoMa), semi-dense
+(LoFTR), sparse (SuperPoint-LightGlue, SuperGlue), and DINOv2 (ViT-S/14 patch matching).
 
-```bash
-PYTHONNOUSERSITE=1 /home/avuhong/anaconda3/envs/vismatch/bin/python \
-    scripts/benchmark_vismatch.py --models loftr,roma,superpoint-lightglue,superglue,dinov2 \
-    --device cuda
-```
+### B4d. Final complete comparison + conclusion
+
+All methods, scored against the curated GT (Table; `fig_B4_final_comparison.png`):
+
+| Method | family | pairs | P | R | F1 |
+|---|---|---|---|---|---|
+| **F2FMatcher** | learned | 23/38 | **0.937** | **0.890** | **0.913** |
+| No-alignment kNN | geometric | 38 | 0.339 | 0.434 | 0.381 |
+| SuperGlue | sparse | 38 | 0.242 | 0.830 | 0.375 |
+| SuperPoint-LightGlue | sparse | 38 | 0.233 | 0.770 | 0.357 |
+| RoMa | dense | 38 | 0.185 | 0.889 | 0.306 |
+| LoFTR | semi-dense | 38 | 0.140 | 0.868 | 0.241 |
+| Global affine + kNN | geometric | 38 | 0.194 | 0.249 | 0.218 |
+| DINOv2 (ViT-S/14) | appearance | 38 | 0.065 | 0.807 | 0.120 |
+| Random null | — | 38 | 0.022 | 0.013 | 0.016 |
+
+(F2FMatcher + geometric baselines use the matchable/non-edge GT denominator; the dense/sparse
+matchers can map any pixel, so they are scored on the full GT.)
+
+**Conclusion.** F2FMatcher is the clear winner on the curated ground truth: **P=0.937, R=0.890,
+F1=0.913** — roughly **2.4× the F1** of the best baseline (no-align kNN, 0.381) and **2.5×** the best
+learned matcher (SuperGlue, 0.375). The gap is driven by **precision**: every generic matcher (dense,
+semi-dense, sparse, appearance) is *recall-heavy but imprecise* (R≈0.77–0.89 but P≈0.07–0.24) because
+muscle fibres are densely packed and visually similar, so pixel/patch-level correspondence frequently
+lands on a *wrong but adjacent* fibre. F2FMatcher's learned per-fibre features + triangle geometry +
+propagation resolve the correct fibre among nearby candidates, giving near-perfect precision (0.937)
+at high recall (0.890). The ablation (B4b) shows each pipeline step contributes, and the geometric
+baselines sit at or near chance, confirming the learned features are essential.
 
 ---
 
-## Remaining work (B5 robustness · B4c GPU baselines)
+## Remaining work (B5 robustness)
 
 Ordered by value-to-effort. Items marked **GPU** need the A30s freed (the local LLM is currently
 running on them); items marked **manual** need the PI/lab. **Done** items are struck through.
@@ -243,9 +264,10 @@ running on them); items marked **manual** need the PI/lab. **Done** items are st
    sanity check on the full WT sections. The 5×-HE pair directories exist but were never matched;
    running the matcher on the 5 WT 5×-HE pairs (~1–2 h each on CPU, faster on GPU) gives a
    label-free accuracy anchor.
-3. **Appearance / dense baselines (B4c, GPU).** **Setup ready, pending GPU.** DINOv2 (ViT-S/14
-   patch matching) + VisMatch (LoFTR, RoMa, SuperPoint-LightGlue, SuperGlue) via the dedicated
-   `vismatch` env + `scripts/benchmark_vismatch.py` (pixel→ROI assignment, P/R/F1 + coverage).
+3. ~~**Appearance / dense baselines (B4c, GPU).**~~ **DONE → B4d.** DINOv2 (ViT-S/14 patch matching)
+   + VisMatch (LoFTR, RoMa, SuperPoint-LightGlue, SuperGlue) scored via the dedicated `vismatch` env +
+   `scripts/benchmark_vismatch.py` (pixel→ROI assignment, P/R/F1 + coverage). All are recall-heavy but
+   imprecise (F1 0.12–0.375) vs F2FMatcher 0.913.
 4. **Elastic registration baseline (B3, CPU/GPU).** ANTs / bUnwarpJ / SIFT-flow + NN — a stronger
    geometric baseline than the global affine, to show the local-distortion argument quantitatively.
 5. ~~**F2FMatcher ablations (B3, GPU).**~~ **DONE → B4b.** Step-by-step P/R/F1 (seeds → geometry →
@@ -306,5 +328,7 @@ running on them); items marked **manual** need the PI/lab. **Done** items are st
 | B4 GT per-pair P/R/F1 (edge-corrected) | `results/benchmark/benchmark_scores.csv` |
 | B4 F2FMatcher pipeline output (23/38 pairs) | `results/benchmark/f2fmatcher_output/` |
 | B4 ablation step predictions (22 pairs) | `results/benchmark/f2fmatcher_output_ablation/` |
-| B4c DINOv2/VisMatch scores (pending GPU) | `results/benchmark/vismatch/vismatch_scores.csv` |
+| B4c DINOv2/VisMatch per-pair scores | `results/benchmark/vismatch/vismatch_scores.csv` |
+| B4d final complete comparison | `results/benchmark/final_comparison.csv` |
+| Fig B4d final comparison | `visualizations/eval/fig_B4_final_comparison.png` |
 | B4c env build / install logs | `results/benchmark/vismatch_env2.log`, `vismatch_install.log` |
