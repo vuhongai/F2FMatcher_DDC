@@ -1,0 +1,98 @@
+38 pairs, models=['dinov2', 'superpoint-lightglue', 'superglue', 'loftr', 'roma'], device=cpu
+Using cache found in /home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main
+/home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+[ 1/38] dinov2                 P=0.079 R=0.857 F1=0.145 (454 pairs, 1225 kpts)
+[ 1/38] superpoint-lightglue   P=0.208 R=0.905 F1=0.338 (183 pairs, 822 kpts)
+Loaded SuperGlue model ("outdoor" weights)
+[1/38] superglue ERROR AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+The CUDA driver logged these messages, which may provide useful details:
+Returning 2 (CUDA_ERROR_OUT_OF_MEMORY) from cuDevicePrimaryCtxRetain
+
+
+[ 1/38] superglue              P=0.000 R=0.000 F1=0.000 (0 pairs, 0 kpts)
+[ 1/38] loftr                  P=0.193 R=0.905 F1=0.318 (197 pairs, 1378 kpts)
+xFormers not available
+xFormers not available
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using coarse resolution (560, 560), and upsample res (864, 864)
+[ 1/38] roma                   P=0.250 R=0.929 F1=0.394 (156 pairs, 2048 kpts)
+Using cache found in /home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main
+[ 2/38] dinov2                 P=0.097 R=0.956 F1=0.176 (445 pairs, 1225 kpts)
+[ 2/38] superpoint-lightglue   P=0.328 R=0.911 F1=0.482 (125 pairs, 402 kpts)
+Loaded SuperGlue model ("outdoor" weights)
+[2/38] superglue ERROR AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+The CUDA driver logged these messages, which may provide useful details:
+Returning 2 (CUDA_ERROR_OUT_OF_MEMORY) from cuDevicePrimaryCtxRetain
+
+
+[ 2/38] superglue              P=0.000 R=0.000 F1=0.000 (0 pairs, 0 kpts)
+[ 2/38] loftr                  P=0.264 R=0.956 F1=0.413 (163 pairs, 1681 kpts)
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using coarse resolution (560, 560), and upsample res (864, 864)
+[ 2/38] roma                   P=0.264 R=0.933 F1=0.412 (159 pairs, 2048 kpts)
+Using cache found in /home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main
+[ 3/38] dinov2                 P=0.035 R=0.372 F1=0.064 (459 pairs, 1225 kpts)
+[ 3/38] superpoint-lightglue   P=0.087 R=0.140 F1=0.107 (69 pairs, 158 kpts)
+Loaded SuperGlue model ("outdoor" weights)
+[3/38] superglue ERROR AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+The CUDA driver logged these messages, which may provide useful details:
+Returning 2 (CUDA_ERROR_OUT_OF_MEMORY) from cuDevicePrimaryCtxRetain
+
+
+[ 3/38] superglue              P=0.000 R=0.000 F1=0.000 (0 pairs, 0 kpts)
+[ 3/38] loftr                  P=0.086 R=0.326 F1=0.136 (163 pairs, 1147 kpts)
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using coarse resolution (560, 560), and upsample res (864, 864)
+[ 3/38] roma                   P=0.071 R=0.279 F1=0.113 (169 pairs, 2048 kpts)
+Using cache found in /home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main
+[ 4/38] dinov2                 P=0.063 R=0.967 F1=0.119 (459 pairs, 1225 kpts)
+[ 4/38] superpoint-lightglue   P=1.000 R=0.033 F1=0.065 (1 pairs, 3 kpts)
+Loaded SuperGlue model ("outdoor" weights)
+[4/38] superglue ERROR AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+The CUDA driver logged these messages, which may provide useful details:
+Returning 2 (CUDA_ERROR_OUT_OF_MEMORY) from cuDevicePrimaryCtxRetain
+
+
+[ 4/38] superglue              P=0.000 R=0.000 F1=0.000 (0 pairs, 0 kpts)
+[ 4/38] loftr                  P=0.123 R=0.967 F1=0.218 (236 pairs, 985 kpts)
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using coarse resolution (560, 560), and upsample res (864, 864)
+[ 4/38] roma                   P=0.172 R=0.967 F1=0.291 (169 pairs, 2048 kpts)
+Using cache found in /home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main
+[ 5/38] dinov2                 P=0.084 R=1.000 F1=0.155 (344 pairs, 1225 kpts)
+[ 5/38] superpoint-lightglue   P=0.254 R=1.000 F1=0.406 (114 pairs, 777 kpts)
+Loaded SuperGlue model ("outdoor" weights)
+[5/38] superglue ERROR AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+The CUDA driver logged these messages, which may provide useful details:
+Returning 2 (CUDA_ERROR_OUT_OF_MEMORY) from cuDevicePrimaryCtxRetain
+
+
+[ 5/38] superglue              P=0.000 R=0.000 F1=0.000 (0 pairs, 0 kpts)
+[ 5/38] loftr                  P=0.158 R=1.000 F1=0.274 (183 pairs, 1135 kpts)
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using coarse resolution (560, 560), and upsample res (864, 864)
