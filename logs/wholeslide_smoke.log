@@ -1,0 +1,18 @@
+2 WT pairs | models=['dinov2'] | device=cpu (requested cpu) | max_size=2048 | img_dir=/DATA/F2FMatcher_DDC/results/QUA/images_segmentation
+  note: dinov2 capped at 1024px (eager-attention memory ceiling, see docstring)
+loading dinov2 on cpu ...
+Using cache found in /home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main
+/home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/avuhong/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+  dinov2 ready
+[ 1/2] dinov2                     6.9s  assigned=  1137  kpts=4526
+[ 2/2] dinov2                     6.2s  assigned=   916  kpts=4526
+
+saved assignments under /DATA/F2FMatcher_DDC/results/QUA/eval/wholeslide/<method>/ and runtime -> /DATA/F2FMatcher_DDC/results/QUA/eval/wholeslide/runtime.csv (2 run, 0 skipped)
+        seconds  n_assigned
+method                     
+dinov2      6.6      1026.5

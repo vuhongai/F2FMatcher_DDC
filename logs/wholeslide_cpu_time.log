@@ -1,0 +1,26 @@
+1 WT pairs | models=['loftr', 'roma', 'superpoint-lightglue'] | device=cpu (requested cpu) | max_size=2048 | img_dir=/DATA/F2FMatcher_DDC/results/QUA/images_segmentation
+  note: roma capped at 1024px (eager-attention memory ceiling, see docstring)
+loading loftr on cpu ...
+  loftr ready
+loading roma on cpu ...
+xFormers not available
+xFormers not available
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/avuhong/anaconda3/envs/vismatch/lib/python3.10/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using coarse resolution (560, 560), and upsample res (864, 864)
+  roma ready
+loading superpoint-lightglue on cpu ...
+  superpoint-lightglue ready
+[ 1/1] loftr                     34.6s  assigned=   196  kpts=279
+[ 1/1] roma                      42.9s  assigned=  3675  kpts=8192
+[ 1/1] superpoint-lightglue      14.9s  assigned=     0  kpts=0
+
+saved assignments under /DATA/F2FMatcher_DDC/results/QUA/eval/wholeslide/<method>/ and runtime -> /DATA/F2FMatcher_DDC/results/QUA/eval/wholeslide/runtime.csv (3 run, 0 skipped)
+                      seconds  n_assigned
+method                                   
+dinov2                    6.6      1026.5
+loftr                    34.6       196.0
+roma                     42.9      3675.0
+superpoint-lightglue     14.9         0.0

@@ -13,6 +13,17 @@ side is downscaled so its long edge <= --max-size (keypoints are scaled back int
 the ORIGINAL CellPose-mask space before the pixel->ROI vote). The chosen downscale
 and the runtime are recorded — they are part of the scalability story, not hidden.
 
+Memory note (this box: 2x A30 24 GB, no xformers in the `vismatch` env): DINOv2
+and RoMa use EAGER attention, whose (H x N x N) tensor at a 2048-px long edge is
+~22 GB — an OOM even on a FREE 24 GB GPU. Both are therefore capped at
+METHOD_MAX_SIZE (1024 px, ~1.3 GB attention) regardless of --max-size; the
+keypoint/semi-dense methods (LoFTR, SuperPoint-LightGlue) run at the full
+--max-size. This cap is part of the scalability story and is logged per method.
+
+Device: --device auto (default) uses CUDA only when >= 12 GB is free on GPU 0
+(the local LLM normally occupies both A30s); otherwise it falls back to CPU.
+An explicit --device cuda|cpu overrides the probe.
+
 Outputs (under results/QUA/eval/wholeslide/):
     {method}/{img1}___vs___{img2}.pkl   {anchor_label:int -> panel_label:int}
     runtime.csv                          per (pair, method): seconds, n_kpts, max_size
@@ -20,6 +31,10 @@ Outputs (under results/QUA/eval/wholeslide/):
 Usage (on the GPU box, WT data present):
     python scripts/wholeslide_run_baselines.py --models dinov2,loftr,roma,superpoint-lightglue
     python scripts/wholeslide_run_baselines.py --models dinov2 --device cpu --limit-pairs 2   # smoke test
+
+Resume: pairs whose assignment pkl already exists and is non-empty are skipped
+(override with --force). runtime.csv is rewritten after every (pair, method), so
+a killed run keeps its data.
 """
 import argparse
 import pickle
@@ -44,6 +59,26 @@ DINO_MEAN = np.array([0.485, 0.456, 0.406], np.float32)
 DINO_STD = np.array([0.229, 0.224, 0.225], np.float32)
 DINO_PATCH = 14
 
+# Eager-attention (no xformers) memory ceiling on a 24 GB GPU:
+# 2048-px long edge -> ~22 GB attention tensor -> OOM. 1024 px -> ~1.3 GB, safe.
+METHOD_MAX_SIZE = {"dinov2": 1024, "roma": 1024}
+CUDA_FREE_MIN = 12 * 1024**3  # bytes; enough for LoFTR@2048 + RoMa/DINOv2@1024
+
+
+def pick_device(requested):
+    """'auto' -> cuda if >= CUDA_FREE_MIN bytes free on GPU 0, else cpu."""
+    if requested != "auto":
+        return requested
+    try:
+        import torch
+        if torch.cuda.is_available():
+            free, _ = torch.cuda.mem_get_info(0)
+            if free >= CUDA_FREE_MIN:
+                return "cuda"
+    except Exception:  # noqa: BLE001  (mem_get_info itself can raise when saturated)
+        pass
+    return "cpu"
+
 
 def wt_pairs():
     out = []
@@ -62,17 +97,6 @@ def wt_pairs():
 def load_mask(img):
     with open(CP_MASKS_DIR_QUA / f"{img}_CP_masks.pkl", "rb") as f:
         return pickle.load(f)[0]
-
-
-def load_image_scaled(img_dir, img, max_size):
-    """Return (RGB float array HxWx3 in [0,1] resized, scale=(orig/resized) x,y)."""
-    im = Image.open(Path(img_dir) / f"{img}.png").convert("RGB")
-    ow, oh = im.size
-    s = max(ow, oh) / float(max_size)
-    if s > 1:
-        im = im.resize((int(round(ow / s)), int(round(oh / s))))
-    rw, rh = im.size
-    return np.asarray(im, np.float32) / 255.0, np.array([ow / rw, oh / rh])
 
 
 def vote_assign(kpts0, kpts1, scale0, scale1, mask0, mask1):
@@ -95,9 +119,40 @@ def vote_assign(kpts0, kpts1, scale0, scale1, mask0, mask1):
     return {int(a): int(max(bs, key=bs.get)) for a, bs in votes.items()}
 
 
-def run_vismatch(model_name, img_dir, img0, img1, mask0, mask1, device, max_size):
+def build_matcher(model_name, device):
+    """Instantiate the (expensive) matcher once; reused across all pairs."""
+    if model_name == "dinov2":
+        import torch
+        model = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14",
+                               pretrained=True).eval().to(device)
+        return model
     from vismatch import get_matcher
-    matcher = get_matcher(model_name, device=device, max_num_keypoints=8192)
+    return get_matcher(model_name, device=device, max_num_keypoints=8192)
+
+
+def target_size(ow, oh, max_size, mult):
+    """Aspect-preserving target (w, h): long edge -> max_size, dims floored to mult.
+    (Square resizing would anisotropically stretch sections by up to ~16%,
+    distorting the very appearance the matchers rely on.)"""
+    s = max(ow, oh) / float(max_size)
+    if s <= 1:
+        return ow, oh
+    return int((ow / s) // mult) * mult, int((oh / s) // mult) * mult
+
+
+def _vismatch_load(matcher, img_dir, img, max_size):
+    """Load via the matcher's own loader (aspect-preserving resize, long edge <= max_size).
+    Returns (image_tensor, scale resized->original)."""
+    from PIL import Image as _I
+    p = str(Path(img_dir) / f"{img}.png")
+    ow, oh = _I.open(p).size
+    rw, rh = target_size(ow, oh, max_size, 8)
+    t = matcher.load_image(p, resize=(rh, rw))  # vismatch resize tuple is (H, W)
+    rh, rw = int(t.shape[-2]), int(t.shape[-1])
+    return t, np.array([ow / rw, oh / rh])
+
+
+def run_vismatch(matcher, img_dir, img0, img1, mask0, mask1, max_size):
     a, s0 = _vismatch_load(matcher, img_dir, img0, max_size)
     b, s1 = _vismatch_load(matcher, img_dir, img1, max_size)
     res = matcher(a, b)
@@ -105,100 +160,129 @@ def run_vismatch(model_name, img_dir, img0, img1, mask0, mask1, device, max_size
     return vote_assign(k0, k1, s0, s1, mask0, mask1), int(len(k0))
 
 
-def _vismatch_load(matcher, img_dir, img, max_size):
-    """Load via the matcher's own loader when possible; else fall back to PIL.
-    Returns (image_tensor, scale resized->original)."""
-    from PIL import Image as _I
-    p = str(Path(img_dir) / f"{img}.png")
-    ow, oh = _I.open(p).size
-    try:
-        t = matcher.load_image(p, resize=max_size)  # most vismatch loaders accept resize
-        # infer resized long edge from tensor shape (C,H,W)
-        rh, rw = int(t.shape[-2]), int(t.shape[-1])
-        return t, np.array([ow / rw, oh / rh])
-    except TypeError:
-        t = matcher.load_image(p)
-        rh, rw = int(t.shape[-2]), int(t.shape[-1])
-        return t, np.array([ow / rw, oh / rh])
-
-
-def run_dinov2(img_dir, img0, img1, mask0, mask1, device, max_size):
+def run_dinov2(model, img_dir, img0, img1, mask0, mask1, device, max_size):
     import torch
-    size = (max_size // DINO_PATCH) * DINO_PATCH  # multiple of patch
-    model = getattr(run_dinov2, "_model", None)
-    if model is None:
-        model = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14", pretrained=True).eval().to(device)
-        run_dinov2._model = model
 
     def feats(img):
         from PIL import Image as _I
         ow, oh = _I.open(Path(img_dir) / f"{img}.png").size
-        im = _I.open(Path(img_dir) / f"{img}.png").convert("RGB").resize((size, size))
+        rw, rh = target_size(ow, oh, max_size, DINO_PATCH)  # multiple of patch
+        im = _I.open(Path(img_dir) / f"{img}.png").convert("RGB").resize((rw, rh))
         x = (np.asarray(im, np.float32) / 255.0 - DINO_MEAN) / DINO_STD
         x = torch.from_numpy(x).permute(2, 0, 1).unsqueeze(0).to(device)
         with torch.no_grad():
             f = model.forward_features(x)["x_norm_patchtokens"][0].cpu().numpy()
-        n = size // DINO_PATCH
-        gy, gx = np.meshgrid(np.arange(n), np.arange(n), indexing="ij")
+        nw, nh = rw // DINO_PATCH, rh // DINO_PATCH
+        gy, gx = np.meshgrid(np.arange(nh), np.arange(nw), indexing="ij")
         c = np.stack([gx.ravel() * DINO_PATCH + DINO_PATCH / 2,
                       gy.ravel() * DINO_PATCH + DINO_PATCH / 2], 1).astype(float)
-        return f / (np.linalg.norm(f, axis=1, keepdims=True) + 1e-8), c, np.array([ow / size, oh / size])
+        return f / (np.linalg.norm(f, axis=1, keepdims=True) + 1e-8), c, np.array([ow / rw, oh / rh])
 
     f0, c0, s0 = feats(img0); f1, c1, s1 = feats(img1)
     j = (f0 @ f1.T).argmax(1)                      # best panel patch per anchor patch
     return vote_assign(c0, c1[j], s0, s1, mask0, mask1), int(len(f0))
 
 
+def save_runtime(rows):
+    """Merge with any existing runtime.csv (append across --models runs)."""
+    OUT.mkdir(parents=True, exist_ok=True)
+    df = pd.DataFrame(rows)
+    rt = OUT / "runtime.csv"
+    if rt.exists():
+        df = pd.concat([pd.read_csv(rt), df], ignore_index=True)
+        df = df.drop_duplicates(["img1", "img2", "method"], keep="last")
+    df.to_csv(rt, index=False)
+    return df
+
+
+def load_existing(path, force):
+    """Resume: return the saved assignment if present and non-empty, else None."""
+    if force or not path.exists():
+        return None
+    try:
+        with open(path, "rb") as f:
+            d = pickle.load(f)
+        return d if d else None
+    except Exception:  # noqa: BLE001  (corrupt/partial file -> redo)
+        return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", default="dinov2,loftr,roma,superpoint-lightglue")
-    ap.add_argument("--device", default="cuda")
+    ap.add_argument("--device", default="auto", choices=["auto", "cuda", "cpu"])
     ap.add_argument("--max-size", type=int, default=2048,
-                    help="downscale each side so long edge <= this (keypoints scaled back to mask space)")
+                    help="downscale each side so long edge <= this (keypoints scaled back to mask space); "
+                         "dinov2/roma are additionally capped at 1024 (eager-attention memory)")
     ap.add_argument("--img-dir", default=str(MAPPING_OUTPUT_DIR_QUA / "images_segmentation"),
                     help="dir of whole-slide PNGs named {img}.png")
     ap.add_argument("--limit-pairs", type=int, default=0, help="0 = all WT pairs")
+    ap.add_argument("--force", action="store_true", help="re-run pairs even if a non-empty pkl exists")
     args = ap.parse_args()
     models = [m.strip() for m in args.models.split(",") if m.strip()]
+    device = pick_device(args.device)
 
     pairs = wt_pairs()
     if args.limit_pairs:
         pairs = pairs[:args.limit_pairs]
-    print(f"{len(pairs)} WT pairs | models={models} | device={args.device} | "
-          f"max_size={args.max_size} | img_dir={args.img_dir}", flush=True)
+    print(f"{len(pairs)} WT pairs | models={models} | device={device} "
+          f"(requested {args.device}) | max_size={args.max_size} | img_dir={args.img_dir}",
+          flush=True)
+    for m in models:
+        cap = METHOD_MAX_SIZE.get(m)
+        if cap and cap < args.max_size:
+            print(f"  note: {m} capped at {cap}px (eager-attention memory ceiling, see docstring)",
+                  flush=True)
+
+    # Build each (expensive) matcher once, before the pair loop.
+    handles = {}
+    for m in models:
+        print(f"loading {m} on {device} ...", flush=True)
+        handles[m] = build_matcher(m, device)
+        print(f"  {m} ready", flush=True)
 
     rows = []
-    for i, (img1, img2, _) in enumerate(pairs, 1):
+    n_done = n_skip = 0
+    for i, (img1, img2, d) in enumerate(pairs, 1):
         mask0, mask1 = load_mask(img1), load_mask(img2)
         for m in models:
             (OUT / m).mkdir(parents=True, exist_ok=True)
+            out_pkl = OUT / m / f"{img1}___vs___{img2}.pkl"
+            existing = load_existing(out_pkl, args.force)
+            if existing is not None:
+                n_skip += 1
+                print(f"[{i:2d}/{len(pairs)}] {m:22s} SKIP (exists, {len(existing)} assigned)",
+                      flush=True)
+                continue
             t0 = time.time()
             try:
+                size = min(args.max_size, METHOD_MAX_SIZE.get(m, args.max_size))
                 if m == "dinov2":
-                    assign, nk = run_dinov2(args.img_dir, img1, img2, mask0, mask1, args.device, args.max_size)
+                    assign, nk = run_dinov2(handles[m], args.img_dir, img1, img2, mask0, mask1, device, size)
                 else:
-                    assign, nk = run_vismatch(m, args.img_dir, img1, img2, mask0, mask1, args.device, args.max_size)
+                    assign, nk = run_vismatch(handles[m], args.img_dir, img1, img2, mask0, mask1, size)
                 err = ""
             except Exception as e:  # noqa: BLE001
                 assign, nk, err = {}, 0, f"{type(e).__name__}: {e}"
             dt = time.time() - t0
-            with open(OUT / m / f"{img1}___vs___{img2}.pkl", "wb") as f:
+            with open(out_pkl, "wb") as f:
                 pickle.dump(assign, f)
             rows.append({"img1": img1, "img2": img2, "method": m, "seconds": round(dt, 2),
-                         "n_kpts": nk, "n_assigned": len(assign), "max_size": args.max_size, "error": err})
+                         "n_kpts": nk, "n_assigned": len(assign),
+                         "max_size": min(args.max_size, METHOD_MAX_SIZE.get(m, args.max_size)),
+                         "device": device, "error": err})
+            save_runtime(rows)
+            n_done += 1
             print(f"[{i:2d}/{len(pairs)}] {m:22s} {dt:7.1f}s  assigned={len(assign):6d}  "
                   f"kpts={nk}{('  ERR '+err) if err else ''}", flush=True)
         del mask0, mask1
 
-    OUT.mkdir(parents=True, exist_ok=True)
-    df = pd.DataFrame(rows)
     rt = OUT / "runtime.csv"
-    if rt.exists():  # append across runs (different --models)
-        df = pd.concat([pd.read_csv(rt), df], ignore_index=True)
-        df = df.drop_duplicates(["img1", "img2", "method"], keep="last")
-    df.to_csv(rt, index=False)
-    print(f"\nsaved assignments under {OUT}/<method>/ and runtime -> {rt}")
-    print(df.groupby("method")[["seconds", "n_assigned"]].mean().round(1).to_string())
+    df = pd.read_csv(rt) if rt.exists() else pd.DataFrame()
+    print(f"\nsaved assignments under {OUT}/<method>/ and runtime -> {rt} "
+          f"({n_done} run, {n_skip} skipped)")
+    if len(df):
+        print(df.groupby("method")[["seconds", "n_assigned"]].mean().round(1).to_string())
 
 
 if __name__ == "__main__":

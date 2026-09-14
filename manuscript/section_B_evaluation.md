@@ -2,9 +2,10 @@
 
 > **Status:** B1 **done** · B2 self-supervised accuracy **done** (adapted to the available star
 > topology) · B3 geometric baselines **done** · **B4 curated-GT P/R/F1 + ablation + full baseline
-> comparison done** (TA crop pairs; F2FMatcher F1=0.913, ~2.4× best baseline) · B5 robustness
-> **pending**. Prose below is a first draft in manuscript voice — to be refined with the PI. All
-> numbers are computed, reproducible, and sourced (see *Provenance*).
+> comparison done** (TA crop pairs; F2FMatcher F1=0.913, ~2.4× best baseline) · **B-WS whole-slide
+> coverage-vs-correctness done** (F2FMatcher is the only method high on both axes: cov 0.71, AUC 0.87) ·
+> B5 robustness **pending**. Prose below is a first draft in manuscript voice — to be refined with the PI.
+> All numbers are computed, reproducible, and sourced (see *Provenance*).
 
 ## Scope
 
@@ -306,8 +307,16 @@ running on them); items marked **manual** need the PI/lab. **Done** items are st
    `save_step_prediction=True` (`scripts/run_f2fmatcher_ablation.py`) and scores the intermediate
    matched-label set at each step (`scripts/benchmark_ablation.py`).
 - **DINOv2 / VisMatch (B4c).** Dedicated `vismatch` conda env (torch 2.14+cu130, `vismatch` 1.3.2,
-   `dinov2`); `scripts/benchmark_vismatch.py` runs each matcher, assigns matched pixels/patches to
-   ROIs via the CellPose label map, and scores P/R/F1 + coverage. Pending GPU.
+    `dinov2`); `scripts/benchmark_vismatch.py` runs each matcher, assigns matched pixels/patches to
+    ROIs via the CellPose label map, and scores P/R/F1 + coverage.
+- **Whole-slide baseline (B-WS).** Same `vismatch` env. `scripts/wholeslide_run_baselines.py` runs each
+    learned matcher on the full WT sections (aspect-preserving downscale, long edge ≤ 2048 px; DINOv2/RoMa
+    ≤ 1024 px — eager-attention memory ceiling, no xformers), maps pixel/patch correspondences back to mask
+    space, and reduces them to a 1:1 per-fibre assignment by **majority vote** through the CellPose label
+    map; per-pair runtime/resolution/device are logged. `scripts/wholeslide_score_and_plot.py` scores every
+    method (F2FMatcher from `paired_labels`, geometric baselines from centroids, learned from the saved
+    assignments) on coverage + shape-AUC + cross-panel fold + runtime — the identical B1–B3 machinery
+    (`scripts/evaluate_section_B.py`). Run on CPU (64 cores; GPUs occupied by the local LLM service).
 - **Scripts (WT self-supervised).** `scripts/precompute_fiber_morphology.py` →
    `scripts/evaluate_section_B.py` → `scripts/plot_section_B.py`. End-to-end runtime (from cache): ~2 s.
 
@@ -332,41 +341,110 @@ running on them); items marked **manual** need the PI/lab. **Done** items are st
 | B4d final complete comparison | `results/benchmark/final_comparison.csv` |
 | Fig B4d final comparison | `visualizations/eval/fig_B4_final_comparison.png` |
 | B4c env build / install logs | `results/benchmark/vismatch_env2.log`, `vismatch_install.log` |
+| B-WS per-method pooled scores | `results/QUA/eval/wholeslide_scores.csv` |
+| B-WS per-method × per-panel scores | `results/QUA/eval/wholeslide_scores_by_panel.csv` |
+| B-WS per-(pair,method) runtime/resolution | `results/QUA/eval/wholeslide/runtime.csv` |
+| B-WS per-method 1:1 assignments | `results/QUA/eval/wholeslide/{dinov2,loftr,roma,superpoint-lightglue}/*.pkl` |
+| Fig B-WS coverage vs correctness | `visualizations/eval/fig_B_wholeslide_coverage_vs_consistency.png` |
+| Fig B-WSb runtime | `visualizations/eval/fig_B_wholeslide_runtime.png` |
 
 ---
 
-## B-WS. Whole-slide comparison: coverage vs correctness (WT) — *code ready, run pending*
+## B-WS. Whole-slide comparison: coverage vs correctness (WT) — **done**
 
 The curated-GT benchmark (B4) is the definitive *accuracy* result but uses small crops. A complementary
 **whole-slide** comparison answers a different, reviewer-relevant question: at full-section scale — where
 there is **no ground truth** — do the generic matchers actually assign fibres correctly, or do they merely
 achieve high *coverage*? **Coverage alone is misleading** (a matcher can "match" everything at chance
-accuracy), so we report coverage **together with two label-free correctness proxies** (the same ones
-validated in B2): shape-consistency AUC and cross-panel cycle-consistency, plus runtime.
+accuracy), so for every method we report coverage **together with the label-free correctness proxies**
+validated in B2 — shape-consistency AUC (B2a) and cross-panel cycle-consistency (B2b) — plus runtime.
+All 30 WT section-pairs, all methods scored with the *identical* machinery as B1–B3
+(`scripts/evaluate_section_B.py`), so the metrics are directly comparable.
 
-**Expected result / argument.** Geometry-only kNN reaches ~100% coverage at chance shape-AUC (~0.5); the
-learned matchers (DINOv2, LoFTR, RoMa, SuperGlue) reach high coverage but low correctness (their per-fibre
-assignment lands on wrong-but-adjacent fibres, exactly as in B4); **only F2FMatcher is high on both axes**
-(coverage ≈ 0.77, shape-AUC ≈ 0.87). The runtime panel additionally shows the scalability cost of running
-generic matchers at whole-slide resolution.
+**Methods (whole-slide).** Each learned matcher is run on the full sections (downscaled, aspect-preserving,
+long edge ≤ 2048 px; DINOv2 and RoMa at ≤ 1024 px — see *Caveats*), and its pixel/patch correspondences are
+reduced to a **1-to-1 per-fibre assignment** by majority vote through the CellPose label map (an anchor ROI
+is assigned to the panel ROI its keypoints/patches hit most; keypoints are scaled back to mask space).
+F2FMatcher uses its own `paired_labels`; the geometric baselines are computed from centroids (no images
+needed). Coverage = fraction of anchor fibres assigned; shape-AUC = matched-vs-random separation of the
+assigned pairs (20,000 random draws/pair, seed 42); cross-panel fold = null/real spread of an anchor
+fibre's counterparts across panels after robust-affine alignment (same as B2b).
 
-**Code (ready to run on the GPU box; WT data present).**
+**Result (pooled over 30 pairs; Fig B-WS, `fig_B_wholeslide_coverage_vs_consistency.png`).**
+
+| Method | family | coverage | shape-AUC | cross-panel fold | runtime (s/pair) |
+|---|---|---|---|---|---|
+| **F2FMatcher** | learned (fibre-level) | **0.712** | **0.865** | 2.6× | — (precomputed) |
+| RoMa | dense | 0.452 | 0.751 | 2.2× | 38.8 |
+| LoFTR | semi-dense | 0.144 | 0.676 | 3.0× | 35.3 |
+| SuperPoint-LightGlue | sparse | 0.083 | 0.657 | 1.7× | 14.3 |
+| DINOv2 (ViT-S/14) | appearance | 0.153 | 0.508 | 2.7× | 6.5 |
+| Global affine + kNN | geometric | 1.000 | 0.497 | 3.7× | — |
+| No-alignment kNN | geometric | 1.000 | 0.488 | 12.0× | — |
+| Random null | — | — | 0.500 | — | — |
+
+(Fig B-WSb, `fig_B_wholeslide_runtime.png`: runtime per method. Per-panel breakdown:
+`results/QUA/eval/wholeslide_scores_by_panel.csv`.)
+
+**Draft prose.** At whole-slide scale, with no ground truth available, the single most important quantity is
+*not* coverage — it is whether the assigned fibres are the *right* ones. The comparison makes this concrete
+(Fig B-WS). Geometry-only kNN reaches **100% coverage at chance accuracy** (shape-AUC 0.49): it "matches"
+every fibre, and half the time the shape evidence is no better than a coin flip. The generic learned
+matchers behave very differently from each other, but none comes close to F2FMatcher. **RoMa** is the best
+generic matcher (coverage 0.45, AUC 0.75) — dense flow fields survive the stain gap reasonably well;
+**LoFTR** and **SuperPoint-LightGlue** are strongly panel-dependent (Table below): they work on the
+textured IgG/CD11b panel (LoFTR AUC 0.89) but essentially fail on NADH, HE and COX (AUC ≈ 0.5, coverage
+≤ 0.03), where the coarse downscale leaves no reliable keypoints or flow. **DINOv2** patch matching is at
+chance accuracy on every panel (AUC 0.50–0.52) with low coverage (0.15) — patch-level appearance cannot
+resolve which *fibre* a patch belongs to among densely packed, visually similar neighbours. **F2FMatcher is
+the only method high on both axes** (coverage 0.71, AUC 0.87): its per-fibre features + triangle geometry +
+propagation resolve the correct fibre among adjacent candidates — exactly the failure mode of every generic
+matcher here, mirroring the precision gap seen against the curated GT in B4.
+
+**Per-panel detail (learned matchers; full table in the CSV).**
+
+| Method | NADH | IgG/CD11b | HE | COX | LAMP2/LGALS3/SQSTM1 | WGA/Myh |
+|---|---|---|---|---|---|---|
+| F2FMatcher cov / AUC | 0.84 / 0.90 | 0.80 / 0.90 | 0.79 / 0.87 | 0.78 / 0.87 | 0.52 / 0.84 | 0.55 / 0.81 |
+| RoMa cov / AUC | 0.49 / 0.76 | 0.48 / 0.88 | 0.46 / 0.72 | 0.48 / 0.66 | 0.39 / 0.77 | 0.41 / 0.73 |
+| LoFTR cov / AUC | 0.02 / 0.58 | 0.47 / 0.89 | 0.03 / 0.55 | 0.02 / 0.51 | 0.16 / 0.78 | 0.16 / 0.75 |
+| SuperPoint-LG cov / AUC | 0.00 / — | 0.32 / 0.72 | 0.00 / 0.68 | 0.01 / 0.57 | 0.10 / 0.65 | 0.07 / 0.60 |
+| DINOv2 cov / AUC | 0.16 / 0.51 | 0.16 / 0.52 | 0.16 / 0.51 | 0.16 / 0.50 | 0.14 / 0.52 | 0.15 / 0.50 |
+
+**Caveats (honesty box).**
+1. *Resolution.* Whole slides (≈ 10,000–15,000 px) cannot be processed at native resolution by any generic
+   matcher; each side is downscaled (long edge ≤ 2048 px, aspect-preserving) and correspondences are mapped
+   back to mask space. DINOv2 and RoMa are capped at 1024 px: without xformers their eager attention needs
+   ≈ 22 GB at 2048 px — an OOM even on a free 24 GB GPU. The cap is part of the scalability story and is
+   logged per method (`runtime.csv`).
+2. *Runtime* is measured on CPU (64 cores; the lab's A30 GPUs were occupied by the local LLM service).
+   Relative ordering and the "generic matchers are expensive at whole-slide scale" message are unaffected;
+   a GPU run would be ~5–10× faster.
+3. *SuperPoint-LightGlue* returns **zero matches** on several panels (NADH/HE/COX) even with the acceptance
+   threshold set to 0 — its greedy ratio-test rejects every candidate on the repetitive, cross-stained,
+   coarse texture. This is a genuine failure mode of sparse descriptor matching at whole-slide scale, not a
+   pipeline artefact (the same pairs yield 10²–10³ matches for LoFTR/RoMa/DINOv2).
+4. *Cross-panel fold* measures spatial cycle-consistency, not correctness by itself: the no-align kNN
+   baseline scores high (12×) because its assignment is a spatially *smooth* map (the affine absorbs the
+   error) even though its shape-AUC is at chance (0.49). It is reported for completeness; the shape-AUC is
+   the correctness axis of the figure.
+5. *Coverage denominators* are all ROIs in the morphology cache (edge ROIs included), so learned-matcher
+   coverage is not inflated by F2FMatcher's edge-ROI exclusion (B4).
+
+**Code.**
 - `scripts/wholeslide_run_baselines.py` — runs each learned matcher (DINOv2 via torch.hub; LoFTR/RoMa/
-  SuperGlue/SuperPoint-LightGlue via `vismatch`) on the WT whole-slide pairs, reduces pixel/patch
-  correspondences to a **1:1 per-fibre assignment** by majority vote through the CellPose label map, and
-  records runtime. Whole slides are downscaled to `--max-size` (default 2048) with keypoints scaled back to
-  mask space; the downscale + runtime are logged (part of the scalability story). GPU.
+  SuperPoint-LightGlue via the `vismatch` env) on the WT whole-slide pairs, reduces pixel/patch
+  correspondences to a 1:1 per-fibre assignment by majority vote through the CellPose label map, and records
+  per-pair runtime. `--device auto` (CUDA only if ≥ 12 GB free, else CPU), `--max-size` (default 2048;
+  dinov2/roma capped at 1024), resume (non-empty pkl skipped, `--force` overrides), `runtime.csv` rewritten
+  after every (pair, method).
   `python scripts/wholeslide_run_baselines.py --models dinov2,loftr,roma,superpoint-lightglue`
 - `scripts/wholeslide_score_and_plot.py` — scores **every** method (F2FMatcher from `paired_labels`; the two
-  geometric baselines computed inline from centroids; any learned matchers whose assignments exist) on
-  coverage + shape-AUC + cross-panel fold + runtime, and draws the 2-D coverage-vs-correctness figure and the
-  runtime bar. CPU, seconds. **Runs standalone** (F2FMatcher + geometric baselines) even before the GPU run;
-  re-run after the baselines land to add their points.
+  geometric baselines from centroids; any learned matchers whose assignments exist) on coverage + shape-AUC +
+  cross-panel fold + runtime, and draws the 2-D coverage-vs-correctness figure and the runtime bar. CPU,
+  seconds. Re-run after any baseline update.
   `python scripts/wholeslide_score_and_plot.py`
 
-Outputs: `results/QUA/eval/wholeslide_scores.csv`;
-`visualizations/eval/fig_B_wholeslide_coverage_vs_consistency.png`, `…_runtime.png`.
-Both scripts reuse the B1–B3 machinery in `scripts/evaluate_section_B.py` (morphology cache, shape distance,
-robust affine), so the metric is identical to the rest of §B. Prerequisite: `fiber_morphology.pkl`
-(`scripts/precompute_fiber_morphology.py`) and the whole-slide PNGs (`--img-dir`, default
-`results/QUA/images_segmentation`).
+Outputs: `results/QUA/eval/wholeslide_scores.csv` (+ `_by_panel.csv`);
+`visualizations/eval/fig_B_wholeslide_coverage_vs_consistency.png`, `fig_B_wholeslide_runtime.png`;
+per-method assignments + runtime under `results/QUA/eval/wholeslide/`.

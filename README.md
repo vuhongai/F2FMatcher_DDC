@@ -97,6 +97,32 @@ filter = detected on slide 6). Plots: `scripts/plot_umap.py`.
 `results/QUA/analysis_bundle.npz` from the precomputed cache + `features_combined`
 (raw 807-dim features, UMAP, groups, samples, GMM k=6 labels) — no re-clustering.
 
+### 5. Method evaluation (§B, WT cohort)
+
+Draft + numbers: `manuscript/section_B_evaluation.md`. Everything derives from precomputed
+artifacts (no re-matching):
+
+```bash
+python scripts/precompute_fiber_morphology.py   # once: masks -> results/QUA/eval/fiber_morphology.pkl
+python scripts/evaluate_section_B.py            # B1 coverage, B2 shape/cross-panel consistency, B3 baselines
+python scripts/plot_section_B.py                # B1-B3 figures -> visualizations/eval/
+# B4 curated-GT P/R/F1 + ablation (TA crops): run_f2fmatcher_benchmark.py -> benchmark_gt.py,
+#    run_f2fmatcher_ablation.py -> benchmark_ablation.py, benchmark_vismatch.py (DINOv2/VisMatch)
+# B-WS whole-slide coverage-vs-correctness (30 WT pairs):
+python scripts/wholeslide_run_baselines.py --models dinov2,loftr,roma,superpoint-lightglue
+python scripts/wholeslide_score_and_plot.py
+```
+
+`wholeslide_run_baselines.py` runs the learned matchers (vismatch env) on the full sections,
+reduces pixel/patch correspondences to a 1:1 per-fibre assignment by majority vote through the
+CellPose label map, and logs per-pair runtime/resolution (`results/QUA/eval/wholeslide/`).
+`--device auto` (CUDA if ≥12 GB free, else CPU); DINOv2/RoMa capped at 1024 px (eager-attention
+memory); resumes over existing non-empty assignments (`--force` overrides).
+`wholeslide_score_and_plot.py` scores every method (F2FMatcher, geometric baselines, learned) on
+coverage + shape-AUC + cross-panel fold + runtime → `results/QUA/eval/wholeslide_scores.csv` +
+`visualizations/eval/fig_B_wholeslide_*.png`. Headline: F2FMatcher is the only method high on both
+coverage (0.71) and correctness (AUC 0.87); kNN reaches 100% coverage at chance accuracy.
+
 **Notebooks** (kernel: `fibermatcher`, run top-to-bottom; figures in `visualizations/Q1|Q2/`):
 - `notebooks/Q1_mdx_vs_WT.ipynb` — the mdx disease signature: cluster identities,
   mdx vs WT per-cluster marker effects (Cliff's delta), dystrophin loss, correlations lost in mdx.
@@ -124,7 +150,11 @@ F2FMatcher_DDC/
 │   ├── cluster_fibers.py      # Step 4: UMAP cache builder (filter->impute->zscore->PCA->UMAP)
 │   ├── plot_umap.py           # Step 4: UMAP plots from cache (group / cluster / feature)
 │   ├── plot_stain_correlation.py  # Step 4: density scatter of 2 stainings per group
-│   └── build_analysis_bundle.py   # Step 5: analysis_bundle.npz for the Q1/Q2 notebooks
+│   ├── build_analysis_bundle.py   # Step 5: analysis_bundle.npz for the Q1/Q2 notebooks
+│   ├── evaluate_section_B.py      # Step 6 (§B): B1-B3 method evaluation (WT)
+│   ├── plot_section_B.py          # Step 6 (§B): B1-B3 figures
+│   ├── wholeslide_run_baselines.py    # Step 6 (§B-WS): learned matchers on whole slides
+│   └── wholeslide_score_and_plot.py   # Step 6 (§B-WS): coverage-vs-correctness scoring
 ├── notebooks/
 │   ├── Q1_mdx_vs_WT.ipynb
 │   └── Q2_treatment_effect_AAV9_vs_LICA1.ipynb

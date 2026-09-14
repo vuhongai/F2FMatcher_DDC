@@ -193,7 +193,9 @@ def main():
                     fontweight="bold" if is_f2f else "normal")
     ax.set_xlabel("coverage (fraction of anchor fibres assigned)")
     ax.set_ylabel("correctness proxy — shape-consistency AUC")
-    ax.set_xlim(-0.02, 1.03); ax.set_ylim(0.45, 1.0)
+    aucs = res["shape_auc"].dropna()
+    lo = min(0.45, float(aucs.min()) - 0.05) if len(aucs) else 0.45
+    ax.set_xlim(-0.02, 1.03); ax.set_ylim(max(lo, 0.30), 1.0)
     ax.set_title("Whole-slide (WT): coverage is not enough\nonly F2FMatcher is high on coverage AND correctness",
                  fontweight="bold", fontsize=11)
     for sp in ("top", "right"): ax.spines[sp].set_visible(False)
