@@ -40,6 +40,11 @@ each fibre centroid we cut a fixed **256×256 window** (fibres whose window woul
 whose area is < 100 px², are excluded) and keep three channels: the two flow components and the binary ROI
 mask.
 
+Crucially, the 256×256 window is deliberately larger than a single fibre: the two flow channels are cut from
+the **whole-section** flow field, so they retain the flow of the **neighbouring fibres** that fall inside the
+window, while the binary mask marks only the central target. The embedding therefore describes each fibre
+**together with its immediate surroundings**, not in isolation — a property we exploit below (§A.3).
+
 The flow field is re-encoded before it enters the network. Rather than feed the signed Cartesian components
 `(flow_x, flow_y)`, we convert them to **polar form** — magnitude `mag = clip(‖flow‖/10, 0, 1)` and direction
 `angle = (atan2(flow_y, flow_x)+π)/2π` — stack them with the mask, and resize the 256×256 window to
@@ -85,7 +90,11 @@ only the KL term during training).
 > scale differences that separate serial sections, so the *same* fibre lands at nearly the same point in
 > latent space regardless of section or stain. Reconstructing the **Cartesian** `(flow_x, flow_y)` from a
 > **polar** input adds a mild extra constraint (the decoder must learn the polar→Cartesian map) and avoids the
-> angle wrap-around discontinuity in the loss.
+> angle wrap-around discontinuity in the loss. Finally, because the reconstruction targets are the **full**
+> flow crop — which contains the neighbouring fibres inside the 256-px window — μ is *forced* to encode the
+> target fibre **together with the morphology and arrangement of its neighbours**. The appearance term is thus
+> already **context-aware**: it compares not two isolated silhouettes but two fibres each embedded in their
+> local surroundings, a far more discriminative signal in a field of near-identical fibres.
 
 ## A.4 Training the same-fibre classifier
 
@@ -110,8 +119,10 @@ checkpoint reached **validation F1 ≈ 0.944**.
 
 ## A.5 The matching cost: appearance × geometry
 
-Appearance similarity alone cannot separate thousands of near-identical fibres, so the matching cost pairs it
-with a purely geometric term. For each cross-section pair `(i, j)` the two ingredients are:
+Both ingredients of the cost are **local descriptors**: they characterise a fibre only by itself and its
+immediate neighbourhood, with no knowledge of the section-wide layout. Appearance similarity alone cannot
+separate thousands of near-identical fibres, so the matching cost pairs it with a purely geometric term. For
+each cross-section pair `(i, j)` the two ingredients are:
 
 - **Appearance — classifier score `S[i,j]` (§A.4):** does fibre *i* look like the same cell as fibre *j*?
 - **Geometry — spatial-signature similarity `G[i,j]`:** does fibre *i* sit in the same local neighbourhood as
@@ -182,6 +193,15 @@ Together the three stages implement a **coarse-to-fine confidence** strategy —
 a locally-verified propagation wave-front, then an affine-primed clean-up — in which geometry imposes the
 global spatial consistency that appearance cannot, while local validation absorbs the non-rigid distortion
 between serial sections.
+
+**The two-scale logic of the method.** This is the conceptual division of labour between the cost (§A.5) and
+the matcher (§A.6). Everything in the cost is **local** — the appearance embedding sees a fibre and its
+immediate surroundings within one 256-px patch, and the spatial signature sees a fibre and its k nearest
+neighbours — so on its own the cost can say *"these two fibres look and sit alike locally"* but cannot resolve
+which of many locally-similar candidates is the true partner. The matcher supplies the missing **wider scale**:
+triangle-verified seeds are consistent across the whole section, propagation stitches the local descriptors
+into one coherent field, and the affine fill reasons over a section-wide transform. Local evidence proposes;
+global geometry disposes.
 
 ## A.7 From a stained stack to a per-fibre multiplex table
 
