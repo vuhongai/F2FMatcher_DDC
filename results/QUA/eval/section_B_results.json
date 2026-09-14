@@ -1,0 +1,32 @@
+{
+  "B1_coverage": {
+    "n_samples": 5,
+    "n_pairs": 30,
+    "total_matched_pairs": 190009.0,
+    "mean_coverage_ref": 0.7122777288280214,
+    "mean_coverage_other": 0.8184122674502106,
+    "mean_coverage_both": 0.7653449981391159
+  },
+  "B2a_morph_consistency": {
+    "n_pairs": 30,
+    "n_matched_total": 190009,
+    "matched_mean": 1.0858669817757896,
+    "matched_median": 0.8658542447973231,
+    "random_mean": 2.6548045659063817,
+    "auc_mean": 0.8654206649948196,
+    "auc_min": 0.7427675525075011,
+    "lift_mean": 0.5928977480233527
+  },
+  "B2b_crosspanel": {
+    "real_spread_mean": 1755.1151169360805,
+    "null_spread_mean": 4479.26738390983,
+    "fold_reduction": 2.695461170636846
+  },
+  "B3_baselines": {
+    "F2FMatcher": 1.0858669817757896,
+    "global_affine_kNN": 2.6109240135920833,
+    "no_align_kNN": 2.6568686001432322,
+    "random_null": 2.6529722166761043
+  },
+  "runtime_s": 2.3785197734832764
+}

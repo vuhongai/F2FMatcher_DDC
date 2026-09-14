@@ -1,0 +1,64 @@
+loaded morphology: 35 images, 271,119 fibers
+
+[B1] coverage (WT)
+                       panel  n_pairs  mean_pairs  cov_ref  cov_other  cov_mean
+                     10X_COX        5      6871.8   0.7767     0.8653    0.8210
+10X_DAPI_LAMP2_LGALS3_SQSTM1        5      4685.8   0.5204     0.7242    0.6223
+      10X_DAPI_LAM_IgG_CD11B        5      7052.8   0.7997     0.8755    0.8376
+                      10X_HE        5      6972.2   0.7857     0.8880    0.8368
+                    10X_NADH        5      7453.0   0.8399     0.8819    0.8609
+      10X_WGA_Myh7_Myh2_Myh4        5      4966.2   0.5512     0.6756    0.6134
+    overall: 30 pairs, cov ref 71.2%, other 81.8%, both 76.5%
+
+[B2a] morphological consistency (scale-invariant shape), matched vs random
+sample                        panel  n_matched  matched_mean  random_mean    auc   lift
+QUAG01                      10X_COX       5509        1.1901       2.7164 0.8495 0.5619
+QUAG01 10X_DAPI_LAMP2_LGALS3_SQSTM1       1599        1.3287       2.9323 0.8202 0.5469
+QUAG01       10X_DAPI_LAM_IgG_CD11B       6871        1.2968       2.7033 0.8181 0.5203
+QUAG01                       10X_HE       5062        1.4790       2.7799 0.7859 0.4680
+QUAG01                     10X_NADH       5535        1.2908       2.6777 0.8183 0.5179
+QUAG01       10X_WGA_Myh7_Myh2_Myh4       2333        1.6792       2.7900 0.7428 0.3981
+QUAG02                      10X_COX       6740        1.0751       2.6233 0.8653 0.5902
+QUAG02 10X_DAPI_LAMP2_LGALS3_SQSTM1       5056        1.2722       2.7403 0.8257 0.5358
+QUAG02       10X_DAPI_LAM_IgG_CD11B       8396        0.7972       2.5577 0.9199 0.6883
+QUAG02                       10X_HE       6908        1.0650       2.6224 0.8732 0.5939
+QUAG02                     10X_NADH       7435        0.8374       2.5144 0.9111 0.6670
+QUAG02       10X_WGA_Myh7_Myh2_Myh4       6607        1.1373       2.7055 0.8635 0.5796
+QUAG03                      10X_COX       7680        1.0086       2.5851 0.8788 0.6098
+QUAG03 10X_DAPI_LAMP2_LGALS3_SQSTM1       6985        1.1116       2.6123 0.8584 0.5745
+QUAG03       10X_DAPI_LAM_IgG_CD11B       8238        0.7719       2.5695 0.9268 0.6996
+QUAG03                       10X_HE       7698        0.9466       2.5736 0.8954 0.6322
+QUAG03                     10X_NADH       7835        0.8246       2.5132 0.9138 0.6719
+QUAG03       10X_WGA_Myh7_Myh2_Myh4       2344        1.4424       2.6689 0.7896 0.4595
+QUAG04                      10X_COX       6588        1.0888       2.6783 0.8655 0.5935
+QUAG04 10X_DAPI_LAMP2_LGALS3_SQSTM1       5045        1.2376       2.6519 0.8329 0.5333
+QUAG04       10X_DAPI_LAM_IgG_CD11B       2822        0.8320       2.6407 0.9157 0.6849
+QUAG04                       10X_HE       7159        0.8771       2.6644 0.9114 0.6708
+QUAG04                     10X_NADH       7533        0.7898       2.5720 0.9260 0.6929
+QUAG04       10X_WGA_Myh7_Myh2_Myh4       6145        1.1939       2.7420 0.8529 0.5646
+QUAG05                      10X_COX       7842        1.0406       2.6253 0.8774 0.6036
+QUAG05 10X_DAPI_LAMP2_LGALS3_SQSTM1       4744        1.1344       2.8523 0.8568 0.6023
+QUAG05       10X_DAPI_LAM_IgG_CD11B       8937        0.7717       2.5540 0.9286 0.6978
+QUAG05                       10X_HE       8034        0.9126       2.5902 0.9035 0.6477
+QUAG05                     10X_NADH       8927        0.8030       2.5006 0.9193 0.6789
+QUAG05       10X_WGA_Myh7_Myh2_Myh4       7402        1.3401       2.6868 0.8166 0.5012
+    pooled: AUC 0.865 (min 0.743), matched 1.086 vs random 2.655 (59.3% reduction)
+
+[B2b] cross-panel spatial consistency (star-topology cycle check)
+sample  n_anchor_fibers  n_panels  real_spread_mean  real_spread_med  null_spread_mean  null_spread_med  fold_reduction
+QUAG01             6814         6            894.22           876.19           3712.37          3724.03            4.15
+QUAG02             8486         6            462.39           465.13           4122.34          4132.88            8.92
+QUAG03             8492         6            288.59           230.19           3883.11          3902.40           13.46
+QUAG04             8081         6            585.08           538.61           3734.66          3740.78            6.38
+QUAG05             9152         6            606.00           616.00           3856.45          3873.83            6.36
+    pooled: real spread 567.3px vs null 3861.8px  (7.9x tighter)
+Traceback (most recent call last):
+  File "/DATA/F2FMatcher_DDC/scripts/evaluate_section_B.py", line 347, in <module>
+    main()
+  File "/DATA/F2FMatcher_DDC/scripts/evaluate_section_B.py", line 333, in main
+    _, cmp, _ = b3_baselines(arr)
+  File "/DATA/F2FMatcher_DDC/scripts/evaluate_section_B.py", line 285, in b3_baselines
+    A, t = fit_affine(c1, c2)
+  File "/DATA/F2FMatcher_DDC/scripts/evaluate_section_B.py", line 186, in fit_affine
+    cov_sd = Cs.T @ Cd / len(src)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 7058 is different from 7481)
