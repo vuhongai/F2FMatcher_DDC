@@ -15,6 +15,8 @@ Thumbs.db
 
 .ipynb_checkpoints/
 
+logs/
+
 results/TA/
 results/QUA/analysis_bundle.npz
 results/QUA/features/
@@ -38,3 +40,4 @@ results/benchmark/f2fmatcher_output_ablation/
 results/benchmark/*.log
 
 results/QUA/eval/wholeslide/*/*.pkl
+manuscript/figures/step_prediction_real/
