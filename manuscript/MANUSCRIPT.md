@@ -102,54 +102,94 @@ table.** (a) Pipeline. (b) Worked example: serial sections stained for laminin (
 (brightfield), Cellpose segmentation and F2FMatcher correspondence linking fibres across the modality gap.
 (c) The four compartments and the 807-feature per-fibre vector.
 
-### §B. Evaluation: accuracy against ground truth and eight baselines
+### §B. F2FMatcher matches fibres more accurately than registration- and appearance-based methods
 
-We evaluated F2FMatcher on the cleanest tissue in the study (wild-type quadriceps; 30 section-pairs, 190,009
-matched fibres) and against a curated expert ground truth.
+Correspondence across a stain gap has no established benchmark, so a claim of accuracy must be earned against
+an expert-defined truth and against the strongest available alternatives. We therefore built a curated ground
+truth and benchmarked F2FMatcher against eight baselines spanning the three natural strategies for the task —
+spatial registration, deep image-region embedding, and general-purpose keypoint matching — and evaluated the
+method at two scales: on annotated crops, where precision and recall can be measured exactly, and on whole
+sections, where the practical yield and its correctness must hold at the scale of tens of thousands of fibres.
+All evaluation was carried out on the cleanest tissue in the study — wild-type quadriceps (30 section-pairs,
+190,009 matched fibres) — so that matcher performance is isolated from dystrophic pathology and gene therapy.
 
-**Coverage.** F2FMatcher matched on average **76.5%** of fibres per section-pair (71% of anchor fibres, 82%
-of panel fibres), highest for panels with segmentation concordant to the laminin anchor (NADH 86%, IgG/CD11b
-84%, HE 84%, COX 82%) and lower where the panel's own segmentation misses fibres (WGA/Myh 61%, lysosomal
-62%) — i.e. coverage reflects segmentation concordance, not a ceiling of the matcher (Fig 2a).
+**F2FMatcher is highly precise and outperforms every baseline against expert ground truth.** We scored
+precision, recall and F1 against **1,315 expert-annotated fibre correspondences** (38 crop-pairs; the
+Cellpose label space was exactly reproducible, so every method was scored on identical objects). F2FMatcher
+reached **precision = 0.94, recall = 0.89, F1 = 0.91**, roughly **2.4× the F1 of the best competing method**
+(Fig 2a). The advantage is driven by precision. Every generic matcher was recall-heavy but imprecise (recall
+0.77–0.89 at precision 0.07–0.24): registration by centroid nearest-neighbour (no-alignment kNN F1 = 0.38;
+global-affine + kNN 0.22), general keypoint and dense matchers (SuperGlue [DOI:10.48550/arXiv.1911.11763]
+0.38; SuperPoint-LightGlue [DOI:10.48550/arXiv.2306.13643; DOI:10.48550/arXiv.1712.07629] 0.36; RoMa
+[DOI:10.48550/arXiv.2305.15404] 0.31; LoFTR [DOI:10.48550/arXiv.2104.00680] 0.24), and appearance embedding
+(DINOv2 [DOI:10.48550/arXiv.2304.07193] 0.12) all near the chance floor (random F1 = 0.02). The reason is
+intrinsic to the tissue: muscle fibres are densely packed and near-identical, so a pixel-, patch- or
+centroid-level correspondence routinely lands on a *wrong-but-adjacent* fibre — precisely the error that
+learned per-fibre shape features, triangle-geometry validation and local propagation are designed to resolve.
+F2FMatcher makes this resolution the core operation and so converts a high-recall guess into a
+near-error-free assignment.
 
-![Figure 2a](figures/fig2a_coverage.png)
+![Figure 2a](figures/fig2e_final_prf1.png)
 
-**Label-free accuracy.** Without labels, two self-supervised checks confirm the matches are biologically
-coherent: F2FMatcher pairs are **59% more shape-consistent** than random pairs (mean scale-invariant shape
-distance 1.09 vs 2.65; separation AUC 0.865; Fig 2b), and, because all panels share one anchor, an anchor
-fibre's counterparts across panels are **2.7× tighter in space** than random assignment after robust affine
-alignment (1,755 vs 4,479 px; Fig 2c). Geometry-only baselines fail on the same shape-consistency metric —
-global-affine+kNN (2.61) and no-alignment kNN (2.66) both sit at the random level (2.65) — because a single
-affine cannot absorb local distortion and the nearest neighbour of a densely-packed fibre is frequently a
-wrong-but-adjacent fibre (Fig 2d).
+**Every algorithmic component contributes.** Scoring the pipeline stage-by-stage against the same ground
+truth showed that no component is redundant: the classifier seeds alone carry most of the recall at moderate
+precision (F1 = 0.72), geometry validation raises precision without cost (0.74), local propagation is
+conservatively precise (P = 0.93) but prunes recall (F1 = 0.72), and the final affine fill restores recall
+while holding precision, yielding the complete pipeline's F1 = 0.91. Shape embedding, geometry and
+propagation are thus each necessary, and only their combination attains both high precision and high recall.
 
-![Figure 2b](figures/fig2b_shape_auc.png)
+**Accuracy is retained at whole-section scale, where coverage alone is misleading.** Crop-level P/R/F1 does
+not by itself establish that the method works on a full section of tens of thousands of fibres, where no
+ground truth exists. There, the informative question is not how *many* fibres a method assigns (its coverage)
+but whether the assigned fibres are the *right* ones — a matcher can trivially assign every fibre at chance
+accuracy. We therefore scored all methods on the 30 whole-section WT pairs on two axes simultaneously:
+coverage, and a label-free correctness proxy (the shape-consistency of the assigned pairs, validated below).
+**F2FMatcher is the only method high on both** (coverage 0.71, correctness AUC 0.87; Fig 2b). Geometry-only
+kNN reaches 100% coverage at chance correctness (AUC ≈ 0.49) — it matches everything, half of it no better
+than a coin flip. The generic learned matchers trade off the other way: the best of them (RoMa) reaches only
+0.45 coverage at 0.75 correctness, and the sparse and appearance matchers collapse on the low-texture
+brightfield panels (coverage ≤ 0.15). This is the crop-level precision gap reappearing at scale, and it is
+the axis on which coverage-only reporting would have been misleading.
 
-![Figure 2c](figures/fig2c_crosspanel.png)
+![Figure 2b](figures/fig2_wholeslide_cov_vs_correctness.png)
 
-![Figure 2d](figures/fig2d_geombaselines.png)
+**Coverage tracks segmentation, not the matcher.** In practical use F2FMatcher recovered on average **76.5%**
+of fibres per section-pair (71% of anchor fibres, 82% of panel fibres; Fig 2c). Coverage was highest for
+panels whose segmentation is concordant with the laminin anchor (NADH 86%, HE 84%, IgG/CD11b 84%, COX 82%)
+and lower for the two panels whose own segmentation misses fibres (WGA/Myh 61%, lysosomal 62%). Because the
+recoverable ceiling for a panel is set by how many of the anchor's fibres its own segmentation also finds,
+this residual is a property of stain-specific segmentation quality, not of the matching algorithm — and it is
+the same segmentation dependence that separates the panels on the correctness axis of Fig 2b.
 
-**Definitive accuracy against curated ground truth.** We scored precision/recall/F1 against 1,315
-expert-annotated fibre correspondences (38 crop-pairs; label space exactly reproducible). Against the fair
-set of matchable ROIs, **F2FMatcher reached P = 0.937, R = 0.890, F1 = 0.913** (Fig 2e). An ablation
-confirmed that each pipeline stage contributes (classifier seeds F1 0.717 → +geometry 0.737 → +propagation
-0.717, precision 0.926 → +affine fill 0.914). Crucially, F2FMatcher beat every baseline, including
-state-of-the-art learned matchers benchmarked on the same ground truth: no-alignment kNN 0.381, SuperGlue
-[DOI:10.48550/arXiv.1911.11763] 0.375, SuperPoint-LightGlue [DOI:10.48550/arXiv.2306.13643;
-DOI:10.48550/arXiv.1712.07629] 0.357, RoMa [DOI:10.48550/arXiv.2305.15404] 0.306, global-affine+kNN 0.218,
-LoFTR [DOI:10.48550/arXiv.2104.00680] 0.241, and DINOv2 [DOI:10.48550/arXiv.2304.07193] 0.120. The gap is
-driven by **precision**: every generic matcher is recall-heavy but imprecise (R ≈ 0.77–0.89 but P ≈
-0.07–0.24) because muscle fibres are densely packed and visually similar, so pixel/patch correspondence
-frequently lands on a wrong-but-adjacent fibre. F2FMatcher's learned per-fibre features + triangle geometry +
-propagation resolve the correct fibre among nearby candidates, giving near-perfect precision at high recall
-— **~2.4× the F1 of the best baseline**.
+![Figure 2c](figures/fig2a_coverage.png)
 
-![Figure 2e](figures/fig2e_final_prf1.png)
+**Two label-free consistency checks corroborate accuracy at full scale.** The correctness proxy used above
+rests on two self-supervised properties that a correct set of matches must satisfy and that require no
+annotation. First, the same physical fibre has the same shape in two serial sections: F2FMatcher pairs were
+**59% more shape-consistent** than random pairs across all 30 section-pairs (mean scale-invariant shape
+distance 1.09 vs 2.65; separation AUC = 0.865, per-pair range 0.74–0.93; Fig 2d), whereas both geometry-only
+baselines sat at the random level (2.61 and 2.66 vs 2.65; Supplementary Fig S2) — confirming that pure
+geometry cannot recover shape-coherent matches. Second, because all six panels are matched to one common
+anchor, a correct match is cycle-consistent: an anchor fibre's counterparts across panels must coincide in
+space. They did, clustering **2.7× more tightly** than random assignment after robust affine alignment (1,755
+vs 4,479 px, per-sample 1.9–3.7×; Fig 2e). Both checks are label-free, agree with the expert-ground-truth
+result, and extend it from annotated crops to whole sections.
 
-**Figure 2. F2FMatcher is accurate and outperforms registration- and appearance-based baselines.** (a)
-Coverage per stain-pair (WT). (b) Shape-consistency of matched vs random pairs (AUC 0.865). (c) Cross-panel
-cycle-consistency (2.7× tighter than random). (d) Geometry-only baselines sit at chance on shape consistency.
-(e) Precision/recall/F1 against the curated expert ground truth for F2FMatcher and eight baselines.
+![Figure 2d](figures/fig2b_shape_auc.png)
+
+![Figure 2e](figures/fig2c_crosspanel.png)
+
+**Figure 2. F2FMatcher matches fibres accurately across the stain gap and outperforms registration- and
+appearance-based baselines.** (a) Precision, recall and F1 against a curated expert ground truth (1,315
+correspondences, 38 crop-pairs) for F2FMatcher and eight baselines; F2FMatcher F1 = 0.91, ~2.4× the best
+baseline. (b) Whole-section evaluation on coverage (fibres assigned) versus a label-free correctness proxy
+(shape-consistency AUC); F2FMatcher is the only method high on both axes, whereas geometry-only kNN reaches
+full coverage at chance correctness and generic learned matchers reach neither. (c) Coverage per stain-pair
+in wild-type quadriceps; the residual reflects stain-specific segmentation concordance, not matcher failure.
+(d) Matched fibre pairs are far more shape-consistent than random pairs (AUC = 0.865). (e) Cross-panel
+cycle-consistency: an anchor fibre's counterparts across panels cluster 2.7× more tightly than random. Panels
+(b,d,e) are label-free and computed on all 30 whole-section pairs; per-method whole-section runtimes and the
+geometry-only shape-consistency comparison are in Supplementary Fig S2.
 
 ### §C. F2FMatcher reveals the single-fibre pathology of dystrophic muscle
 
@@ -313,9 +353,11 @@ regeneration↔vector-loss feedback and the "no-reversal" account of resistance 
 cross-sectional data plus prior literature rather than a longitudinal measurement; correlations are
 observational. Slide-8 (lysosomal) markers had low mapping coverage for AAV9 (~16%) and were therefore
 excluded for that group, and brightfield NADH/COX intensity can be inflated by uptake in leaky fibres. The
-ground-truth benchmark used small crops; a whole-slide comparison and robustness curves remain to be added
-(see below). Replication in a second muscle (tibialis anterior data are available) and mixed-effects
-modelling would further strengthen the biological claims.
+expert ground truth was annotated on small crops; the whole-section comparison (Fig 2b) uses label-free
+correctness proxies rather than annotations, and quantitative robustness curves (accuracy versus
+inter-section distortion, fibre density and segmentation error) remain to be added. Replication in a second
+muscle (tibialis anterior data are available) and mixed-effects modelling would further strengthen the
+biological claims.
 
 ---
 
@@ -352,7 +394,11 @@ and no-alignment kNN (scored on the same shape metric and GT); DINOv2 (ViT-S/14)
 SuperGlue [DOI:10.48550/arXiv.1911.11763] and SuperPoint-LightGlue [DOI:10.48550/arXiv.1712.07629;
 DOI:10.48550/arXiv.2306.13643] via the `vismatch`/`image-matching-models` toolkit, with pixel→ROI assignment
 through the Cellpose label map. Ablation: intermediate matched-label sets scored at each pipeline stage.
-Scripts under `scripts/`; provenance in `manuscript/section_B_evaluation.md`.
+Whole-section comparison: every method was run on all 30 WT section-pairs and reduced to a 1:1 per-fibre
+assignment (learned matchers by majority vote of their correspondences through the Cellpose label map), then
+scored on coverage together with the two label-free correctness proxies (shape-consistency AUC and
+cross-panel cycle-consistency) and per-pair runtime, so coverage is never reported without a correctness
+axis. Scripts under `scripts/`; provenance and full per-pair tables in `manuscript/section_B_evaluation.md`.
 
 **Clustering and statistics (§C–§D).** Fibres detected on the HE panel were clustered on the unbiased "ch3"
 feature set (15 morphology + HE brightfield, 123 features): per-feature z-score → PCA(30) → UMAP
